@@ -1,0 +1,518 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quarter Life Crisis — Media Informasi</title>
+
+  <!-- Fonts (Google) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ===========================
+       STYLE GUIDE / VARIABLES
+       =========================== */
+    :root{
+      --bg:#FAFBFF;
+      --card:#FFFFFF;
+      --muted:#8B8C99;
+      --text:#1F2937;
+      --primary:#8F6BF4;   /* ungu */
+      --accent:#FFD369;    /* kuning pastel */
+      --soft:#EDE9FF;
+      --max-width:1100px;
+      --radius:12px;
+    }
+
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    /* Container */
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+
+    /* Header / Nav */
+    header{
+      position:fixed;left:0;right:0;top:0;z-index:60;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+      border-bottom:1px solid rgba(34,40,55,0.04);
+    }
+    .nav {
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:12px 20px;
+      max-width:var(--max-width);margin:0 auto;
+    }
+    .logo{
+      display:flex;align-items:center;gap:10px;font-weight:700;font-family:Poppins, Inter;
+    }
+    .logo .mark{
+      width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#A37AFD);
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:800;
+      box-shadow:0 6px 18px rgba(143,107,244,0.15)
+    }
+    .nav-links{display:flex;gap:12px;align-items:center}
+    .nav-links a{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--primary);text-decoration:none}
+    .cta {background:var(--accent);padding:8px 14px;border-radius:10px;font-weight:700;color:#222}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:grid;place-items:center;
+      position:relative;overflow:hidden;
+      padding-top:84px; /* header */
+    }
+    .hero-bg{
+      position:absolute;inset:0;z-index:0;pointer-events:none;
+      background: radial-gradient( at 20% 20%, rgba(143,107,244,0.08), transparent 10%),
+                  radial-gradient( at 80% 80%, rgba(255,211,105,0.06), transparent 12%);
+      transform:translateZ(0);
+    }
+    .hero-inner{z-index:1;display:flex;gap:40px;align-items:center;justify-content:space-between;width:100%;max-width:1100px;padding:40px 20px}
+    .hero-left{flex:1;min-width:280px;}
+    .eyebrow{color:var(--primary);font-weight:700;margin-bottom:8px}
+    h1{font-family:Poppins, Inter;margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}
+    p.lead{color:var(--muted);margin-top:12px;font-size:1rem}
+    .hero-cta{margin-top:20px;display:flex;gap:12px;align-items:center}
+    .btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(34,40,55,0.06)}
+
+    /* hero visual */
+    .hero-art{flex-basis:360px;flex-shrink:0;position:relative}
+    .card-figure{
+      width:100%;height:420px;border-radius:18px;background:linear-gradient(180deg,#FFF,#F3F0FF);
+      box-shadow:0 14px 40px rgba(31,41,55,0.06);display:flex;align-items:center;justify-content:center;
+      position:relative;overflow:hidden;
+    }
+    .figure-person{width:260px;height:260px;border-radius:18px;background:linear-gradient(180deg,#FFE9C6,#FFDDA0);
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#6b1d4e;
+      transform-origin:center center; /* for scaling animation */
+    }
+
+    /* SECTION basic */
+    section{padding:80px 0;position:relative}
+    h2.section-title{font-family:Poppins;margin:0 0 18px 0;font-size:22px}
+    .intro{color:var(--muted);max-width:800px}
+
+    /* Signs list (left column) + detail panel (right column) */
+    .signs{
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;
+    }
+
+    .sign-list{display:grid;gap:12px}
+    .sign-card{
+      background:var(--card);border-radius:14px;padding:18px;box-shadow:0 8px 20px rgba(31,41,55,0.04);
+      display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(15,15,15,0.02);
+    }
+    .sign-index{width:44px;height:44px;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-weight:800;color:var(--primary)}
+    .sign-body{flex:1}
+    .sign-title{margin:0;font-weight:700;font-size:16px}
+    .sign-sub{color:var(--muted);font-size:0.95rem;margin-top:6px}
+
+    /* sticky detail panel */
+    .detail-panel{
+      position:sticky;top:96px;height:360px;padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#FBFAFF);
+      box-shadow:0 12px 40px rgba(31,41,55,0.06);overflow:auto;
+    }
+    .detail-title{font-weight:800;margin:0 0 8px 0}
+    .detail-text{color:var(--muted);line-height:1.6}
+
+    /* Coping section - accordion */
+    .coping-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
+    .accordion{background:white;padding:14px;border-radius:12px;border:1px solid rgba(15,15,15,0.03)}
+    .accordion h3{margin:0;font-size:15px;font-weight:700}
+    .accordion p{margin:8px 0 0 0;color:var(--muted);font-size:0.95rem;line-height:1.5}
+
+    /* Footer */
+    footer{padding:40px 0;background:transparent;border-top:1px solid rgba(15,15,15,0.03)}
+    .small{font-size:0.9rem;color:var(--muted)}
+
+    /* Responsive tweaks */
+    @media (max-width:980px){
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .hero-art{order:-1;width:100%}
+      .signs{grid-template-columns:1fr}
+      .detail-panel{position:relative;top:auto}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <div class="logo" aria-hidden="true">
+        <div class="mark">Q</div>
+        <div>QuarterLife</div>
+      </div>
+      <div class="nav-links" aria-hidden="true">
+        <a href="#about">Tentang</a>
+        <a href="#tanda">Tanda</a>
+        <a href="#cara">Cara Menghadapi</a>
+        <a class="cta" href="#tanda">Mulai</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+
+      <div class="hero-inner container">
+        <div class="hero-left">
+          <div class="eyebrow">QUARTER LIFE CRISIS</div>
+          <h1>“Pernah nggak sih kamu ngerasa… hidup kayak mandek di tempat?”</h1>
+          <p class="lead">Quarter life crisis nyata — perasaan bingung, overthinking, sampai lelah itu wajar. Website ini untuk kamu yang butuh pijakan, strategi, dan pengingat bahwa kamu tidak sendiri.</p>
+
+          <div class="hero-cta">
+            <button class="btn btn-primary" id="scrollToSigns">Kenali Tanda</button>
+            <button class="btn btn-ghost" id="scrollToCoping">Cara Menghadapi</button>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="card-figure" id="figure-card">
+            <div class="figure-person">B</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container" aria-label="Tentang QLC">
+      <h2 class="section-title">Apa itu Quarter Life Crisis?</h2>
+      <p class="intro">Quarter Life Crisis (QLC) terjadi ketika kamu merasa kehilangan arah soal percintaan, keuangan, karir, dan tujuan hidup di usia dewasa awal. Ini bukan kegagalan — ini momen transisi untuk bertumbuh. Selama terus bergerak, kegagalan hanyalah bagian dari proses.</p>
+    </section>
+
+    <!-- SIGNS -->
+    <section id="tanda" class="container" aria-label="Tanda-Tanda QLC">
+      <h2 class="section-title">Tanda-Tanda Quarter Life Crisis</h2>
+      <p class="intro">Tiap tanda bisa menjadi petunjuk untuk refleksi. Scroll ke bawah — tiap kali kamu mencapai tanda, panel di kanan akan menampilkan penjelasan yang menenangkan dan membangun.</p>
+
+      <div class="signs" id="signsGrid">
+        <div class="sign-list" id="signList">
+          <!-- Sign cards: data-index used for animation binding -->
+          <article class="sign-card" data-index="1" id="s1" tabindex="0">
+            <div class="sign-index">1</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Bingung arah tujuan hidup</h3>
+              <p class="sign-sub">“Tujuan hidupku ini apa, sih?” Semua tampak membingungkan.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="2" id="s2" tabindex="0">
+            <div class="sign-index">2</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Merasa bingung dengan diri sendiri</h3>
+              <p class="sign-sub">Pertanyaan “Aku ini siapa?” muncul. Itu bagian dari membentuk identitas.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="3" id="s3" tabindex="0">
+            <div class="sign-index">3</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Merasa hidup stuck / jalan di tempat</h3>
+              <p class="sign-sub">Usaha terasa tidak membuahkan perubahan — tanda mental fatigue/kelelahan.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="4" id="s4" tabindex="0">
+            <div class="sign-index">4</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Sulit membuat keputusan</h3>
+              <p class="sign-sub">Decision paralysis — takut salah sehingga sulit bergerak.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="5" id="s5" tabindex="0">
+            <div class="sign-index">5</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Kegiatan atau hubungan terasa hampa</h3>
+              <p class="sign-sub">Rutinitas terasa kosong; hubungan mungkin kehilangan makna.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="6" id="s6" tabindex="0">
+            <div class="sign-index">6</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Hilangnya rasa antusias</h3>
+              <p class="sign-sub">Hal yang dulu menyenangkan terasa hambar.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="7" id="s7" tabindex="0">
+            <div class="sign-index">7</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Sering merasa cemas</h3>
+              <p class="sign-sub">Gelisah tanpa alasan jelas, tanda overthinking/burnout awal.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="8" id="s8" tabindex="0">
+            <div class="sign-index">8</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Suka membandingkan diri</h3>
+              <p class="sign-sub">Perbandingan sosial membuat merasa tertinggal.</p>
+            </div>
+          </article>
+
+          <article class="sign-card" data-index="9" id="s9" tabindex="0">
+            <div class="sign-index">9</div>
+            <div class="sign-body">
+              <h3 class="sign-title">Merasa kesepian meskipun punya teman</h3>
+              <p class="sign-sub">Koneksi emosional belum kuat → merasa sendiri.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Detail Panel (sticky) -->
+        <aside class="detail-panel" id="detailPanel" aria-live="polite">
+          <h3 class="detail-title" id="detailTitle">Pilih satu tanda</h3>
+          <p class="detail-text" id="detailText">Scroll ke bawah atau klik salah satu kartu di kiri untuk melihat penjelasan dan kata-kata penyemangat.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Coping -->
+    <section id="cara" class="container" aria-label="Cara Menghadapi QLC">
+      <h2 class="section-title">Bagaimana Menghadapinya?</h2>
+      <p class="intro">Rekomendasi aktivitas sederhana untuk membuka pikiran dan memulai langkah kecil.</p>
+
+      <div class="coping-grid" id="coping">
+        <!-- Each item corresponds to coping strategies in your content -->
+        <div class="accordion" id="c1">
+          <h3>1. Sering Bingung Memikirkan Arah</h3>
+          <p>Coba tulis hal-hal yang kamu sukai dan hal yang bikin kamu penasaran. Contoh: buat konten edukasi kecil sesuai minatmu.</p>
+        </div>
+
+        <div class="accordion" id="c2">
+          <h3>2. Merasa Hidup Stuck</h3>
+          <p>Luangkan waktu untuk me-time: baca buku, jalan pagi, atau journaling. Coba aktivitas kecil yang memberi perspektif baru.</p>
+        </div>
+
+        <div class="accordion" id="c3">
+          <h3>3. Sulit Membuat Keputusan</h3>
+          <p>Tulis semua pilihan, lalu pilih satu langkah paling ringan untuk dicoba. Jangan takut salah — belajar dari proses itu penting.</p>
+        </div>
+
+        <div class="accordion" id="c4">
+          <h3>4. Sering Merasa Cemas</h3>
+          <p>Teknik pernapasan 4-7-8, journaling, atau meditasi 5 menit bisa membantu menenangkan.</p>
+        </div>
+
+        <div class="accordion" id="c5">
+          <h3>5. Suka Membandingkan Diri</h3>
+          <p>Ambil jarak dari media sosial dan tulis 3 hal yang kamu syukuri hari ini.</p>
+        </div>
+
+        <div class="accordion" id="c6">
+          <h3>6. Merasa Kesepian</h3>
+          <p>Mulai ngobrol jujur ke satu orang terdekat; menulis surat kepada diri sendiri juga bisa membantu.</p>
+        </div>
+
+        <div class="accordion" id="c7">
+          <h3>7. Kegiatan/Hubungan Terasa Hampa</h3>
+          <p>Evaluasi apa yang dulu memberi semangat, coba kembali tanpa ekspektasi untuk menghidupkan rasa bermakna.</p>
+        </div>
+
+        <div class="accordion" id="c8">
+          <h3>8. Hilangnya Rasa Antusias</h3>
+          <p>Cari hal kecil untuk dicoba—kelas online gratis, resep baru, atau hobi sederhana.</p>
+        </div>
+
+        <div class="accordion" id="c9">
+          <h3>9. Merasa Bingung dengan Diri Sendiri</h3>
+          <p>Tulis 5 hal yang menggambarkan “kamu banget” untuk mulai mengenali diri lebih dalam.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Reflection -->
+    <section class="container" aria-label="Refleksi">
+      <h2 class="section-title">Refleksi Singkat</h2>
+      <p class="intro">Quarter life crisis bukan tanda kelemahan — ini fase untuk bertumbuh. Coba langkah kecil hari ini: tulis satu hal yang ingin kamu coba minggu ini.</p>
+      <div style="margin-top:18px">
+        <button id="btnAction" class="btn btn-primary">Tulis Satu Langkah</button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:800">QuarterLife</div>
+          <div class="small">Sumber: jurnal & literatur psikologi (untuk kebutuhan skripsi).</div>
+        </div>
+        <div class="small">© 2025 — Project Skripsi</div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ===========================
+       SCRIPTS: animations + interactions
+       =========================== -->
+  <script>
+    // Accessibility helpers
+    function setDetail(title, text){
+      document.getElementById('detailTitle').textContent = title;
+      document.getElementById('detailText').textContent = text;
+    }
+
+    // Smooth scroll for nav buttons
+    document.getElementById('scrollToSigns').addEventListener('click', ()=> {
+      document.getElementById('tanda').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    document.getElementById('scrollToCoping').addEventListener('click', ()=> {
+      document.getElementById('cara').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+
+    // Populate detail text mapping (from your content)
+    const details = {
+      1: {
+        title: 'Bingung arah tujuan hidup',
+        text: 'Kamu sering bertanya, “Tujuan hidupku ini apa, sih?” Semua pilihan terasa membingungkan. Ini fase mengenal diri — pelan-pelan, jalanmu tidak harus sama dengan orang lain.'
+      },
+      2: {
+        title: 'Merasa bingung dengan diri sendiri',
+        text: 'Kamu merasa asing dengan dirimu sendiri. Ini umum di masa dewasa awal. Kamu bukan tersesat — kamu sedang tumbuh.'
+      },
+      3: {
+        title: 'Merasa hidup stuck / jalan di tempat',
+        text: 'Usaha terasa tanpa hasil. Tenang — beri waktu untuk recharge. Langkah kecil tetap berarti.'
+      },
+      4: {
+        title: 'Sulit membuat keputusan',
+        text: 'Fear of missing out dan takut salah. Mulailah dari keputusan kecil dan jadikan proses sebagai pembelajaran.'
+      },
+      5: {
+        title: 'Kegiatan atau hubungan terasa hampa',
+        text: 'Rutinitas terasa kosong. Coba refleksi: apa yang masih cocok, apa yang perlu diubah.'
+      },
+      6: {
+        title: 'Hilangnya rasa antusias',
+        text: 'Hal kecil yang dulu menyenangkan terasa hambar. Coba temukan hal baru untuk mewarnai hari.'
+      },
+      7: {
+        title: 'Sering merasa cemas',
+        text: 'Gelisah tanpa alasan jelas. Teknik pernapasan dan istirahat singkat bisa membantu menenangkan.'
+      },
+      8: {
+        title: 'Suka membandingkan diri',
+        text: 'Media sosial memperparah rasa tertinggal. Fokus pada progress kecil yang kamu capai.'
+      },
+      9: {
+        title: 'Merasa kesepian meskipun punya teman',
+        text: 'Ada teman tapi tetap merasa sendiri. Mulai dari satu obrolan jujur untuk membangun koneksi bermakna.'
+      }
+    };
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero subtle background parallax
+    gsap.to("#hero-bg", {
+      y: 120,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    // Hero figure scale/float
+    gsap.fromTo(".figure-person", {y:20, scale:0.95, opacity:0.9}, {
+      y:-20, scale:1, opacity:1, duration:2, ease:"sine.inOut",
+      scrollTrigger:{ trigger:".hero", start:"top top", end:"bottom top", scrub:1 }
+    });
+
+    // Sign cards: reveal as they enter viewport; when active, update detail panel
+    const signCards = document.querySelectorAll('.sign-card');
+    signCards.forEach(card => {
+      const idx = card.dataset.index;
+      // simple fade+up animation
+      gsap.from(card, {
+        opacity:0, y:30, duration:0.8, ease:"power2.out",
+        scrollTrigger:{
+          trigger: card,
+          start: "top 85%", // when top of card hits 85% of viewport
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // when card is centered enough, show detail in panel
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 65%",
+        end: "top 30%",
+        onEnter: ()=> setDetail(details[idx].title, details[idx].text),
+        onEnterBack: ()=> setDetail(details[idx].title, details[idx].text)
+      });
+
+      // keyboard accessibility: Enter to show detail
+      card.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          // scroll that card to visible area
+          card.scrollIntoView({behavior:'smooth',block:'center'});
+          setDetail(details[idx].title, details[idx].text);
+        }
+      });
+    });
+
+    // Coping section: simple entry animations
+    gsap.utils.toArray('.accordion').forEach((el, i)=>{
+      gsap.from(el, {
+        opacity:0, y:20, duration:0.8, delay: i*0.06,
+        scrollTrigger: { trigger: el, start: "top 90%" }
+      });
+    });
+
+    // Optional: clicking sign triggers scroll + detail focus
+    signCards.forEach(card=>{
+      card.addEventListener('click', ()=>{
+        const idx = card.dataset.index;
+        // scroll to card then set detail
+        card.scrollIntoView({behavior:'smooth',block:'center'});
+        setTimeout(()=> setDetail(details[idx].title, details[idx].text), 600);
+      });
+    });
+
+    // CTA button: quick input prompt (very simple)
+    document.getElementById('btnAction').addEventListener('click', ()=>{
+      const step = prompt('Tulis satu langkah kecil yang ingin kamu coba minggu ini:');
+      if(step){
+        alert('Bagus! Langkahmu: "' + step + '" — semoga kamu dapat waktu menjalankannya 💪');
+      }
+    });
+
+    // Small accessibility: reduced motion respect
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(mq.matches){
+      ScrollTrigger.getAll().forEach(st=>st.disable());
+      gsap.globalTimeline.pause();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal QLC: Menemukan Arah Tujuan Hidup</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Menggunakan Font Inter sebagai default */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19; /* Warna latar belakang gelap untuk kesan mendalam */
+            color: #e2e8f0;
+            overflow-x: hidden; /* Mencegah scroll horizontal akibat efek parallax */
+        }
+
+        /* Container utama untuk efek parallax */
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            perspective: 1px; /* Mengaktifkan 3D space untuk parallax */
+            overflow-y: scroll;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Lapisan Parallax */
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform-origin: 0 0;
+        }
+
+        /* Lapisan Latar Belakang (Jauh) */
+        .layer-back {
+            transform: translateZ(-1px) scale(2); /* Jauhkan dan Skala untuk mengisi viewport */
+            /* Z: -1px, Scale: 2 -> Parallax Speed ~ 0.5 */
+        }
+
+        /* Lapisan Mid-Ground (Sedang) */
+        .layer-mid {
+            transform: translateZ(-0.5px) scale(1.5); /* Jauhkan dan Skala */
+            /* Z: -0.5px, Scale: 1.5 -> Parallax Speed ~ 0.67 */
+        }
+
+        /* Lapisan Foreground (Dekat/Normal) */
+        .layer-front {
+            transform: translateZ(0);
+        }
+
+        /* Menyesuaikan tinggi setiap bagian konten */
+        .content-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(234, 179, 8, 0.5);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(234, 179, 8, 0.7);
+        }
+
+        /* Animasi Kunci untuk ilustrasi (Simulasi Parallax Bergerak) */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Parallax Container Utama -->
+    <div id="parallax-container" class="parallax-container">
+        
+        <!-- ============================================== -->
+        <!-- LAPISAN PARALLAX VISUAL (Simulasi 3D Background) -->
+        <!-- ============================================== -->
+        
+        <!-- Lapisan Background (Terjauh) - Langit / Horizon -->
+        <div id="layer-back" class="parallax-layer layer-back bg-gradient-to-t from-indigo-900 to-gray-900">
+            <!-- Tanda tanya besar yang bergerak sangat lambat -->
+            <div class="absolute inset-0 opacity-10 text-9xl font-extrabold flex items-center justify-around">
+                <span class="animate-float" style="animation-delay: 1s;">?</span>
+                <span class="animate-float" style="animation-delay: 3s;">?</span>
+            </div>
+        </div>
+
+        <!-- Lapisan Mid-Ground - Pohon/Bukit/Siluet -->
+        <div id="layer-mid" class="parallax-layer layer-mid">
+            <!-- Ilustrasi bukit/tanaman yang lebih dekat -->
+            <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-indigo-950 opacity-50"></div>
+        </div>
+
+        <!-- Lapisan Foreground (Normal) -->
+        <div id="layer-front" class="parallax-layer layer-front">
+            <!-- Karakter / Fokus Utama -->
+        </div>
+
+        <!-- ============================================== -->
+        <!-- KONTEN BERDASARKAN SCROLL (Lapisan Front Tetap) -->
+        <!-- ============================================== -->
+
+        <!-- HERO SECTION: BINGUNG ARAH TUJUAN HIDUP -->
+        <div class="content-section bg-transparent" id="section-hero">
+            <div class="container mx-auto p-8 lg:p-16 max-w-4xl bg-gray-800/80 backdrop-blur-md rounded-3xl shadow-2xl">
+                <h1 class="text-6xl lg:text-8xl font-black text-yellow-400 mb-6 leading-tight">
+                    Bingung Arah <br class="hidden lg:block">Tujuan Hidup
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-300">
+                    Selamat datang di jurnal refleksi diri untuk kamu yang sedang berjuang di usia 19-25. Quarter Life Crisis (QLC) itu nyata, tapi bukan akhir dari segalanya. <br>Ini adalah awal dari perjalanan yang paling penting: **Mengenal Dirimu Sendiri.**
+                </p>
+
+                <!-- Ikon visualisasi QLC -->
+                <div class="mt-8 flex justify-center space-x-6 text-gray-400">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 3h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0v4m-7 4h10l-1 4H9l-1-4zm0 0l-1 4a2 2 0 002 2h6a2 2 0 002-2l-1-4m-6-4h4"></path></svg>
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+
+                <a href="#section-kebingungan" class="block w-fit mx-auto mt-12 px-8 py-3 bg-yellow-500 text-gray-900 font-bold rounded-full text-lg hover:bg-yellow-400 cta-button">
+                    Mulai Perjalanan Refleksi ↓
+                </a>
+            </div>
+        </div>
+
+        <!-- SECTION 1: KEBINGUNGAN ARAH DAN IDENTITAS DIRI -->
+        <div class="content-section bg-transparent pt-32 pb-16" id="section-kebingungan">
+            <div class="container mx-auto p-4 lg:p-8 max-w-5xl">
+                <h2 class="text-5xl font-extrabold text-teal-400 mb-12 text-center">Tanda-Tanda Quarter Life Crisis</h2>
+                
+                <!-- CARD 1: Bingung arah tujuan hidup -->
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-20 bg-gray-900/70 p-8 rounded-xl shadow-xl">
+                    <div class="text-center lg:text-left">
+                        <span class="text-5xl mb-4 block">🧭</span>
+                        <h3 class="text-3xl font-bold text-yellow-500 mb-4">1. Bingung Arah Tujuan Hidup</h3>
+                        <p class="text-lg text-gray-300 mt-4">
+                            Kamu sering bertanya, **“Tujuan hidupku ini apa, sih?”** Semua pilihan terasa membingungkan dan masa depan tampak samar. Ini bisa jadi tanda kamu sedang mengalami krisis identitas.
+                        </p>
+                    </div>
+                    <div class="border-l-4 border-teal-500 pl-6 space-y-4">
+                        <p class="text-lg italic text-teal-300">
+                            **Jendela Kesadaran:** Justru dari kebingungan ini biasanya tumbuh kesadaran baru tentang apa yang benar-benar penting buat kamu.
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            **Refleksi:** Kamu sedang dalam proses mengenal diri. Nggak harus cepat, pelan-pelan aja, yang penting kamu tetap jalan. Jalanmu nggak harus sama dengan orang lain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Merasa bingung dengan diri sendiri -->
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start bg-gray-900/70 p-8 rounded-xl shadow-xl">
+                    <div class="text-center lg:text-left">
+                        <span class="text-5xl mb-4 block">👤❓</span>
+                        <h3 class="text-3xl font-bold text-yellow-500 mb-4">2. Merasa Bingung dengan Diri Sendiri</h3>
+                        <p class="text-lg text-gray-300 mt-4">
+                            Kamu merasa asing dengan dirimu sendiri. Bertanya, **“Aku ini siapa?”**, dan mempertanyakan nilai serta keinginan pribadi.
+                        </p>
+                    </div>
+                    <div class="border-l-4 border-teal-500 pl-6 space-y-4">
+                        <p class="text-lg italic text-teal-300">
+                            **Jendela Kesadaran:** Ini umum terjadi di masa dewasa awal, saat kita sedang membentuk identitas diri.
+                        </p>
+                        <p class="text-lg text-gray-400">
+                            **Refleksi:** Kamu bukan tersesat, kamu sedang tumbuh. Mengenali diri adalah perjalanan panjang, dan kamu punya hak atas waktu itu.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="#section-stuck" class="block w-fit mx-auto mt-12 px-8 py-3 bg-teal-500 text-gray-900 font-bold rounded-full text-lg hover:bg-teal-400 transition duration-300">
+                    Lanjut ke Tantangan Berikutnya ↓
+                </a>
+            </div>
+        </div>
+
+        <!-- SECTION 2: STUCK, KEPUTUSAN SULIT, DAN RASA HAMPA -->
+        <div class="content-section bg-transparent pt-32 pb-16" id="section-stuck">
+            <div class="container mx-auto p-4 lg:p-8 max-w-5xl">
+                <h2 class="text-5xl font-extrabold text-orange-400 mb-12 text-center">Stuck, Keputusan Sulit, dan Rasa Hampa</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Point 3 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-orange-500 space-y-3">
+                        <span class="text-4xl block mb-2">🐢</span>
+                        <h4 class="text-xl font-bold text-yellow-400">3. Merasa Hidup Stuck / Jalan di Tempat</h4>
+                        <p class="text-sm text-gray-400">Kamu merasa usahamu nggak membuahkan perubahan. Ini bisa jadi tanda *mental fatigue*. **🍂 Tenang, ini wajar.** Kamu sudah melangkah sejauh ini—itu nggak sia-sia.</p>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-orange-500 space-y-3">
+                        <span class="text-4xl block mb-2">⚖️</span>
+                        <h4 class="text-xl font-bold text-yellow-400">4. Sulit Membuat Keputusan</h4>
+                        <p class="text-sm text-gray-400">Di antara banyak pilihan, kamu takut melangkah (*decision paralysis*). Mulailah dari keputusan kecil. Nggak harus langsung benar, yang penting kamu berani mencoba.</p>
+                    </div>
+
+                    <!-- Point 5 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-orange-500 space-y-3">
+                        <span class="text-4xl block mb-2">🎭</span>
+                        <h4 class="text-xl font-bold text-yellow-400">5. Kegiatan atau Hubungan Terasa Hampa</h4>
+                        <p class="text-sm text-gray-400">Rutinitas berjalan, tapi rasanya kosong. Saatnya refleksi. Coba jujur pada diri sendiri: apa yang masih cocok dan apa yang sudah tidak?</p>
+                    </div>
+
+                    <!-- Point 6 -->
+                    <div class="md:col-span-3 text-center pt-8">
+                        <div class="inline-block bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-orange-500 space-y-3 max-w-lg">
+                            <span class="text-4xl block mb-2">🕯️</span>
+                            <h4 class="text-xl font-bold text-yellow-400">6. Hilangnya Rasa Antusias</h4>
+                            <p class="text-sm text-gray-400">Hal-hal kecil yang dulu menyenangkan kini terasa hambar. Kamu hanya perlu menemukan hal baru yang bisa kembali mewarnai hari-harimu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#section-kecemasan" class="block w-fit mx-auto mt-12 px-8 py-3 bg-orange-500 text-gray-900 font-bold rounded-full text-lg hover:bg-orange-400 transition duration-300">
+                    Lanjut ke Rasa Cemas & Perbandingan ↓
+                </a>
+            </div>
+        </div>
+        
+        <!-- SECTION 3: KECEMASAN, PERBANDINGAN SOSIAL, DAN KESEPIAN -->
+        <div class="content-section bg-transparent pt-32 pb-16" id="section-kecemasan">
+            <div class="container mx-auto p-4 lg:p-8 max-w-5xl">
+                <h2 class="text-5xl font-extrabold text-red-400 mb-12 text-center">Kecemasan, Perbandingan Sosial, dan Kesepian</h2>
+                
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Point 7 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-red-500 space-y-3">
+                        <span class="text-4xl block mb-2">😟</span>
+                        <h4 class="text-xl font-bold text-yellow-400">7. Sering Merasa Cemas</h4>
+                        <p class="text-sm text-gray-400">Hatimu sering gelisah tanpa sebab jelas. Coba tarik napas dan kasih ruang untuk istirahat. Kamu nggak harus ngerti semua sekarang.</p>
+                    </div>
+
+                    <!-- Point 8 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-red-500 space-y-3">
+                        <span class="text-4xl block mb-2">👀</span>
+                        <h4 class="text-xl font-bold text-yellow-400">8. Suka Membandingkan Diri</h4>
+                        <p class="text-sm text-gray-400">Melihat teman sukses bikin kamu merasa tertinggal. Ingat, hidup bukan lomba. Fokus ke progres kecil yang kamu capai. Jalurmu unik.</p>
+                    </div>
+
+                    <!-- Point 9 -->
+                    <div class="bg-gray-900/70 p-6 rounded-xl shadow-xl border-t-4 border-red-500 space-y-3">
+                        <span class="text-4xl block mb-2">☁️</span>
+                        <h4 class="text-xl font-bold text-yellow-400">9. Merasa Kesepian</h4>
+                        <p class="text-sm text-gray-400">Ada orang di sekitarmu, tapi kamu tetap merasa sendiri. Kesepian ini bukan akhir. Koneksi bermakna butuh waktu dan keberanian.</p>
+                    </div>
+                </div>
+
+                <a href="#section-solusi" class="block w-fit mx-auto mt-12 px-8 py-3 bg-red-500 text-gray-900 font-bold rounded-full text-lg hover:bg-red-400 transition duration-300">
+                    Bagaimana Menghadapinya? (Solusi) ↓
+                </a>
+            </div>
+        </div>
+
+        <!-- SECTION 4: BAGAIMANA MENGHADAPINYA? (SOLUSI) -->
+        <div class="content-section bg-transparent py-20" id="section-solusi">
+            <div class="container mx-auto p-4 lg:p-8 max-w-4xl">
+                <h2 class="text-5xl font-extrabold text-green-400 mb-16 text-center">Bagaimana Menghadapinya? Aksi Nyata!</h2>
+
+                <div class="space-y-12">
+                    <!-- Solusi 1: Bingung Arah Tujuan Hidup -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">1. Mencari Arah Tujuan Hidup</h3>
+                        <p class="text-gray-300 mb-2">Coba tulis hal-hal yang kamu sukai dan hal yang bikin kamu penasaran akhir-akhir ini. Mulai dari situ bisa bantu kamu kenal diri lebih dalam.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku suka bikin video pendek dan tertarik dengan isu lingkungan. Mungkin aku bisa mulai bikin konten edukatif tentang gaya hidup ramah lingkungan.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 2: Merasa Hidup Stuck -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">2. Saat Merasa Stuck / Jalan di Tempat</h3>
+                        <p class="text-gray-300 mb-2">Luangkan waktu untuk *me-time*, coba aktivitas baru meski kecil: baca buku, jalan pagi, *journaling*. Dari hal sederhana, kita bisa dapat perspektif baru.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku coba ikut kelas yoga pemula dari YouTube dan ternyata bikin pikiranku lebih tenang dan ide-ide baru mulai muncul.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 3: Sulit Membuat Keputusan -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">3. Menghadapi Decision Paralysis</h3>
+                        <p class="text-gray-300 mb-2">Tulis semua pilihan yang bikin kamu bimbang, lalu pikirkan satu langkah paling ringan yang bisa kamu coba dulu. Nggak semua keputusan harus diambil sekarang.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku galau antara lanjut kerja atau ambil beasiswa kuliah. Jadi aku coba konsultasi dengan kakak alumni dulu untuk dapat perspektif.”
+                        </p>
+                    </div>
+                    
+                    <!-- Solusi 4: Sering Merasa Cemas -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">4. Mengelola Kecemasan (Anxiety)</h3>
+                        <p class="text-gray-300 mb-2">Coba teknik pernapasan 4-7-8, *journaling*, atau meditasi 5 menit. Atau cukup diam sebentar dan sadari: “nggak apa-apa merasa seperti ini.”</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Pas lagi *overthinking* soal masa depan, aku coba dengerin *podcast* meditasi dan tarik napas pelan. Nggak langsung hilang, tapi bantu lebih tenang.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 5: Suka Membandingkan Diri -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">5. Menghentikan Perbandingan Sosial</h3>
+                        <p class="text-gray-300 mb-2">Ambil jarak dari media sosial sejenak. Gantikan dengan menulis 3 hal kecil yang kamu syukuri hari ini.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Daripada *scroll* Instagram, aku nulis: hari ini tugas kuliah selesai, makan enak, dan ada temen yang *support* aku. Lumayan bikin hati adem.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 6: Merasa Kesepian -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">6. Mengatasi Rasa Kesepian</h3>
+                        <p class="text-gray-300 mb-2">Mulailah dari satu obrolan jujur ke orang terdekat. Kamu juga bisa menulis surat untuk diri sendiri, agar kamu merasa lebih terhubung secara emosional.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku cerita ke teman kos soal rasa kosong yang aku rasain. Ternyata dia juga sering merasa gitu. Akhirnya kami jadi lebih terbuka dan saling nguatkan.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 7: Kegiatan atau Hubungan Terasa Hampa -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">7. Mengisi Kekosongan dan Rasa Hampa</h3>
+                        <p class="text-gray-300 mb-2">Evaluasi kecil: “Apa yang dulu bikin aku semangat?” Coba lakukan kembali hal itu, tanpa ekspektasi, hanya untuk menghidupkan rasa.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Dulu aku suka ikut *volunteer* kegiatan sosial. Aku coba daftar jadi relawan *event* donor darah lagi, dan ternyata perasaan bermaknanya muncul kembali.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 8: Hilangnya Rasa Antusias -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">8. Menemukan Kembali *Spark* dan Antusias</h3>
+                        <p class="text-gray-300 mb-2">Cari hal baru yang bisa kamu coba walau kecil—main *game* baru, coba resep masakan, menggambar. Rasa semangat bisa tumbuh lagi lewat eksplorasi ringan.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku coba ikut kelas gratis tentang fotografi dari HP. Walau nggak jago, tapi rasanya *fresh* dan bikin aku *excited* lagi.”
+                        </p>
+                    </div>
+
+                    <!-- Solusi 9: Merasa Bingung dengan Diri Sendiri -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-green-400 mb-3">9. Mengenal Diri Lebih Dalam</h3>
+                        <p class="text-gray-300 mb-2">Coba tulis 5 hal yang menurutmu menggambarkan “kamu banget.” Lalu cari tahu kenapa hal itu penting buat kamu. Dari sana, kamu bisa mulai mengenal siapa dirimu lebih dalam.</p>
+                        <p class="text-sm italic text-gray-400 bg-gray-700 p-3 rounded mt-3">
+                            Contoh: “Aku tulis: suka merawat orang lain, senang belajar hal baru, agak perfeksionis, mudah merasa bersalah, dan suka kerja di balik layar. Dari situ aku sadar mungkin aku cocok di bidang psikologi atau perawat.”
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <p class="text-2xl font-medium text-yellow-300 mb-6">
+                        Perjalanan ini milikmu. Setiap langkah kecil adalah kemajuan.
+                    </p>
+                    <a href="#section-hero" class="px-10 py-4 bg-yellow-500 text-gray-900 font-extrabold rounded-full text-xl hover:bg-yellow-400 cta-button">
+                        Kembali ke Awal & Ambil Napas
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-950/90 py-8 text-center text-sm text-gray-500">
+            <p>Dibuat untuk kamu yang sedang berproses. Kamu tidak sendiri. &copy; 2025 Jurnal QLC</p>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT UNTUK EFEK PARALLAX -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('parallax-container');
+            const backLayer = document.getElementById('layer-back');
+            const midLayer = document.getElementById('layer-mid');
+
+            // Fungsi utama untuk menghitung dan menerapkan parallax
+            function applyParallax() {
+                const scrolled = container.scrollTop;
+
+                // Hitung pergerakan layer. Semakin besar angka pembagi, semakin lambat gerakannya (jauh)
+                // backLayer (Latar Belakang): Bergerak 10% dari scroll
+                const backMovement = scrolled * 0.1;
+                backLayer.style.transform = `translate3d(0, ${backMovement}px, -1px) scale(2)`;
+
+                // midLayer (Mid-Ground): Bergerak 30% dari scroll
+                const midMovement = scrolled * 0.3;
+                midLayer.style.transform = `translate3d(0, ${midMovement}px, -0.5px) scale(1.5)`;
+            }
+
+            // Terapkan parallax saat kontainer di-scroll
+            container.addEventListener('scroll', applyParallax);
+
+            // Inisialisasi parallax saat halaman dimuat
+            applyParallax();
+
+            // Set up smooth scrolling for anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Scroll container ke posisi elemen target
+                        container.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
