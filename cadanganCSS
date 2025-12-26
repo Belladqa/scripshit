@@ -1,3 +1,45 @@
+<!-- Section 7 -->
+    <section class="container-fluid p-0 position-relative bg-sec7">
+            <div class="row g-0 position-relative overflow-x-hidden overflow-y-hidden mt-5">
+                <div class="col-12 col-lg-6 position-relative d-flex align-items-end">
+                    <div class="h-100 d-inline position-relative sec7-leftWrap" id="sec7LeftWrap">
+                        <img src="media/img/jalan-slide7.png" alt="" class="w-76 sec7-road" id="sec7Road">
+                        <img src="media/img/tanya-slide7.png" alt="" class="w-26 jalanTanya idle" id="sec7Q">
+                    </div>                    
+                </div>
+                            
+                <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex overflow-y-hidden">
+                    <div class="w-98 position-relative">
+                        <div class="row row1">
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Bingung arah tujuan hidup</p>
+                        </div>
+                        <div class="row py-4 w-83">
+                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4 sec7-problem">Semua pilihan hidup rasanya membingungkan. Kamu membayangkan masa depan yang kamu miliki tampaknya samar.</p>
+                        </div>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Kamu bisa mulai catat hal yang buat diri kamu merasa lebih bersemangat dan hal yang bikin kamu penasaran akhir-akhir ini. Mulai dari situ bisa bantu kamu kenal diri kamu lebih dalam. Kamu ngga harus langsung tahu tujuan hidup kamu, jangan terlalu menekan diri kamu.
+                                <br><b>Sedikit <i>clue</i> atau arahan itu udah cukup buat mulai langkah kecil kamu.</b>
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku suka bikin video pendek dan tertarik dengan isu lingkungan.
+                                Mungkin aku bisa mulai bikin konten edukatif tentang gaya hidup ramah lingkungan.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sec7-badge">
+                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center sec7-problem" id="sec7Badge">Ini bisa jadi tanda kalau kamu lagi mengalami <b>krisis identitas</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
 * {
   margin: 0;
   padding: 0;
