@@ -12,186 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- <style>
-        .lunar-wrapper{
-            max-width:100%; 
-            margin:40px 120px; 
-            padding:0 16px
-        }
-
-        h1{
-            margin:0 0 6px; 
-            font-size:clamp(20px, 3.5vw, 36px)
-        }
-
-        p.lead{
-            margin:0 0 20px; 
-            color:var(--muted)
-        }
-
-        .lunar-rail{
-            position:relative; 
-            padding:24px 0;
-        }
-
-        .phases{
-            display:grid; 
-            grid-template-columns:repeat(9, minmax(120px,1fr)); 
-            gap:18px; 
-            align-items:end
-        }
-
-        .phase{
-            position:relative; 
-            display:flex; 
-            flex-direction:column; 
-            align-items:center; 
-            gap:8px; 
-            padding:10px 0
-        }
-
-        .phase button{
-            all:unset; 
-            cursor:pointer; 
-            position:relative
-        }
-
-        .phase .moon{
-            width:86px; 
-            aspect-ratio:1; 
-            border-radius:50%; 
-            background:#f2f4f8; 
-            position:relative; 
-            box-shadow:inset 0 0 0 2px rgba(255,255,255,.15), 0 10px 24px rgba(0,0,0,.35); 
-            transition: transform .25s, box-shadow .25s
-        }
-
-        .phase .phase-btn:hover .moon, .phase .phase-btn:focus-visible .moon{ 
-            transform: translateY(-2px) scale(1.04); 
-            box-shadow:inset 0 0 0 2px rgba(181,227,255,.65), 0 0 0 6px rgba(181,227,255,.18)
-        }
-
-        /* Fase visual dengan CSS murni */
-        .phase[data-variant="new"] .moon{
-            background:linear-gradient(90deg,#0b0d14 45%, #10131d 55%)
-        }
-        .phase[data-variant="crescent"] .moon::before{
-            content:""; position:absolute; 
-            inset:0; 
-            border-radius:50%; 
-            background:radial-gradient(120% 100% at 20% 50%, #f2f4f8 30%, transparent 31%), #0b0d14
-        }
-        .phase[data-variant="first"] .moon{
-            background:linear-gradient(90deg, #f2f4f8 50%, #0b0d14 50%)
-        }
-        .phase[data-variant="gibbous"] .moon::before{
-            content:""; 
-            position:absolute; 
-            inset:0; 
-            border-radius:50%; 
-            background:radial-gradient(120% 100% at 80% 50%, #f2f4f8 60%, transparent 61%), #f2f4f8
-        }
-        .phase[data-variant="full"] .moon{
-            background:#f2f4f8
-        }
-
-        .label{
-            font-size:.9rem; 
-            color:var(--muted)
-        }
-        .index{
-            font-weight:600; 
-            font-size:.78rem; 
-            color:var(--accent)
-        }
-
-        /* Tooltip kustom */
-        .phase .phase-btn::after{
-            content:attr(data-tip); 
-            position:absolute; 
-            left:50%; 
-            bottom:-6px; 
-            transform:translate(-50%, 10px); 
-            background:#111524; 
-            border:1px solid #1f2540; 
-            padding:.38rem .6rem; 
-            border-radius:10px; 
-            font-size:.78rem; 
-            color:#e6e8ee; 
-            white-space:nowrap; 
-            opacity:0; 
-            pointer-events:none; 
-            transition:opacity .18s ease, transform .18s ease
-        }
-        .phase .phase-btn:hover::after, .phase .phase-btn:focus-visible::after{
-            opacity:1; 
-            transform:translate(-50%, 0)
-        }
-
-        /* Float animasi ringan (tanpa lib) */
-        @keyframes floaty{
-            0%{transform:translateY(0)} 
-            50%{transform:translateY(-12px)} 
-            100%{transform:translateY(0)}
-        }
-        .phase .moon{
-            animation:floaty 3.2s ease-in-out infinite
-        }
-        .phase:nth-child(3n) .moon{
-            animation-duration: 2.7s
-        }
-        .phase:nth-child(2n) .moon{
-            animation-duration: 3.7s
-        }
-
-        /* Modal */
-        dialog.modal{
-            width:min(680px, calc(100% - 2rem)); 
-            border:none; border-radius:var(--radius); 
-            padding:0; background:var(--card); 
-            color:var(--fg); 
-            box-shadow:0 30px 120px rgba(0,0,0,.6)
-        }
-        .modal header{
-            display:flex; 
-            align-items:center; 
-            justify-content:space-between; 
-            padding:12px 14px; 
-            border-bottom:1px solid #22283f
-        }
-        .modal .content{
-            padding:14px;
-        }
-        .badge{
-            display:inline-flex; 
-            gap:.5rem; 
-            align-items:center; 
-            font-size:.75rem; 
-            color:#0d1222; 
-            background:linear-gradient(180deg,#b5e3ff,#9fd0ee); 
-            padding:.35rem .6rem; 
-            border-radius:999px; 
-            font-weight:600
-        }
-        .close{
-            all:unset; 
-            cursor:pointer; 
-            padding:.5rem; 
-            border-radius:10px
-        }
-        .close:focus-visible{
-            outline:2px solid rgba(181,227,255,.6)
-        }
-        .muted{
-            color:var(--muted)
-        }
-
-        @media (max-width:700px){ 
-            .phases{
-                grid-template-columns:repeat(3, minmax(100px,1fr))
-            } 
-        }
-    </style> -->
 </head>
 <body>
 <!-- Background -->
@@ -294,9 +114,6 @@
     <!-- Gambar -->
     <div class="col-12 col-lg-5 text-center position-relative pria-center">
         <img src="media/img/vektor2-slide3.png" class="img-fluid w-97 my-6rem ms-6">
-        <!-- <div class="pria-sec3">
-            <img src="media/img/pria-slide3.png" class="position-absolute w-42 ms-6 mt-1rem">
-        </div>         -->
     </div>
     <!-- Fase -->
     <div class="col-12 col-lg-7 text-center ps-3rem">
@@ -399,7 +216,7 @@
             </div>
             <div class="row p-0 sec6-col2">
                 <div class="col-5">
-                    <img src="media/img/pria-section6.png" alt="" class="float-end w-75">
+                    <img src="media/img/pria-section6.png" alt="" class="float-end w-80">
                 </div>
                 <div class="col-7">
                     <img src="media/img/wanita-section6.png" alt="" class="w-83">
@@ -408,57 +225,48 @@
         </div>
     </section>
 
-<!-- Section 7 -->
-    <section class="container-fluid p-0 position-relative bg-sec7">
-        <!-- <div class="lunar-wrapper">
-            <div class="lunar-rail" aria-label="Daftar fase bulan">
-                <div class="phases" id="phases"></div>
-            </div>
-        </div> -->
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
-                <div class="col-12 col-lg-6 position-relative d-flex align-items-end">
-                    <div class="d-inline position-relative">
-                        <img src="media/img/jalan-slide7.png" alt="" class="w-76">
-                        <img src="media/img/tanya-slide7.png" alt="" class="w-26 jalanTanya">
-                    </div>                    
-                </div>
-                            
-                <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
-                    <div class="w-98 position-relative">
-                        <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Bingung arah tujuan hidup</p>
-                        </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Semua pilihan hidup rasanya membingungkan. Kamu membayangkan masa depan yang kamu miliki tampaknya samar.</p>
-                        </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Ini bisa jadi tanda kalau kamu sedang mengalami <b>krisis identitas</b></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
 <!-- Section 8 -->
      <section class="container-fluid p-0 position-relative bg-sec8">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
-                <div class="col-12 col-lg-6 position-relative d-flex align-items-end">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
+                <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
                     <div class="d-inline position-relative">
                         <img src="media/img/renung-slide8.png" alt="" class="w-76">
-                        <img src="media/img/tanya-slide7.png" alt="" class="w-20 renungTanya">
+                        <div class="jalanTanya-wrapper" data-qtype="sec8">
+                            <img src="media/img/tanya-slide7.png" alt="" class="w-20 renungTanya">
+                        </div>
                     </div>                    
                 </div>
                             
                 <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
                     <div class="w-98 position-relative">
                         <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">bingung dengan diri sendiri</p>
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Bingung Arah Hidup dan Identitas Diri</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Kamu bimbang dengan apa yang sebenarnya kamu mau.</p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Kamu sering bertanya, “Aku sebenarnya mau ke mana?” atau “Aku ini siapa, sih?”. 
+                                                                                            Masa depan terasa samar, dan kamu mulai mempertanyakan nilai, pilihan, 
+                                                                                            serta identitas diri.<br><br> ini bukan tanda kamu gagal, tapi bagian 
+                                                                                            dari proses kamu mengenal diri di fase dewasa awal. </p>
                         </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Hal ini biasa terjadi pada masa dewasa awal, saat seseorang sedang membentuk <b>identitas diri</b></p>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Kamu bisa mulai dengan memperhatikan hal-hal sederhana yang bikin kamu tertarik atau penasaran belakangan ini. 
+                                kamu ngga harus langsung menemukan tujuan hidup yang besar. Mengenal diri itu proses, dan setiap orang punya waktunya sendiri. 
+                                Cukup fokus pada hal kecil yang kamu rasa masuk akal untuk dilakukan sekarang.
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku sadar aku suka mengatur acara kecil dan senang saat bisa bikin orang lain nyaman. Mungkin aku bisa mulai dengan 
+                                ikut jadi panitia di kegiatan kampus atau komunitas.”
+                                </div>
+                            </div>
+                        </div>                        
+                        <div class="row pt-2 me-4 w-83 show1 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Kamu ngga lagi tersesat, kamu sedang tumbuh dan belajar memahami diri sendiri</p>
                         </div>
                     </div>
                 </div>
@@ -467,24 +275,42 @@
 
 <!-- Section 9 -->
      <section class="container-fluid p-0 position-relative bg-sec9">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
                 <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
                     <div class="d-inline position-relative">
                         <img src="media/img/stuck-slide9.png" alt="" class="w-76">
-                        <img src="media/img/life-slide9.png" alt="" class="w-26 lifeTanya">
+                        <div class="jalanTanya-wrapper lifeTanya-pos" data-qtype="sec9">
+                            <img src="media/img/life-slide9.png" alt="" class="w-26 lifeTanya">
+                        </div>
                     </div>                    
                 </div>
                             
                 <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
                     <div class="w-98 position-relative">
                         <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Merasa hidup stuck atau jalan di tempat</p>
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Merasa Hidup Stuck dan Kehilangan Makna</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Kamu merasa apa yang sudah kamu usahakan tidak membuahkan hasil apapun, padahal kamu sudah berusaha lebih keras.</p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Kamu merasa sudah berusaha, tapi hidup terasa jalan di tempat. 
+                                                                                            Rutinitas berjalan, namun kamu tidak lagi merasakan kepuasan emosional.
+                                                                                            Perasaan stuck ini sering muncul ketika kamu berada dalam tekanan yang terus berlangsung tanpa jeda.</p>
                         </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Ini bisa jadi tanda <b>mental fatigue</b> akibat tekanan pada dirimu secara terus-menerus</p>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Saat merasa stuck, coba berhenti sebentar dan lihat kembali apa yang sudah kamu jalani hingga saat ini. Perasaan ini sering muncul karena kamu lelah, dan bukan karena kamu gagal. Kasih jeda untuk mengatur ulang hidup kamu dapat membantu melihat arah yang lebih jernih.
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Akhir-akhir ini aku capek banget sama rutinitas. Aku mau istirahat sebentar dan atur ulang targetku yang lebih realistis.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-2 me-4 w-83 show1 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Istirahatlah sebentar, bukan menyerah. Yuk temukan lagi arah hidupmu</p>
                         </div>
                     </div>
                 </div>
@@ -493,24 +319,46 @@
 
 <!-- Section 10 -->
      <section class="container-fluid p-0 position-relative bg-sec10">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
                 <div class="col-12 col-lg-6 position-relative d-flex align-items-start">
                     <div class="d-inline position-relative">
                         <img src="media/img/pintu-slide10.png" alt="" class="w-76">
-                        <img src="media/img/tanya-slide7.png" alt="" class="pintuTanya">
+                        <div class="jalanTanya-wrapper lifeTanya-pos" data-qtype="sec10">
+                            <img src="media/img/tanya-slide7.png" alt="" class="w-26 pintuTanya">
+                        </div>
                     </div>                    
                 </div>
                             
-                <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
+                <div class="col-12 col-lg-6 px-4 konten-pos position-relative justify-content-center d-flex">
                     <div class="w-98 position-relative">
                         <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">sulit membuat keputusan</p>
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">sulit mengambil keputusan</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Kamu takut melangkah tapi juga enggak bahagia di posisi sekarang.</p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Ada banyak pilihan dalam hidup, dan kamu ngerasa takut salah langkah untuk memilih. 
+                                                                                            Kalau bertahan, kamu ngga bahagia. Kalau melangkah, juga kamu ngerasa takut. 
+                                                                                            Kondisi ini dikenal sebagai decision paralysis dan umum terjadi pada usia dewasa awal. 
+                                                                                            Kamu ngga harus selalu benar.</p>
                         </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Hal ini disebut sebagai <b>Decision Paralysis</b></p>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Kalau terlalu banyak pilihan bikin bingung, kamu bisa mulai dari keputusan kecil dulu. 
+                                Tidak semua keputusan harus sempurna. Yang penting, kamu berani mencoba dan belajar dari setiap prosesnya.
+                                 Kalau terus menyalahkan diri kamu sendiri itu akan membuat kamu kembali pada posisi stuck. 
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku belum yakin soal karier jangka panjang, tapi aku coba dulu daftar magang yang sesuai minatku sekarang untuk cari pengalaman.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-2 me-4 w-83 show1 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Pikirkan risiko dan solusi sebelum memutuskan. 
+                                                                                                                                                    Selanjutnya kamu hanya perlu keberanian untuk melanjutkan</b></p>
                         </div>
                     </div>
                 </div>
@@ -519,74 +367,41 @@
 
 <!-- Section 11 -->
      <section class="container-fluid p-0 position-relative bg-sec11">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
                 <div class="col-12 col-lg-6 position-relative d-flex align-items-start">
                     <div class="d-inline position-relative">
                         <img src="media/img/kosong-slide11.png" alt="" class="w-76">
+                        <div class="jalanTanya-wrapper lifeTanya-pos" data-qtype="sec11">
+                            <img src="media/img/kursi-slide11.png" alt="" class="w-26 kursiDuduk">
+                        </div>
                     </div>                    
                 </div>
                             
                 <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
                     <div class="w-98 position-relative">
                         <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">kegiatan atau hubungan terasa hampa</p>
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Kehilangan semangat dan Motivasi</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Rutinitas dan hubungan yang kamu jalanin rasanya kosong. Enggak lagi kasih kamu semangat jalaninnya.</p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Hal-hal yang dulu rasanya menyenangkan tapi sekarang hambar. Kamu merasa kehilangan semangat dan ‘spark’ untuk jalanin hari-hari kamu.
+                                                                                            <br><br>Ini bukan berarti kamu berubah menjadi pribadi yang negatif, perubahan pada seseorang itu wajar selama bukan hal yang menyimpang.</p>
                         </div>
-                        <!-- <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Hal ini disebut sebagai <b>Decision Paralysis</b></p>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-    </section>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
 
-<!-- Section 12 -->
-     <section class="container-fluid p-0 position-relative bg-sec12">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
-                <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
-                    <div class="d-inline position-relative">
-                        <img src="media/img/lampu-slide12.png" alt="" class="w-76">
-                    </div>                    
-                </div>
-                            
-                <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
-                    <div class="w-98 position-relative">
-                        <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Hilangnya rasa antusias</p>
-                        </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Hal-hal kecil yang dulu rasanya menyenangkan untuk kamu sekarang rasanya hambar.</p>
-                        </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Ini bisa jadi sinyal kalau kamu lagi kehilangan <b>Spark</b> dalam hidupmu</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
+                                <p class="playpenSans mb-3 purple-3">
+                                Hilangnya semangat bisa jadi tanda kamu butuh suasana atau aktivitas baru. Kamu ngga harus paksa diri kamu untuk selalu produktif. Pelan-pelan aja ya, cari hal yang terasa ringan tapi bisa bikin kamu ngerasa lebih hidup.
+                                </p>
 
-<!-- Section 13 -->
-     <section class="container-fluid p-0 position-relative bg-sec13">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
-                <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
-                    <div class="d-inline position-relative">
-                        <img src="media/img/cewe1-slide131.png" alt="" class="w-76">
-                        <img src="media/img/cemas1-slide13.png" alt="" class="cemasRenung">
-                    </div>                    
-                </div>
-                            
-                <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
-                    <div class="w-98 position-relative">
-                        <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">sering merasa cemas</p>
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku mulai ngerasa bosan dengan rutinitas, jadi aku coba ikut kelas online yang temanya beda dari biasanya, tapi buat aku cukup penasaran untuk cari hal baru.”
+                                </div>
+                            </div>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Kamu menjalani hari-hari seperti biasa, namun pikiran kamu enggak biasa. Kamu terus merasa gelisah tanpa tau alasannya. </p>
-                        </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Ini bisa jadi tanda <b>Overthinking atau awal Burnout.</b></p>
+                        <div class="row pt-2 me-4 show1 w-83 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Temukan lagi hal-hal yang sesuai dengan kebutuhan dan minatmu saat ini</p>
                         </div>
                     </div>
                 </div>
@@ -595,11 +410,13 @@
 
 <!-- Section 14 -->
      <section class="container-fluid p-0 position-relative bg-sec14">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
                 <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
                     <div class="d-inline position-relative">
                         <img src="media/img/cowo1-slide14.png" alt="" class="w-76">
-                        <img src="media/img/cemas1-slide14.png" alt="" class="cemasInsecure">
+                        <div class="jalanTanya-wrapper lifeTanya-pos" data-qtype="sec14">
+                            <img src="media/img/cemas1-slide14.png" alt="" class="w-32 cemasInsecure">
+                        </div>
                     </div>                    
                 </div>
                             
@@ -608,12 +425,28 @@
                         <div class="row row1">
                             <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">suka membandingkan diri dengan orang lain</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Melihat temanmu sukses, bikin kamu merasa tertinggal. Semakin explore media sosial dapat memperburuk perasaan kamu. </p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Melihat pencapaian orang lain, terutama di media sosial itu akan membuat kamu merasa tertinggal 
+                                                                                            dan kurang berhasil. Standar hidup orang lain ini secara ngga sadar jadi tolok ukur bagi diri kamu hingga menekan diri kamu lebih dalam lagi. 
+                                                                                            <br><br>Ingat ya, hidup ini bukan perlombaan. Setiap orang punya waktu dan jalannya masing-masing. </p>
                         </div>
-                        <!-- <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Ini bisa jadi tanda <b>Overthinking atau awal Burnout.</b></p>
-                        </div> -->
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Membandingkan diri dengan orang lain itu manusiawi, tapi kalau berlebihan justru bikin kamu capek sendiri. Coba kurangin hal-hal yang bikin kamu merasa tertinggal, dan cukup fokus pada perkembangan kecil yang sudah kamu capai.
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku sadar media sosial bikin aku sering ngerasa kurang. Sekarang aku lebih jarang scroll dan coba buat ga mikirin pencapaian orang lain disekitarku. Aku akan fokus sama progress kecil yang aku buat.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-2 me-4 show1 w-83 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Progress sekecil apapun yang kamu capai itu tetap layak untuk dihargai</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -621,23 +454,41 @@
 
 <!-- Section 15 -->
      <section class="container-fluid p-0 position-relative bg-sec15">
-            <div class="row g-0 position-relative overflow-x-hidden mt-5">
+            <div class="row g-0 position-relative overflow-hidden mt-5">
                 <div class="col-12 col-lg-6 position-relative d-flex align-items-center">
                     <div class="d-inline position-relative">
-                        <img src="media/img/sepi-slide15.png" alt="" class="w-76">
+                        <img src="media/img/sepi-slide151.png" alt="" class="w-76">
+                        <div class="jalanTanya-wrapper lifeTanya-pos" data-qtype="sec15">
+                            <img src="media/img/cemas-slide14.png" alt="" class="w-32 cemasOvt">
+                        </div>
                     </div>                    
                 </div>
                             
                 <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
                     <div class="w-98 position-relative">
                         <div class="row row1">
-                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Merasa kesepian meskipun punya teman</p>
+                            <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">merasa cemas atau kesepian</p>
                         </div>
-                        <div class="row py-4 w-83">
-                            <p class="playpenSans fs-4 purple-2 border-start border-5 px-4">Ada orang di sekitar kamu atau bahkan lebih ramai orang, tapi kamu tetap merasa sendiri.</p>
+                        <div class="row py-4 w-83 sec7-default">
+                            <p class="playpenSans fs-5 purple-2 border-start border-5 px-4">Kehidupan kelihatan baik-baik aja, tapi di dalam hati sering 
+                                                                                            muncul rasa gelisah dan kesepian, bahkan ketika ada banyak orang disekitar kamu. Kesepian ini sering muncul karena koneksi emosional antara kamu dengan orang sekitar belum kuat. </p>
                         </div>
-                        <div class="row pt-2 me-4 w-83">
-                            <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Hal ini mungkin terjadi karena <b>koneksi emosional</b> dirimu dengan orang sekitar kamu yang belum kuat.</p>
+                        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+                            <div class="sec7-solution-card" id="sec7SolutionCard">
+                                <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+                                <p class="playpenSans mb-3 purple-3">
+                                Membandingkan diri dengan orang lain itu manusiawi, tapi kalau berlebihan justru bikin kamu capek sendiri. Coba kurangin hal-hal yang bikin kamu merasa tertinggal, dan cukup fokus pada perkembangan kecil yang sudah kamu capai.
+                                </p>
+
+                                <div class="sec7-example playpenSans purple-3">
+                                <b>Contoh:</b><br>
+                                “Aku sadar media sosial bikin aku sering ngerasa kurang. Sekarang aku lebih jarang scroll dan coba buat ga mikirin pencapaian orang lain disekitarku. Aku akan fokus sama progress kecil yang aku buat.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-2 me-4 show1 w-83 sec7-default">
+                            <p class="poetsenOne fs-3 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center">Bangun hubungan yang bermakna itu butuh waktu, keberanian, dan kejujuran pada diri sendiri</p>
                         </div>
                     </div>
                 </div>
@@ -649,82 +500,5 @@
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
-    <!-- <script>
-        // ===== Data 9 fase =====
-        const DATA = [
-        {id:1, phase:'Bingung Arah Tujuan Hidup', variant:'new', title:'Bingung arah tujuan hidup', subtitle:'Gelap bukan akhir — jeda sebelum awal.', signs:'Kompas pribadi terasa hilang, banyak opsi serba ragu.', affirm:'Aku boleh belum tahu semuanya. Pelan-pelan akan kutemukan yang penting bagiku.', prompt:'Tulis 3 nilai inti. Besok, ambil 1 keputusan kecil selaras nilai itu.'},
-        {id:2, phase:'Bingung dengan diri sendiri', variant:'crescent',title:'Merasa bingung dengan diri sendiri', subtitle:'Cahaya muncul — identitas dibentuk pilihan berulang.', signs:'Peran & ekspektasi bercampur, suara hati jadi samar.', affirm:'Aku belajar membedakan suaraku dari suara orang lain.', prompt:'Kapan terakhir bilang “tidak”? Tambah 1 batasan baru minggu ini.'},
-        {id:3, phase:'Hidup terasa jalan di tempat', variant:'first', title:'Hidup terasa stuck / jalan di tempat', subtitle:'Separuh terang: kemajuan kecil ada bila diukur dari dalam.', signs:'Rutinitas statis meski hari berjalan.', affirm:'Macet sementara tak membatalkan tujuan panjang.', prompt:'Komitmen 1% tiap hari selama 7 hari — apa aksinya?'},
-        {id:4, phase:'Sulit membuat keputusan', variant:'gibbous', title:'Sulit membuat keputusan', subtitle:'Makin terang, noise makin ramai — fokus pada kriteria.', signs:'Overthinking, takut salah, menunda karena terlalu banyak opsi.', affirm:'Keputusan jarang 100% pasti; 70% cukup untuk melangkah.', prompt:'Tentukan 3 kriteria “cukup baik”. Jika terpenuhi, putuskan dalam 24 jam.'},
-        {id:5, phase:'Kehidupan terasa hampa', variant:'full', title:'Membandingkan diri berlebihan', subtitle:'Terang bisa menyilaukan — kurangi sorotan luar.', signs:'Scroll medsos memicu cemas/iri.', affirm:'Aku menghormati ritmeku sendiri.', prompt:'Puasa medsos 24 jam, catat perubahan perasaan.'},
-        {id:6, phase:'Hilangnya rasa antusias', variant:'gibbous', title:'Takut gagal / mengecewakan', subtitle:'Saat surut, ego melunak — ruang eksperimen.', signs:'Enggan mencoba baru karena bayangan kritik.', affirm:'Gagal adalah data, bukan identitas.', prompt:'Rancang eksperimen 2 jam, tulis hipotesis & metrik keberhasilan minimal.'},
-        {id:7, phase:'Sering Merasa Cemas', variant:'first', title:'Kehilangan motivasi', subtitle:'Separuh redup: rapikan komitmen & energi.', signs:'To‑do panjang, tenaga pendek.', affirm:'Motivasi mengikuti momentum.', prompt:'Pilih 1 tugas 5 menit paling berdampak. Kerjakan sekarang.'},
-        {id:8, phase:'Suka membandingkan diri dengan orang lain', variant:'crescent',title:'Merasa sendirian dalam proses', subtitle:'Sabit menipis: komunitas adalah cahaya pinjaman.', signs:'Malu bercerita, memikul beban sendiri.', affirm:'Aku berhak meminta dukungan.', prompt:'Kirim pesan ke 1 orang aman: “Boleh aku curhat 10 menit?”'},
-        {id:9, phase:'Merasa kesepian meskipun punya teman', variant:'new', title:'Butuh makna yang lebih dalam', subtitle:'Siklus ditutup untuk dibuka lagi.', signs:'“Untuk apa semua ini?” sering muncul.', affirm:'Makna lahir dari tindakan kecil berulang.', prompt:'Tentukan ritus 10 menit (jurnal/jalan). Pertahankan 14 hari.'}
-        ];
-
-
-        const phasesEl = document.getElementById('phases');
-
-
-        function createPhase(item){
-        const el = document.createElement('div');
-        el.className = 'phase';
-        el.dataset.variant = item.variant;
-        el.innerHTML = `
-        <button class="phase-btn" aria-label="Buka fase ${item.id}: ${item.phase}" data-tip="${item.phase} — ${item.title}">
-        <div class="moon" aria-hidden="true"></div>
-        </button>
-        <div class="label">${item.phase}</div>
-        <div class="index">${String(item.id).padStart(2,'0')}</div>
-        `;
-        el.querySelector('button').addEventListener('click', ()=> openModal(item));
-        return el;
-        }
-
-
-        DATA.forEach(d => phasesEl.appendChild(createPhase(d)));
-
-
-        // ===== Modal logic =====
-        const modal = document.getElementById('modal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalSubtitle = document.getElementById('modalSubtitle');
-        const modalSigns = document.getElementById('modalSigns');
-        const modalAffirm = document.getElementById('modalAffirm');
-        const modalPrompt = document.getElementById('modalPrompt');
-        const modalBadge = document.getElementById('modalBadge');
-
-
-        function openModal(item){
-        modalTitle.textContent = item.title;
-        modalSubtitle.textContent = item.subtitle;
-        modalSigns.textContent = item.signs;
-        modalAffirm.textContent = item.affirm;
-        modalPrompt.textContent = item.prompt;
-        modalBadge.textContent = `Fase ${String(item.id).padStart(2,'0')} — ${item.phase}`;
-        modal.showModal();
-        trapFocus(modal);
-        }
-
-
-        document.getElementById('modalClose').addEventListener('click', ()=> modal.close());
-        modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.close(); });
-
-
-        // A11y: focus trap sederhana untuk dialog
-        function trapFocus(dialog){
-        const focusable = dialog.querySelectorAll('button, [href], input, textarea, [tabindex]:not([tabindex="-1"])');
-        const first = focusable[0]; const last = focusable[focusable.length - 1];
-        dialog.addEventListener('keydown', function onKey(e){
-        if(e.key === 'Tab'){
-        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-        }
-        if(e.key === 'Escape'){ dialog.close(); dialog.removeEventListener('keydown', onKey); }
-        });
-        first?.focus();
-        }
-    </script> -->
-</body>
+    </body>
 </html>

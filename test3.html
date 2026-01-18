@@ -2,559 +2,327 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QLifeC — Quarter Life Crisis</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Section 7 Parallax Drag: Bingung → Menghadapinya</title>
+
+  <!-- Bootstrap (optional - biar class kamu jalan). Kalau project kamu sudah pakai Bootstrap, boleh hapus link ini -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
+    /* ====== Demo helper (boleh hapus kalau di project asli sudah ada) ====== */
     :root{
-      --bg:#6F55DA;
-      --bg2:#7C63E5;
-      --ink:#F6F2FF;
-      --muted:rgba(246,242,255,.82);
-      --card:rgba(255,255,255,.10);
-      --card2:rgba(255,255,255,.14);
-      --yellow:#F5C542;
-      --shadow: 0 18px 40px rgba(0,0,0,.16);
-      --radius:22px;
+      --sec7-bg:#6b4fe6;
+      --yellow:#ffc107;
+      --purple-2:#f4f0ff;
+      --purple-3:#3b2a7a;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0}
-    body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:linear-gradient(180deg,var(--bg),var(--bg2));
-      color:var(--ink);
-      scroll-behavior:smooth;
-      overflow-x:hidden;
-    }
-    a{color:var(--ink); text-decoration:none}
-    .container{width:min(1100px, 92vw); margin:0 auto;}
-    .section{position:relative; padding:92px 0;}
-    .section-head h2{margin:0 0 10px; font-size:42px; letter-spacing:.2px}
-    .section-head p{margin:0; color:var(--muted); max-width:760px; line-height:1.6}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b1020;}
+    .bg-sec7{background:var(--sec7-bg);}
+    .yellow-3{color:#ffcc00;}
+    .purple-2{color:var(--purple-2);}
+    .purple-3{color:var(--purple-3);}
+    .poetsenOne{font-weight:900; letter-spacing:.03em;}
+    .playpenSans{font-weight:700;}
+    .fs-5vw{font-size:clamp(2rem,4vw,3.2rem);}
+    .fs-4{font-size:1.05rem;}
+    .fs-2{font-size:1.4rem;}
+    .w-76{width:76%;}
+    .w-26{width:26%;}
+    .w-98{width:98%;}
+    .w-83{width:83%;}
+    .overflow-x-hidden{overflow-x:hidden;}
+    /* ====== /Demo helper ====== */
 
-    /* NAV */
-    .nav{
-      position:fixed; inset:0 0 auto 0; height:68px;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:0 4vw; z-index:50;
-      background:rgba(89,63,191,.62); backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.3px}
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      display:grid; place-items:center;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.18);
-    }
-    .nav-links{display:flex; gap:18px}
-    .nav-links a{opacity:.9; font-weight:700}
-    .nav-links a:hover{opacity:1; color:var(--yellow)}
-
-    /* BUTTON */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:999px; border:1px solid rgba(255,255,255,.20);
-      background:rgba(255,255,255,.12); color:var(--ink);
-      cursor:pointer; transition:.18s transform, .18s opacity;
-      user-select:none;
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn.primary{background:var(--yellow); color:#2e2380; border-color:transparent; font-weight:900}
-    .btn.ghost{background:transparent}
-    .btn.small{padding:10px 14px; font-size:14px}
-
-    /* HERO */
-    .hero{min-height:100vh; padding-top:110px; overflow:hidden;}
-    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
-    .badge{
-      display:inline-flex; padding:8px 14px; border-radius:999px;
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.18);
-      margin-bottom:16px; font-weight:800;
-    }
-    h1{font-size:56px; margin:0 0 14px; line-height:1.05}
-    .hl{color:var(--yellow)}
-    .lead{color:var(--muted); line-height:1.7; font-size:18px; max-width:560px}
-    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-
-    .hero-right{display:flex; flex-direction:column; align-items:center; gap:14px}
-    .hero-illus{
-      width:min(360px, 74vw); aspect-ratio:1/1;
-      position:relative; border-radius:var(--radius);
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    /* Placeholder "jalan + tanda tanya" (boleh diganti png/svg kamu) */
-    .road{
-      position:absolute; left:50%; bottom:-30%;
-      width:90%; height:130%;
-      transform:translateX(-50%) skewX(-8deg);
-      background:rgba(255,255,255,.10);
-      border-left:6px solid rgba(255,255,255,.65);
-      border-right:6px solid rgba(255,255,255,.65);
-    }
-    .question{
-      position:absolute; inset:0;
-      display:grid; place-items:center;
-      font-size:130px; font-weight:950;
-      color:var(--yellow);
-      text-shadow:0 10px 0 rgba(0,0,0,.10);
-    }
-    .mini-note{margin:0; color:rgba(255,255,255,.72); font-size:14px}
-
-    /* Scroll dots */
-    .scroll-indicator{
-      position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
-      display:flex; gap:8px; opacity:.9;
-    }
-    .scroll-indicator span{
-      width:7px; height:7px; border-radius:50%;
-      background:rgba(255,255,255,.55);
-      animation:bounce 1.5s infinite ease-in-out;
-    }
-    .scroll-indicator span:nth-child(2){animation-delay:.15s}
-    .scroll-indicator span:nth-child(3){animation-delay:.3s}
-    @keyframes bounce{
-      0%,100%{transform:translateY(0); opacity:.6}
-      50%{transform:translateY(-8px); opacity:1}
+    /* ===== SECTION 7 PARALLAX DRAG ===== */
+    .bg-sec7 .sec7-leftWrap{
+      position: relative;
+      display: inline-block;
     }
 
-    /* Parallax background blobs */
-    .parallax-bg{position:absolute; inset:0; pointer-events:none;}
-    .blob{position:absolute; border-radius:999px; filter: blur(18px); opacity:.55}
-    .blob-1{width:420px;height:420px; left:-120px; top:120px; background:rgba(245,197,66,.35)}
-    .blob-2{width:520px;height:520px; right:-180px; top:20px; background:rgba(255,255,255,.16)}
-    .stars{
-      position:absolute; inset:-50px;
-      background-image: radial-gradient(rgba(255,255,255,.35) 1px, transparent 1px);
-      background-size: 42px 42px;
-      opacity:.22;
+    /* jalan bisa digeser pelan (parallax depth) */
+    .bg-sec7 .sec7-road{
+      will-change: transform;
+      transform: translate3d(0,0,0);
     }
 
-    /* CARDS */
-    .grid{display:grid; gap:16px}
-    .cards{grid-template-columns:repeat(3, 1fr); margin-top:22px}
-    .card{
-      text-align:left;
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:0 10px 24px rgba(0,0,0,.10);
-      cursor:pointer;
-      transition:.18s transform, .18s background;
-      width:100%;
+    /* tanda tanya jadi draggable handle */
+    .bg-sec7 .jalanTanya{
+      position: absolute;
+      left: 52%;
+      top: 22%;
+      transform: translate(-50%, -50%);
+      cursor: grab;
+      touch-action: none;            /* penting untuk HP */
+      -webkit-user-select: none;
+      user-select: none;
+      will-change: transform, opacity;
+      z-index: 5;
     }
-    .card:hover{transform:translateY(-4px); background:var(--card2)}
-    .card .icon{font-size:22px}
-    .card h3{margin:10px 0 6px; font-size:18px}
-    .card p{margin:0; color:var(--muted); line-height:1.55}
-    .tag{
-      display:inline-block; margin-top:12px; font-size:12px; font-weight:900;
-      background:rgba(245,197,66,.22);
-      border:1px solid rgba(245,197,66,.35);
-      color:#FFE9A9;
-      padding:6px 10px; border-radius:999px;
+    .bg-sec7 .jalanTanya.dragging{ cursor: grabbing; }
+
+    /* Idle animation untuk memancing dipegang */
+    @keyframes sec7IdleFloat {
+      0%   { transform: translate(-50%, -50%) scale(1); }
+      40%  { transform: translate(calc(-50% + 6px), calc(-50% - 4px)) scale(1.03); }
+      80%  { transform: translate(calc(-50% - 4px), calc(-50% + 3px)) scale(1.01); }
+      100% { transform: translate(-50%, -50%) scale(1); }
+    }
+    .bg-sec7 .jalanTanya.idle{ animation: sec7IdleFloat 2.8s ease-in-out infinite; }
+
+    /* Crossfade teks */
+    .bg-sec7 .sec7-problem,
+    .bg-sec7 .sec7-solution{
+      transition: opacity .12s linear, filter .12s linear, transform .12s linear;
     }
 
-    /* STEPS */
-    .cara{overflow:hidden}
-    .parallax-strip{
-      position:absolute; inset:auto -10% 0 -10%;
-      height:180px; background:rgba(255,255,255,.08);
-      transform:skewY(-6deg); filter: blur(2px);
-    }
-    .steps{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
-    .step{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:var(--radius);
-      padding:18px;
-    }
-    .step h3{margin:0 0 10px}
-    .step p{margin:0 0 10px; color:var(--muted); line-height:1.6}
-    .example{
-      background:rgba(255,255,255,.85);
-      color:#2e2380;
-      border-radius:16px;
-      padding:12px 14px;
-      border:2px solid rgba(245,197,66,.65);
-      font-weight:700;
+    .bg-sec7 .sec7-solution{
+      opacity: 0;
+      filter: blur(10px);
+      transform: translateY(12px);
     }
 
-    /* SUPPORT */
-    .support-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px}
-    .panel{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:var(--radius);
-      padding:18px;
-    }
-    .panel h3{margin:0 0 12px}
-    .quote{font-size:18px; line-height:1.7; margin:0 0 14px}
-    .story-meta{display:flex; align-items:center; justify-content:space-between; gap:10px}
-    .pill{
-      display:inline-flex; padding:8px 12px; border-radius:999px;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.16);
-      font-weight:900; font-size:12px;
-    }
-    .help-box{
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:16px;
-      background:rgba(245,197,66,.14);
-      border:1px solid rgba(245,197,66,.35);
-      color:#FFE9A9;
-    }
-    .affirm{
-      background:rgba(255,255,255,.85);
-      color:#2e2380;
-      border-radius:18px;
-      padding:16px;
-      border:2px solid rgba(245,197,66,.65);
-    }
-    .affirm-text{margin:0 0 12px; font-size:20px; font-weight:950}
-    .affirm-actions{display:flex; gap:10px; flex-wrap:wrap}
-    .mini-cards{display:grid; gap:10px; margin-top:14px}
-    .mini{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:16px;
-      padding:12px;
-      color:rgba(255,255,255,.9);
+    .bg-sec7 .sec7-solution-card{
+      background: rgba(255,255,255,0.92);
+      border: 5px solid var(--yellow);
+      border-radius: 24px;
+      padding: 18px 18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.25);
+      will-change: transform;
     }
 
-    /* MODAL */
-    .modal{
-      position:fixed; inset:0;
-      display:none; place-items:center;
-      background:rgba(0,0,0,.45);
-      z-index:80; padding:18px;
-    }
-    .modal.show{display:grid}
-    .modal-card{
-      width:min(760px, 96vw);
-      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.08));
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:26px;
-      padding:18px;
-      box-shadow:var(--shadow);
-      position:relative;
-    }
-    .modal-close{
-      position:absolute; right:10px; top:10px;
-      width:40px; height:40px; border-radius:14px;
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.18);
-      color:var(--ink); font-size:22px; cursor:pointer;
-      display:grid; place-items:center;
-    }
-    .modal-content h3{margin:8px 0}
-    .modal-content p{color:var(--muted); line-height:1.7}
-    .modal-content .boost{
-      margin-top:12px;
-      background:rgba(255,255,255,.85);
-      color:#2e2380;
-      border-radius:18px;
-      padding:14px;
-      border:2px solid rgba(245,197,66,.65);
-      font-weight:900;
+    .bg-sec7 .sec7-example{
+      background: rgba(107,79,230,0.10);
+      border-radius: 16px;
+      padding: 12px 12px;
+      font-weight: 800;
     }
 
-    /* REVEAL */
-    .reveal{opacity:0; transform:translateY(22px); transition: .7s ease; }
-    .reveal.show{opacity:1; transform:translateY(0);}
-
-    /* FOOTER */
-    .footer{padding:26px 0; border-top:1px solid rgba(255,255,255,.12)}
-    .footer .container{display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap}
-    .footer p{margin:0; color:rgba(255,255,255,.72)}
-    .footer a{color:var(--yellow); font-weight:950}
-
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr; gap:22px}
-      h1{font-size:44px}
-      .cards{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .support-grid{grid-template-columns:1fr}
-      .nav-links{display:none}
+    /* Biar kolom kiri ga “ngecil” banget di demo */
+    .sec7-stage{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
     }
   </style>
 </head>
 
 <body>
-  <header class="nav">
-    <div class="brand">
-      <span class="logo">QL</span>
-      <span>QLifeC</span>
-    </div>
-    <nav class="nav-links">
-      <a href="#ciri">Ciri</a>
-      <a href="#cara">Cara</a>
-      <a href="#support">Support</a>
-    </nav>
-  </header>
 
-  <section class="section hero" id="top">
-    <div class="parallax-bg">
-      <div class="blob blob-1" data-speed="0.15"></div>
-      <div class="blob blob-2" data-speed="0.25"></div>
-      <div class="stars" data-speed="0.08"></div>
-    </div>
+<!-- SECTION 7 (FULL) -->
+<section class="container-fluid p-0 position-relative bg-sec7 sec7-stage">
 
-    <div class="container hero-grid">
-      <div class="hero-left reveal">
-        <div class="badge">Quarter Life Crisis</div>
-        <h1>Pernah ngerasa hidup <span class="hl">jalan di tempat</span>?</h1>
-        <p class="lead">
-          QLC adalah fase ketika kamu merasa bingung arah, lelah, dan mulai mempertanyakan keputusan hidup.
-          Kamu nggak sendirian—dan kamu nggak harus buru-buru menemukan semua jawabannya.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#ciri">Mulai Kenali Cirinya</a>
-          <a class="btn ghost" href="#support">Butuh Support</a>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <div class="hero-illus" aria-hidden="true">
-          <div class="road"></div>
-          <div class="question">?</div>
-        </div>
-        <p class="mini-note">Scroll pelan ya—tiap bagian muncul bertahap ✨</p>
+  <div class="row g-0 position-relative overflow-x-hidden mt-5 w-100">
+    <!-- LEFT -->
+    <div class="col-12 col-lg-6 position-relative d-flex align-items-end justify-content-center">
+      <div class="d-inline position-relative sec7-leftWrap" id="sec7LeftWrap">
+        <!-- Jalan -->
+        <img src="media/img/jalan-slide7.png" alt="jalan" class="w-76 sec7-road" id="sec7Road">
+        <!-- Tanda tanya (draggable) -->
+        <img src="media/img/tanya-slide7.png" alt="tanya" class="w-26 jalanTanya idle" id="sec7Q">
       </div>
     </div>
 
-    <div class="scroll-indicator" aria-hidden="true"><span></span><span></span><span></span></div>
-  </section>
-
-  <section class="section ciri" id="ciri">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Tanda-Tanda Quarter Life Crisis</h2>
-        <p>9 tanda ini sering muncul di usia 19–25. Klik card untuk membuka detailnya.</p>
-      </div>
-
-      <div class="grid cards">
-        <button class="card reveal" data-modal="m1"><div class="icon">🧭</div><h3>Bingung arah tujuan hidup</h3><p>Semua pilihan terasa membingungkan dan masa depan tampak samar.</p><span class="tag">Identitas</span></button>
-        <button class="card reveal" data-modal="m2"><div class="icon">🪞</div><h3>Bingung dengan diri sendiri</h3><p>“Aku ini siapa?” dan mempertanyakan nilai serta keinginan pribadi.</p><span class="tag">Identitas</span></button>
-        <button class="card reveal" data-modal="m3"><div class="icon">🧱</div><h3>Merasa hidup stuck</h3><p>Sudah berusaha keras, tapi rasanya nggak ada perubahan.</p><span class="tag">Stuck</span></button>
-        <button class="card reveal" data-modal="m4"><div class="icon">🚪</div><h3>Sulit membuat keputusan</h3><p>Takut melangkah tapi juga nggak bahagia di posisi sekarang.</p><span class="tag">Stuck</span></button>
-        <button class="card reveal" data-modal="m5"><div class="icon">🕳️</div><h3>Rutinitas terasa hampa</h3><p>Jalan, tapi kosong. Hubungan pun tak lagi memberi semangat.</p><span class="tag">Hampa</span></button>
-        <button class="card reveal" data-modal="m6"><div class="icon">💡</div><h3>Hilangnya rasa antusias</h3><p>Hal kecil yang dulu menyenangkan kini terasa hambar.</p><span class="tag">Hampa</span></button>
-        <button class="card reveal" data-modal="m7"><div class="icon">🌪️</div><h3>Sering merasa cemas</h3><p>Hari terlihat biasa, tapi hati gelisah tanpa alasan jelas.</p><span class="tag">Cemas</span></button>
-        <button class="card reveal" data-modal="m8"><div class="icon">📱</div><h3>Membandingkan diri</h3><p>Melihat teman sukses bikin kamu merasa tertinggal.</p><span class="tag">Cemas</span></button>
-        <button class="card reveal" data-modal="m9"><div class="icon">🌙</div><h3>Merasa kesepian</h3><p>Ada orang di sekitar, tapi tetap merasa sendiri.</p><span class="tag">Cemas</span></button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section cara" id="cara">
-    <div class="parallax-strip" data-speed="0.18"></div>
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Bagaimana Menghadapinya?</h2>
-        <p>Fokus pada langkah kecil. Nggak harus sempurna, yang penting kamu bergerak.</p>
-      </div>
-
-      <div class="steps">
-        <article class="step reveal">
-          <h3>🧭 Bingung arah tujuan hidup</h3>
-          <p><b>Coba:</b> tulis hal yang kamu suka & yang bikin kamu penasaran akhir-akhir ini.</p>
-          <div class="example"><b>Contoh:</b> “Aku suka bikin video pendek dan tertarik isu lingkungan…”</div>
-        </article>
-
-        <article class="step reveal">
-          <h3>🧱 Hidup terasa stuck</h3>
-          <p><b>Coba:</b> me-time + aktivitas kecil yang menenangkan (jalan pagi, journaling).</p>
-          <div class="example"><b>Contoh:</b> “Aku ikut yoga pemula dari YouTube…”</div>
-        </article>
-
-        <article class="step reveal">
-          <h3>🚪 Sulit membuat keputusan</h3>
-          <p><b>Coba:</b> tulis opsi + ambil langkah paling ringan dulu.</p>
-          <div class="example"><b>Contoh:</b> “Aku konsultasi dengan kakak alumni dulu…”</div>
-        </article>
-
-        <article class="step reveal">
-          <h3>🌪️ Sering merasa cemas</h3>
-          <p><b>Coba:</b> teknik napas 4-7-8 / journaling / meditasi 5 menit.</p>
-          <div class="example"><b>Contoh:</b> “Aku dengerin podcast meditasi dan tarik napas pelan…”</div>
-        </article>
-
-        <article class="step reveal">
-          <h3>📱 Membandingkan diri</h3>
-          <p><b>Coba:</b> jeda dari sosmed + tulis 3 hal kecil yang kamu syukuri.</p>
-          <div class="example"><b>Contoh:</b> “Hari ini tugas selesai, makan enak, ada teman support…”</div>
-        </article>
-
-        <article class="step reveal">
-          <h3>🌙 Merasa kesepian</h3>
-          <p><b>Coba:</b> mulai dari 1 obrolan jujur dengan orang terdekat.</p>
-          <div class="example"><b>Contoh:</b> “Aku cerita ke teman kos… ternyata dia juga sering begitu.”</div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section support" id="support">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Kamu Nggak Sendirian</h2>
-        <p>Potongan cerita anonim + afirmasi yang bisa kamu simpan untuk hari-hari berat.</p>
-      </div>
-
-      <div class="support-grid">
-        <div class="panel reveal">
-          <h3>🧡 Cerita dari Mereka</h3>
-          <p class="quote" id="storyText">“Aku ngerasa semua orang maju, sementara aku stuck. Tapi ternyata fase itu bikin aku lebih kenal diri.”</p>
-          <div class="story-meta">
-            <span class="pill" id="storyPill">Anonim • 23</span>
-            <button class="btn small ghost" id="nextStory">Cerita lain</button>
-          </div>
-          <div class="help-box">
-            <b>Catatan:</b> kalau kamu merasa sangat kewalahan, tidak ada salahnya mencari bantuan profesional.
-          </div>
+    <!-- RIGHT -->
+    <div class="col-12 col-lg-6 px-4 position-relative justify-content-center d-flex">
+      <div class="w-98 position-relative">
+        <div class="row row1">
+          <p class="fs-5vw poetsenOne yellow-3 text-uppercase lh-sm">Bingung arah tujuan hidup</p>
         </div>
 
-        <div class="panel reveal">
-          <h3>🌿 Afirmasi Positif</h3>
-          <div class="affirm">
-            <p class="affirm-text" id="affirmText">“Pelan-pelan juga nggak apa-apa.”</p>
-            <div class="affirm-actions">
-              <button class="btn small primary" id="newAffirm">Afirmasi baru</button>
-              <button class="btn small ghost" id="copyAffirm">Salin</button>
+        <div class="row py-4 w-83">
+          <p class="playpenSans fs-4 purple-2 border-start border-5 px-4 sec7-problem" id="sec7ProblemText">
+            Semua pilihan hidup rasanya membingungkan. Kamu membayangkan masa depan yang kamu miliki tampaknya samar.
+          </p>
+        </div>
+
+        <!-- SOLUSI (muncul saat tanda tanya digeser) -->
+        <div class="row py-2 w-83 sec7-solution" id="sec7SolutionWrap">
+          <div class="sec7-solution-card" id="sec7SolutionCard">
+            <p class="poetsenOne text-uppercase mb-2 purple-3" style="font-size:1.2rem;">Bagaimana Menghadapinya?</p>
+
+            <p class="playpenSans mb-3 purple-3" style="opacity:.95;">
+              Coba kamu catat hal yang buat diri kamu jadi lebih hidup dan hal yang bikin kamu penasaran akhir-akhir ini.
+              Mulai dari situ bisa bantu kamu kenal diri kamu lebih dalam. Nggak harus langsung tahu kok, apa tujuan hidup kamu —
+              <b>Sedikit clue atau arahan itu udah cukup</b> untuk mulai langkah kecil kamu.
+            </p>
+
+            <div class="sec7-example playpenSans purple-3">
+              <b>Contoh:</b><br>
+              “Aku suka bikin video pendek dan tertarik dengan isu lingkungan.
+              Mungkin aku bisa mulai bikin konten edukatif tentang gaya hidup ramah lingkungan.”
             </div>
           </div>
+        </div>
 
-          <div class="mini-cards">
-            <div class="mini reveal">✨ Kamu boleh bingung. Kamu tetap berharga.</div>
-            <div class="mini reveal">🌙 Nggak harus ngerti semua hari ini.</div>
-            <div class="mini reveal">🌱 Progres kecil pun tetap progres.</div>
-          </div>
+        <div class="row pt-2 me-4 w-83">
+          <p class="poetsenOne fs-2 border-top border-5 border-warning rounded-5 bg-white purple-3 px-5 lh-sm py-4 text-center sec7-problem" id="sec7Badge">
+            Ini bisa jadi tanda kalau kamu sedang mengalami <b>krisis identitas</b>
+          </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© QLifeC — Media Informasi Quarter Life Crisis • dibuat untuk kebutuhan skripsi.</p>
-      <a href="#top">Kembali ke atas ↑</a>
-    </div>
-  </footer>
-
-  <!-- MODAL -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Detail ciri">
-      <button class="modal-close" id="closeModal" aria-label="Tutup">×</button>
-      <div class="modal-content" id="modalContent"></div>
     </div>
   </div>
 
-  <script>
-    // REVEAL on scroll
-    const reveals = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.14 });
-    reveals.forEach(el => io.observe(el));
+</section>
 
-    // SIMPLE PARALLAX
-    const parallaxEls = document.querySelectorAll("[data-speed]");
-    window.addEventListener("scroll", () => {
-      const y = window.scrollY;
-      parallaxEls.forEach(el => {
-        const speed = parseFloat(el.dataset.speed || "0.1");
-        el.style.transform = `translate3d(0, ${y * speed}px, 0)`;
-      });
-    }, { passive:true });
+<script>
+(function(){
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-    // MODAL CONTENT
-    const details = {
-      m1:{title:"Bingung arah tujuan hidup",text:"Kamu sering bertanya “Tujuan hidupku ini apa?” Semua pilihan terasa membingungkan dan masa depan tampak samar. Ini bisa jadi tanda krisis identitas. Tapi dari kebingungan ini biasanya tumbuh kesadaran baru tentang apa yang benar-benar penting.",boost:"🌱 Kamu sedang dalam proses mengenal diri. Pelan-pelan aja, yang penting kamu tetap jalan."},
-      m2:{title:"Bingung dengan diri sendiri",text:"Kamu merasa asing dengan dirimu. Bertanya “Aku ini siapa?” dan mempertanyakan nilai serta keinginan pribadi. Ini umum di masa dewasa awal saat identitas sedang terbentuk.",boost:"🌿 Kamu bukan tersesat, kamu sedang tumbuh. Kamu punya hak atas waktu itu."},
-      m3:{title:"Merasa hidup stuck / jalan di tempat",text:"Kamu merasa usahamu tidak membuahkan perubahan, padahal sudah mencoba keras. Ini bisa terkait kelelahan mental akibat tekanan terus-menerus.",boost:"🍂 Tenang, ini wajar. Kasih waktu untuk bernapas dan recharge."},
-      m4:{title:"Sulit membuat keputusan",text:"Di antara banyak pilihan, kamu takut melangkah tapi juga tidak bahagia di posisi sekarang. Ini sering disebut decision paralysis.",boost:"🧩 Mulai dari keputusan kecil. Nggak harus langsung benar—yang penting berani mencoba."},
-      m5:{title:"Kegiatan atau hubungan terasa hampa",text:"Rutinitas berjalan, tapi rasanya kosong. Hubungan pun mungkin tidak lagi memberi semangat.",boost:"🕊️ Saatnya refleksi: apa yang masih cocok dan apa yang sudah tidak?"},
-      m6:{title:"Hilangnya rasa antusias",text:"Hal-hal kecil yang dulu menyenangkan kini terasa hambar. Ini bisa jadi sinyal kamu kehilangan ‘spark’.",boost:"🌻 Bukan kamu yang jadi ‘nggak seru’—kamu hanya perlu menemukan hal baru yang mewarnai hari."},
-      m7:{title:"Sering merasa cemas",text:"Hari terlihat biasa, tapi hati sering gelisah tanpa alasan jelas. Ini bisa jadi tanda overthinking atau awal burnout.",boost:"🌬️ Nggak apa-apa kalau kamu lelah. Tarik napas—kamu nggak harus ngerti semua sekarang."},
-      m8:{title:"Suka membandingkan diri",text:"Melihat teman sukses bikin kamu merasa tertinggal. Media sosial sering memperparah perasaan ini.",boost:"🌼 Hidup bukan lomba. Fokus pada progres kecilmu—jalurmu unik dan layak dihargai."},
-      m9:{title:"Merasa kesepian meskipun punya teman",text:"Ada orang di sekitarmu, tapi kamu tetap merasa sendiri. Mungkin koneksi emosional belum terasa kuat.",boost:"💞 Koneksi bermakna butuh waktu dan keberanian. Pelan-pelan, buka ruang untuk dipercaya."}
-    };
+  const q = document.getElementById('sec7Q');
+  const road = document.getElementById('sec7Road');
+  const solutionWrap = document.getElementById('sec7SolutionWrap');
+  const solutionCard = document.getElementById('sec7SolutionCard');
+  const problems = document.querySelectorAll('.bg-sec7 .sec7-problem');
 
-    const modal = document.getElementById("modal");
-    const modalContent = document.getElementById("modalContent");
-    const closeModal = document.getElementById("closeModal");
+  if(!q || !solutionWrap) return;
 
-    document.querySelectorAll("[data-modal]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const key = btn.dataset.modal;
-        const d = details[key];
-        modalContent.innerHTML = `
-          <h3>${d.title}</h3>
-          <p>${d.text}</p>
-          <div class="boost">${d.boost}</div>
-        `;
-        modal.classList.add("show");
-        modal.setAttribute("aria-hidden","false");
-      });
-    });
+  // Drag state
+  let dragging = false;
+  let startX = 0;
+  let currentX = 0;
+  let maxDrag = 220;
 
-    function hideModal(){
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden","true");
+  // Idle control
+  const IDLE_THRESHOLD = 0.08; // 8% of max
+  let idleAllowed = true;
+
+  function recalc(){
+    // Sesuaikan jarak drag dengan layar
+    maxDrag = Math.round(Math.min(260, window.innerWidth * 0.22));
+    render();
+    applyIdleRules();
+  }
+  window.addEventListener('resize', recalc);
+
+  function progress(){
+    return maxDrag === 0 ? 0 : (currentX / maxDrag);
+  }
+
+  function render(){
+    const p = progress();
+
+    // 1) tanda tanya geser + mengecil (parallax feel)
+    const x = p * maxDrag;
+    const y = p * 18;
+    const scale = 1 - p * 0.18;
+    q.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${scale})`;
+    q.style.opacity = `${1 - p * 0.20}`;
+
+    // 2) jalan geser pelan (depth)
+    if(road){
+      road.style.transform = `translate3d(${p * -18}px, ${p * 6}px, 0)`;
     }
-    closeModal.addEventListener("click", hideModal);
-    modal.addEventListener("click", (e)=>{ if(e.target === modal) hideModal(); });
-    window.addEventListener("keydown",(e)=>{ if(e.key==="Escape" && modal.classList.contains("show")) hideModal(); });
 
-    // SUPPORT: Stories
-    const stories = [
-      { age: 23, text: "“Aku ngerasa semua orang maju, sementara aku stuck. Tapi ternyata fase itu bikin aku lebih kenal diri.”" },
-      { age: 21, text: "“Aku sering bandingin diri sama teman. Pas berhenti scroll sebentar, aku baru sadar aku capek.”" },
-      { age: 24, text: "“Aku takut salah pilih. Akhirnya aku coba satu langkah kecil dulu—dan itu ngebantu.”" },
-      { age: 22, text: "“Aku ngerasa kosong. Tapi setelah coba balik ke hal yang dulu aku suka, pelan-pelan aku hidup lagi.”" },
-    ];
-    let sIdx = 0;
-    const storyText = document.getElementById("storyText");
-    const storyPill = document.getElementById("storyPill");
-    document.getElementById("nextStory").addEventListener("click", () => {
-      sIdx = (sIdx + 1) % stories.length;
-      storyText.style.opacity = 0;
-      setTimeout(() => {
-        storyText.textContent = stories[sIdx].text;
-        storyPill.textContent = `Anonim • ${stories[sIdx].age}`;
-        storyText.style.opacity = 1;
-      }, 220);
+    // 3) problem fade out
+    problems.forEach(el=>{
+      el.style.opacity = `${1 - p}`;
+      el.style.filter = `blur(${p * 8}px)`;
+      el.style.transform = `translateY(${p * -6}px)`;
     });
 
-    // SUPPORT: Affirmations
-    const affirms = [
-      "“Pelan-pelan juga nggak apa-apa.”",
-      "“Kamu boleh bingung. Kamu tetap berharga.”",
-      "“Progres kecil pun tetap progres.”",
-      "“Hari ini berat, tapi kamu tidak sendirian.”",
-      "“Nggak harus tahu semua jawaban sekarang.”"
-    ];
-    let aIdx = 0;
-    const affirmText = document.getElementById("affirmText");
-    document.getElementById("newAffirm").addEventListener("click", () => {
-      aIdx = (aIdx + 1) % affirms.length;
-      affirmText.textContent = affirms[aIdx];
-    });
+    // 4) solusi fade in (mulai setelah 25%)
+    const p2 = clamp((p - 0.25) / 0.75, 0, 1);
+    solutionWrap.style.opacity = `${p2}`;
+    solutionWrap.style.filter = `blur(${(1 - p2) * 10}px)`;
+    solutionWrap.style.transform = `translateY(${(1 - p2) * 12}px)`;
 
-    document.getElementById("copyAffirm").addEventListener("click", async () => {
-      try{
-        await navigator.clipboard.writeText(affirmText.textContent.replace(/“|”/g,''));
-        alert("Afirmasi tersalin ✨");
-      }catch{
-        alert("Gagal menyalin. Coba manual ya.");
-      }
-    });
-  </script>
+    // pop halus pada card
+    if(solutionCard){
+      const s = 1 - (1 - p2) * 0.02;
+      solutionCard.style.transform = `scale(${s})`;
+    }
+  }
+
+  function applyIdleRules(){
+    const p = progress();
+
+    // kalau sudah geser agak jauh, idle dimatikan sampai balik ke awal
+    if (p > 0.15) idleAllowed = false;
+    if (p < IDLE_THRESHOLD) idleAllowed = true;
+
+    if (!dragging && idleAllowed && p < IDLE_THRESHOLD) q.classList.add('idle');
+    else q.classList.remove('idle');
+  }
+
+  function getClientX(ev){
+    if (ev.touches && ev.touches.length) return ev.touches[0].clientX;
+    if (ev.changedTouches && ev.changedTouches.length) return ev.changedTouches[0].clientX;
+    return ev.clientX;
+  }
+
+  function onDown(ev){
+    dragging = true;
+    q.classList.remove('idle');
+    q.classList.add('dragging');
+    startX = getClientX(ev);
+
+    // capture supaya move selalu kebaca
+    if (ev.pointerId != null && q.setPointerCapture) q.setPointerCapture(ev.pointerId);
+
+    if (ev.cancelable) ev.preventDefault();
+  }
+
+  function onMove(ev){
+    if (!dragging) return;
+    const x = getClientX(ev);
+    const dx = x - startX;
+    startX = x;
+    currentX = clamp(currentX + dx, 0, maxDrag);
+    render();
+    if (ev.cancelable) ev.preventDefault();
+  }
+
+  function snapTo(target){
+    const start = currentX;
+    const dist = target - start;
+    const dur = 220;
+    const t0 = performance.now();
+
+    function tick(t){
+      const u = clamp((t - t0)/dur, 0, 1);
+      const eased = 1 - Math.pow(1 - u, 3);
+      currentX = start + dist * eased;
+      render();
+      if (u < 1) requestAnimationFrame(tick);
+      else applyIdleRules();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function onUp(){
+    if (!dragging) return;
+    dragging = false;
+    q.classList.remove('dragging');
+
+    const p = progress();
+    const target = (p > 0.5) ? maxDrag : 0;
+    snapTo(target);
+  }
+
+  // Pointer events
+  q.addEventListener('pointerdown', onDown);
+  q.addEventListener('pointermove', onMove);
+  q.addEventListener('pointerup', onUp);
+  q.addEventListener('pointercancel', onUp);
+
+  // Fallbacks (mouse/touch)
+  q.addEventListener('touchstart', onDown, { passive:false });
+  window.addEventListener('touchmove', onMove, { passive:false });
+  window.addEventListener('touchend', onUp);
+  window.addEventListener('touchcancel', onUp);
+
+  q.addEventListener('mousedown', onDown);
+  window.addEventListener('mousemove', onMove);
+  window.addEventListener('mouseup', onUp);
+
+  // Init
+  recalc();
+  currentX = 0;
+  render();
+  applyIdleRules();
+})();
+</script>
+
 </body>
 </html>

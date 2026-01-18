@@ -71,6 +71,173 @@
       }
     }
 
+// DRAG ELEMENT FOR SECTION 7
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ===============================
+     CONFIG RESPONSIF PER SECTION
+  =============================== */
+  function getResponsiveConfig(type) {
+    const w = window.innerWidth;
+
+    if (type === 'sec8') {
+      if (w <= 375)  return { x: 97, y: -50 };
+      if (w <= 450)  return { x: 120, y: -55 };
+      if (w <= 576)  return { x: 130, y: -55 };
+      if (w <= 780)  return { x: 200, y: -90 };
+      if (w <= 992)  return { x: 250, y: -90 };
+      if (w <= 1024) return { x: 140, y: -70 };
+      return           { x: 220, y: -110 };
+    }
+
+    if (type === 'sec9') {
+      if (w <= 375)  return { x: 11.5, y: -40 };
+      if (w <= 450)  return { x: 14, y: -50 };
+      if (w <= 576)  return { x: 15, y: -58 };
+      if (w <= 780)  return { x: 22, y: -73 };
+      if (w <= 992)  return { x: 26, y: -84 };
+      if (w <= 1024) return { x: 15, y: -60 };
+      return           { x: 15, y: -85 };
+    }
+
+    if (type === 'sec10') {
+      if (w <= 375)  return { x: 130, y: 40 };
+      if (w <= 450)  return { x: 125, y: 40 };
+      if (w <= 576)  return { x: 160, y: 50 };
+      if (w <= 780)  return { x: 190, y: 50 };
+      if (w <= 992)  return { x: 240, y: 70 };
+      if (w <= 1024) return { x: 150, y: 70 };
+      return           { x: 210, y: 80 };
+    }
+
+    if (type === 'sec11') {
+      if (w <= 375)  return { x: 70, y: 110 };
+      if (w <= 450)  return { x: 70, y: 115 };
+      if (w <= 576)  return { x: 90, y: 140 };
+      if (w <= 780)  return { x: 130, y: 190 };
+      if (w <= 992)  return { x: 180, y: 225 };
+      if (w <= 1024) return { x: 120, y: 170 };
+      return           { x: 140, y: 250 };
+    }
+
+    if (type === 'sec14') {
+      if (w <= 375)  return { x: 30, y: 100 };
+      if (w <= 450)  return { x: 30, y: 85 };
+      if (w <= 576)  return { x: 40, y: 130 };
+      if (w <= 780)  return { x: 50, y: 160 };
+      if (w <= 992)  return { x: 60, y: 200 };
+      if (w <= 1024) return { x: 47, y: 200 };
+      return           { x: 40, y: 250 };
+    }
+
+    if (type === 'sec15') {
+      if (w <= 375)  return { x: 25, y: 50 };
+      if (w <= 450)  return { x: 30, y: 65 };
+      if (w <= 576)  return { x: 43, y: 90 };
+      if (w <= 780)  return { x: 53, y: 110 };
+      if (w <= 992)  return { x: 60, y: 120 };
+      if (w <= 1024) return { x: 45, y: 130 };
+      return           { x: 48, y: 150 };
+    }
+
+    return { x: 280, y: -120 };
+  }
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+  /* ===============================
+     DRAG LOGIC
+  =============================== */
+  const wrappers = document.querySelectorAll('.jalanTanya-wrapper');
+  if (!wrappers.length) return;
+
+  wrappers.forEach((element) => {
+
+    /* ===== LANGKAH 3 (BENAR) ===== */
+    const type = element.dataset.qtype || 'sec7';
+    let { x: maxDragX, y: maxLiftY } = getResponsiveConfig(type);
+
+    // update config SAAT resize (KHUSUS element ini)
+    window.addEventListener('resize', () => {
+      const cfg = getResponsiveConfig(type);
+      maxDragX = cfg.x;
+      maxLiftY = cfg.y;
+    });
+
+    let moveVal = 0;
+    let startX = 0;
+    let isDragging = false;
+
+    element.setAttribute('draggable', 'false');
+    element.style.touchAction = 'none';
+
+    const section = element.closest('section');
+    const solution = section ? section.querySelector('.sec7-solution') : null;
+    const defaults = section ? section.querySelectorAll('.sec7-default') : [];
+
+    function render() {
+      element.style.setProperty('--drag-x', `${moveVal}px`);
+    }
+
+    function updateUI() {
+      const progress = Math.max(0, Math.min(moveVal / maxDragX, 1));
+
+      defaults.forEach(el => {
+        el.style.opacity = 1 - progress;
+        el.style.transform = `translateY(${progress * -8}px)`;
+        el.style.filter = `blur(${progress * 6}px)`;
+      });
+
+      if (solution) {
+        solution.style.opacity = progress;
+        solution.style.transform = `translateY(${(1 - progress) * 14}px)`;
+        solution.style.filter = `blur(${(1 - progress) * 10}px)`;
+      }
+
+      const scale = 1 - (progress * 0.2);
+      element.style.setProperty('--drag-scale', scale);
+
+      const lift = progress * maxLiftY;
+      element.style.setProperty('--drag-y', `${lift}px`);
+    }
+
+    element.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      element.classList.add('dragging');
+      element.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+
+    element.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+
+      const dx = e.clientX - startX;
+      startX = e.clientX;
+
+      moveVal = clamp(moveVal + dx, 0, maxDragX);
+      render();
+      updateUI();
+    });
+
+    element.addEventListener('pointerup', (e) => {
+      isDragging = false;
+      element.classList.remove('dragging');
+      element.releasePointerCapture(e.pointerId);
+    });
+
+    element.addEventListener('pointercancel', () => {
+      isDragging = false;
+      element.classList.remove('dragging');
+    });
+
+    // INIT
+    render();
+    updateUI();
+  });
+});
+
+
 // SET ALL PARALLAX EFFECTS
     let wScroll = 0;
     let ticking = false;
@@ -110,10 +277,10 @@
       progSec1 = Math.max(0,Math.min(progSec1,1));
 
       //1440
-      var limRight = Math.min(scrollPercent, 27);
-      var limLeft = Math.min(scrollPercent, 25);
-      var menScrollX = Math.min(scrollPercent, 57);
-      var menScrollY = Math.min(scrollPercent, 60);
+      var limRight = Math.min(scrollPercent, 9);
+      var limLeft = Math.min(scrollPercent, 9.2);
+      var menScrollX = Math.min(scrollPercent, 26);
+      var menScrollY = Math.min(scrollPercent, 28);
       var menScale = Math.min((-80 + wScroll * 0.1), 110);
 
       //1250
@@ -173,10 +340,10 @@
         return 1; 
       }
 
-      if(scrollPercent >= 73 && !typewriterStarted) {
+      if(scrollPercent >= 32 && !typewriterStarted) {
         typewriterStarted = true;
         typeWriter();
-        $('.cursor').css('opacity', scrollPercent >= 73 ? 1 : 0);
+        $('.cursor').css('opacity', scrollPercent >= 32 ? 1 : 0);
       }
 
       if (window.matchMedia("(max-width: 375px)").matches) {
@@ -397,26 +564,26 @@
 
         // Section 2
         $('.swipe2-righthalf').css({
-          'transform' : 'translate('+ (100-limRight*3.7)+'%, 0) rotate(180deg)'
+          'transform' : 'translate('+ (100-limRight*10.9)+'%, 0) rotate(180deg)'
         });
         $('.swipe2-lefthalf').css({
-          'transform' : 'translate('+ (-100+limLeft*3.5)+'%, 0)'
+          'transform' : 'translate('+ (-100+limLeft*10.9)+'%, 0)'
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-400+wScroll*0.4) +'%) scale('+ (-30 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 14 ? 1 : 0)
+          'opacity': (scrollPercent >= 9 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (127-wScroll*0.1) + '%, '+ (-55+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (120-wScroll*0.1) + '%, '+ (-75+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (-127+wScroll*0.1) + '%, '+ (-55+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (-127+wScroll*0.1) + '%, '+ (-75+wScroll*0.05) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-725 + menScrollX*12.5) + '%, ' + (-650 + menScrollY*12) + '%) scale('+ menScale +'%)',
-           'opacity': (scrollPercent >= 37 ? 1 : 0)
+          'transform': 'translate(' + (-725 + menScrollX*27.5) + '%, ' + (-650 + menScrollY*26.1) + '%) scale('+ menScale +'%)',
+           'opacity': (scrollPercent >= 15 ? 1 : 0)
         });
       }
       // AOS.refresh();
