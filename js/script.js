@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-400+wScroll*0.4) +'%) scale('+ (-30 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 9 ? 1 : 0)
+          'opacity': (scrollPercent >= 8 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
           'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (120-wScroll*0.1) + '%, '+ (-75+wScroll*0.05) +'%)'
