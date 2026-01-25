@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', function () {
       //1440
       var limRight = Math.min(scrollPercent, 9);
       var limLeft = Math.min(scrollPercent, 9.2);
-      var menScrollX = Math.min(scrollPercent, 26);
-      var menScrollY = Math.min(scrollPercent, 28);
+      var menScrollX = Math.min(scrollPercent, 24);
+      var menScrollY = Math.min(scrollPercent, 26);
       var menScale = Math.min((-80 + wScroll * 0.1), 110);
 
       //1250
@@ -574,7 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-725 + menScrollX*27.5) + '%, ' + (-650 + menScrollY*26.1) + '%) scale('+ menScale +'%)',
+          'transform': 'translate(' + (-680 + menScrollX*27.7) + '%, ' + (-605 + menScrollY*26.1) + '%) scale('+ menScale +'%)',
            'opacity': (scrollPercent >= 15 ? 1 : 0)
         });
       }
