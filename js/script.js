@@ -74,9 +74,6 @@
 // DRAG ELEMENT FOR SECTION 7
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ===============================
-     CONFIG RESPONSIF PER SECTION
-  =============================== */
   function getResponsiveConfig(type) {
     const w = window.innerWidth;
 
@@ -145,19 +142,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-  /* ===============================
-     DRAG LOGIC
-  =============================== */
+  //  DRAG LOGIC
   const wrappers = document.querySelectorAll('.jalanTanya-wrapper');
   if (!wrappers.length) return;
 
   wrappers.forEach((element) => {
 
-    /* ===== LANGKAH 3 (BENAR) ===== */
     const type = element.dataset.qtype || 'sec7';
     let { x: maxDragX, y: maxLiftY } = getResponsiveConfig(type);
 
-    // update config SAAT resize (KHUSUS element ini)
     window.addEventListener('resize', () => {
       const cfg = getResponsiveConfig(type);
       maxDragX = cfg.x;
@@ -231,7 +224,6 @@ document.addEventListener('DOMContentLoaded', function () {
       element.classList.remove('dragging');
     });
 
-    // INIT
     render();
     updateUI();
   });
@@ -588,3 +580,83 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       // AOS.refresh();
     }
+
+// VUE CARD SECTION 16
+Vue.config.devtools = true;
+
+Vue.component('card', {
+  template: `
+    <div class="card-wrap"
+    @mousemove="handleMouseMove"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
+    ref="card">
+      <div class="card" :style="cardStyle">
+        <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>
+        <div class="card-info">
+          <slot name="header"></slot>
+          <slot name="content"></slot>
+        </div>
+      </div>
+    </div>`,
+  mounted() {
+      this.width = this.$refs.card.offsetWidth;
+      this.height = this.$refs.card.offsetHeight;
+  },
+  props: ['dataImage'],
+  data: () => ({
+      width: 0,
+      height: 0,
+      mouseX: 0,
+      mouseY: 0,
+      mouseLeaveDelay: null
+  }),
+  computed: {
+      mousePX() { return this.mouseX / this.width },
+      mousePY() { return this.mouseY / this.height },
+      cardStyle() {
+      const rX = Math.max(Math.min(this.mousePY * -35, 15), -15);
+      const rY = Math.max(Math.min(this.mousePX * 35, 15), -15);
+
+      return {
+          transform: `
+          rotateX(${rX}deg)
+          rotateY(${rY}deg)
+          `
+      };
+      },
+      cardBgTransform() {
+      const tX = this.mousePX * -38;
+      const tY = this.mousePY * -38;
+
+      return {
+          transform: `
+          translateX(${tX}px)
+          translateY(${tY}px)
+          translateZ(-40px)
+          scale(1.25)
+          `
+      };
+      },
+      cardBgImage() {
+      return { backgroundImage: `url(${this.dataImage})` };
+      }
+  },
+  methods: {
+      handleMouseMove(e) {
+      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+      this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+      },
+      handleMouseEnter() {
+      clearTimeout(this.mouseLeaveDelay);
+      },
+      handleMouseLeave() {
+      this.mouseLeaveDelay = setTimeout(() => {
+          this.mouseX = 0;
+          this.mouseY = 0;
+      }, 1000);
+      }
+  }
+  });
+
+new Vue({ el: '#app' });
