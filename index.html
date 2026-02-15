@@ -552,6 +552,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>  AOS.init({
+    once: true
+  });
+
+  if (window.innerWidth <= 450) {
+    document.querySelectorAll('.img-sec2 [data-aos]').forEach(function(el) {
+      el.setAttribute('data-aos-offset', '-230');
+    });
+
+    AOS.refresh();
+  }</script>
     </body>
 </html>
