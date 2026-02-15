@@ -1742,15 +1742,23 @@ html, body {
   position: fixed;
   width: 250%;
   }
-  
+
   .position-start img {
-  margin-top: 40%;
+  margin-top: 0%;
   margin-right: 0%;
   }
 
   .position-end img {
-  margin-top: 40%;
+  margin-top: 0%;
   margin-left: 5%;
+  }
+
+  .swipe2-righthalf, .swipe2-lefthalf {
+    width: 77% !important;
+  }
+
+  .img-sec2 .position-start, .img-sec2 .position-end {
+    margin-top: 70% !important;
   }
 
   .w-14 {
