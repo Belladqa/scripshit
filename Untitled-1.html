@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Curtain Scroll Demo</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      overflow: hidden; /* halaman tidak pernah scroll */
+      background: #000; /* anti white flash */
+      font-family: system-ui, sans-serif;
+    }
+
+    /* =========================
+       CURTAIN SECTIONS
+    ========================== */
+    .curtain {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+
+      clip-path: inset(100% 0 0 0);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .curtain.active {
+      z-index: 10;
+    }
+
+    /* warna demo */
+    .curtain:nth-child(1) { background:#111; }
+    .curtain:nth-child(2) { background:#1e40af; }
+    .curtain:nth-child(3) { background:#065f46; }
+    .curtain:nth-child(4) { background:#7c2d12; }
+    .curtain:nth-child(5) { background:#581c87; }
+    .curtain:nth-child(6) { background:#374151; }
+
+    .hint {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      z-index: 99;
+    }
+  </style>
+</head>
+<body>
+
+<div id="curtain-root">
+  <section class="curtain active" style="clip-path: inset(0 0 0 0)">SECTION 1</section>
+  <section class="curtain">SECTION 2</section>
+  <section class="curtain">SECTION 3</section>
+  <section class="curtain">SECTION 4</section>
+  <section class="curtain">SECTION 5</section>
+  <section class="curtain">SECTION 6</section>
+</div>
+
+<div class="hint">Scroll mouse ↓</div>
+
+<script>
+  const scenes = document.querySelectorAll('.curtain');
+
+  let current = 0;
+  let animating = false;
+  let progress = 0;
+
+  const SPEED = 0.012;
+
+  function easeInOut(t) {
+    return t < 0.5
+      ? 2 * t * t
+      : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+
+  /* =========================
+     OPEN NEXT
+  ========================= */
+  function openNextScene() {
+    if (current >= scenes.length - 1) return;
+
+    animating = true;
+    progress = 0;
+
+    const from = scenes[current];
+    const to = scenes[current + 1];
+
+    to.classList.add('active');
+    to.style.clipPath = 'inset(100% 0 0 0)';
+
+    function animate() {
+      progress += SPEED;
+      progress = Math.min(progress, 1);
+
+      const eased = easeInOut(progress);
+
+      to.style.clipPath =
+        `inset(${(1 - eased) * 100}% 0 0 0)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        from.classList.remove('active');
+        from.style.clipPath = 'inset(100% 0 0 0)';
+        current++;
+        animating = false;
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  /* =========================
+     OPEN PREVIOUS
+  ========================= */
+  function openPrevScene() {
+    if (current <= 0) return;
+
+    animating = true;
+    progress = 0;
+
+    const from = scenes[current];
+    const to = scenes[current - 1];
+
+    to.classList.add('active');
+    to.style.clipPath = 'inset(0 0 0 0)';
+
+    function animate() {
+      progress += SPEED;
+      progress = Math.min(progress, 1);
+
+      const eased = easeInOut(progress);
+
+      from.style.clipPath =
+        `inset(${eased * 100}% 0 0 0)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        from.classList.remove('active');
+        from.style.clipPath = 'inset(100% 0 0 0)';
+        current--;
+        animating = false;
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  /* =========================
+     WHEEL HANDLER
+  ========================= */
+  window.addEventListener('wheel', (e) => {
+    if (animating) return;
+    e.preventDefault();
+
+    if (e.deltaY > 0) {
+      openNextScene();
+    } else if (e.deltaY < 0) {
+      openPrevScene();
+    }
+  }, { passive: false });
+</script>
+
+</body>
+</html>

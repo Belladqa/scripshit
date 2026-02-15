@@ -268,28 +268,30 @@ document.addEventListener('DOMContentLoaded', function () {
       var progSec1 = (wScroll - start1)/(end1-start1);
       progSec1 = Math.max(0,Math.min(progSec1,1));
 
-      //1440
+      //1440+
       var limRight = Math.min(scrollPercent, 9);
       var limLeft = Math.min(scrollPercent, 9.2);
       var menScrollX = Math.min(scrollPercent, 24);
       var menScrollY = Math.min(scrollPercent, 26);
       var menScale = Math.min((-80 + wScroll * 0.1), 110);
 
-      //1250
+      //1440
+      var limRight1440 = Math.min(scrollPercent, 7.7);
+      var limLeft1440 = Math.min(scrollPercent, 7.7);
       var menScale1250 = Math.max(120, (250 - wScroll * 0.1));
-      var menScrollX1250 = Math.min(scrollPercent, 63);
-      var menScrollY1250 = Math.min(scrollPercent, 61.5);
+      var menScrollX1440 = Math.min(scrollPercent, 22.5);
+      var menScrollY1440 = Math.min(scrollPercent, 22);
 
       //990      
-      var limRight990 = Math.min(scrollPercent, 36);
-      var limLeft990 = Math.min(scrollPercent, 37);
-      var menScrollX990 = Math.min(scrollPercent, 51.5);
-      var menScrollY990 = Math.min(scrollPercent, 80.5);
+      var limRight990 = Math.min(scrollPercent, 11);
+      var limLeft990 = Math.min(scrollPercent, 11.3);
+      var menScrollX990 = Math.min(scrollPercent, 17.5);
+      var menScrollY990 = Math.min(scrollPercent, 28);
       var menScale990 = Math.max(120, (420 - wScroll * 0.1));
       function menOpacity990(scrollPercent) {
-        if(scrollPercent < 43) return 0;
-        if(scrollPercent < 60) return 1;
-        if(scrollPercent < 73) return 0;
+        if(scrollPercent < 13) return 0;
+        if(scrollPercent < 20) return 1;
+        if(scrollPercent < 23) return 0;
         return 1; 
       }
 
@@ -310,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var menScale576 = Math.max(110, (280 - wScroll * 0.07));
 
       //450      
-      var menScrollX450 = Math.min(scrollPercent, 63.5);
+      var menScrollX450 = Math.min(scrollPercent, 10.5);
       var menScrollY450 = Math.min(scrollPercent, 90.5);
       var menScale576 = Math.max(100, (280 - wScroll * 0.07));
       function menOpacity450(scrollPercent) {
@@ -321,21 +323,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       //375
-      var limRight375 = Math.min(scrollPercent, 35);
-      var limLeft375 = Math.min(scrollPercent, 36);
-      var menScrollY375 = Math.min(scrollPercent, 86.5);
+      var limRight375 = Math.min(scrollPercent, 5.2);
+      var limLeft375 = Math.min(scrollPercent, 6.8);
+      var menScrollY375 = Math.min(scrollPercent, 16.3);
       var menScale375 = Math.max(100, (220 - wScroll * 0.05));
       function menOpacity375(scrollPercent) {
-        if(scrollPercent < 51) return 0;
-        if(scrollPercent < 71) return 1;
-        if(scrollPercent < 84) return 0;
+        if(scrollPercent < 7.2) return 0;
+        if(scrollPercent < 12) return 1;
+        if(scrollPercent < 15.7) return 0;
         return 1; 
-      }
-
-      if(scrollPercent >= 32 && !typewriterStarted) {
-        typewriterStarted = true;
-        typeWriter();
-        $('.cursor').css('opacity', scrollPercent >= 32 ? 1 : 0);
       }
 
       if (window.matchMedia("(max-width: 375px)").matches) {
@@ -349,33 +345,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Section 2
         $('.swipe2-righthalf').css({
-          'transform' : 'translate('+ (220-limRight375*7.5)+'%, 0) rotate(180deg) scale('+ (145 + (scrollPercent * 1)) +'%)',
-          'opacity' : (scrollPercent >= 25 ? 1 : 0)
+          'transform' : 'translate('+ (155-limRight375*35)+'%, 0) rotate(180deg) scale('+ (145 + (scrollPercent * 1)) +'%)',
+          'opacity': (scrollPercent >= 3.5 ? 1 : 0)
         });
         $('.swipe2-lefthalf').css({
-          'transform' : 'translate('+ (-25+limLeft375*4)+'%, 0) scale('+ (300 + (scrollPercent * 1)) +'%)'
+          'transform' : 'translate('+ (-155+limLeft375*35)+'%, 0) scale('+ (300 + (scrollPercent * 1)) +'%)'
         });
         $('.p2sec2').css({
           'transform' : 'translate(0, '+ (-30)+'%)'
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-400+wScroll*0.45) +'%) scale('+ (15 + (wScroll * 0.07)) +'%)',
-          'opacity': (scrollPercent >= 25 ? 1 : 0)
+          'transform' : 'translate(0, '+ (-430+wScroll*0.45) +'%) scale('+ (15 + (wScroll * 0.12)) +'%)',
+          'opacity': (scrollPercent >= 4 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (174-wScroll*0.25) + '%, '+ (-7+wScroll*0.05) +'%)',
-          'opacity' : (scrollPercent >= 30 ? 1 : 0)
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (164-wScroll*0.25) + '%, '+ (-47+wScroll*0.05) +'%)',
+          'opacity' : (scrollPercent >= 4 ? 1 : 0)
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (-174+wScroll*0.25) + '%, '+ (-7+wScroll*0.05) +'%)',
-          'opacity' : (scrollPercent >= 30 ? 1 : 0)
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (-164+wScroll*0.25) + '%, '+ (-47+wScroll*0.05) +'%)',
+          'opacity' : (scrollPercent >= 4 ? 1 : 0)
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-875 + menScrollX450*13.7) + '%, ' + (-2350 + menScrollY375*27.4) + '%) scale('+ menScale375 +'%)',
+          'transform': 'translate(' + (-600 + menScrollX450*57) + '%, ' + (-1615 + menScrollY375*100) + '%) scale('+ menScale375 +'%)',
            'opacity': menOpacity375(scrollPercent)
         });
+
+        // Section 5    
+        if(scrollPercent >= 15 && !typewriterStarted) {
+          typewriterStarted = true;
+          typeWriter();
+          $('.cursor').css('opacity', scrollPercent >= 15 ? 1 : 0);
+        }
       } else if (window.matchMedia("(max-width: 450px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
@@ -481,39 +484,39 @@ document.addEventListener('DOMContentLoaded', function () {
           'transform': 'translate(' + (-855 + menScrollX780*16) + '%, ' + (-1385 + menScrollY780*18) + '%) scale('+ menScale780 +'%)',
            'opacity': menOpacity780(scrollPercent)
         });
-      } else if (window.matchMedia("(max-width: 990px)").matches) {
+      } else if (window.matchMedia("(max-width: 992px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-40+wScroll*0.1) + '%, 0)'
+          'transform' : 'translate('+ (-35+wScroll*0.15) + '%, 0)'
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (40-wScroll*0.1) + '%, 0)'
+          'transform' : 'translate('+ (35-wScroll*0.15) + '%, 0)'
         });
 
         // Section 2
         $('.swipe2-righthalf').css({
-          'transform' : 'translate('+ (110-limRight990*3)+'%, 0) rotate(180deg)'
+          'transform' : 'translate('+ (110-limRight990*10)+'%, 0) rotate(180deg)'
         });
         $('.swipe2-lefthalf').css({
-          'transform' : 'translate('+ (-113+limLeft990*3)+'%, 0)'
+          'transform' : 'translate('+ (-113+limLeft990*10)+'%, 0)'
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-250+wScroll*0.15) +'%) scale('+ (-60 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 27 ? 1 : 0)
+          'transform' : 'translate(0, '+ (-250+wScroll*0.15) +'%) scale('+ (-80 + (wScroll * 0.1)) +'%)',
+          'opacity': (scrollPercent >= 11 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.04)) +'%) translate('+ (165-wScroll*0.1) + '%, '+ (-93+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.06)) +'%) translate('+ (180-wScroll*0.1) + '%, '+ (-105+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.04)) +'%) translate('+ (-165+wScroll*0.1) + '%, '+ (-93+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.06)) +'%) translate('+ (-183+wScroll*0.1) + '%, '+ (-105+wScroll*0.05) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-820 + menScrollX990*16) + '%, ' + (-1390 + menScrollY990*18) + '%) scale('+ menScale990 +'%)',
+          'transform': 'translate(' + (-280 + menScrollX990*16) + '%, ' + (-1375 + menScrollY990*51.5) + '%) scale('+ menScale990 +'%)',
            'opacity': menOpacity990(scrollPercent)
         });
-      } else if (window.matchMedia("(max-width: 1250px)").matches) {
+      } else if (window.matchMedia("(max-width: 1440px)").matches) {
         // Section 1
         $('.wanita-swipe, .pria-swipe').css({
           'transform' : 'translate('+ (25+wScroll*0.1) + '%, 0)'
@@ -524,27 +527,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Section 2
         $('.swipe2-righthalf').css({
-          'transform' : 'translate('+ (100-limRight*3.7)+'%, 0) rotate(180deg)'
+          'transform' : 'translate('+ (100-limRight1440*13)+'%, 0) rotate(180deg)'
         });
         $('.swipe2-lefthalf').css({
-          'transform' : 'translate('+ (-100+limLeft*3.5)+'%, 0)'
+          'transform' : 'translate('+ (-100+limLeft1440*13)+'%, 0)'
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-290+wScroll*0.3) +'%) scale('+ (-30 + (wScroll * 0.105)) +'%)',
-          'opacity': (scrollPercent >= 18 ? 1 : 0)
+          'opacity': (scrollPercent >= 6 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (127-wScroll*0.1) + '%, '+ (-55+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (16 + (wScroll * 0.09)) +'%) translate('+ (102-wScroll*0.1) + '%, '+ (-57+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (-127+wScroll*0.1) + '%, '+ (-55+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (16 + (wScroll * 0.09)) +'%) translate('+ (-107+wScroll*0.1) + '%, '+ (-57+wScroll*0.05) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-575 + menScrollX1250*9) + '%, ' + (-690 + menScrollY1250*12) + '%) scale('+ menScale1250 +'%)',
-           'opacity': (scrollPercent >= 35 ? 1 : 0)
+          'transform': 'translate(' + (-560 + menScrollX1440*25) + '%, ' + (-645 + menScrollY1440*32) + '%) scale('+ menScale1250 +'%)',
+           'opacity': (scrollPercent >= 13 ? 1 : 0)
         });
+
+        // Section 5 
+        if(scrollPercent >= 25 && !typewriterStarted) {
+          typewriterStarted = true;
+          typeWriter();
+          $('.cursor').css('opacity', scrollPercent >= 25 ? 1 : 0);
+        }
       } else { // DEFAULT
         // Section 1
         $('.wanita-swipe, .pria-swipe').css({
@@ -577,8 +587,14 @@ document.addEventListener('DOMContentLoaded', function () {
           'transform': 'translate(' + (-680 + menScrollX*27.7) + '%, ' + (-605 + menScrollY*26.1) + '%) scale('+ menScale +'%)',
            'opacity': (scrollPercent >= 15 ? 1 : 0)
         });
+
+        // Section 5    
+        if(scrollPercent >= 29 && !typewriterStarted) {
+          typewriterStarted = true;
+          typeWriter();
+          $('.cursor').css('opacity', scrollPercent >= 29 ? 1 : 0);
+        }
       }
-      // AOS.refresh();
     }
 
 // VUE CARD SECTION 16

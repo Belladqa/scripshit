@@ -48,6 +48,49 @@ html, body {
   opacity: 0;
 }
 
+/* Curtain section */
+/* index3 */
+/* #curtain-wrapper {
+  height: 600vh;
+  position: relative;
+}
+
+#stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene.s1 {
+  position: relative;
+}
+
+.s1 {z-index: 1; background: #704FDE;}
+.s2 {z-index: 2; clip-path: inset(100% 0 0 0); }
+.s3 {z-index: 3; clip-path: inset(100% 0 0 0); }
+.s4 {z-index: 4; clip-path: inset(100% 0 0 0); }
+.s5 {z-index: 5; clip-path: inset(100% 0 0 0); }
+.s6 {z-index: 6; clip-path: inset(100% 0 0 0); }
+
+#section5 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+} */
+
+/* index4 */
+
 /* Style Website */
 .active {
   color: #FFE472;
@@ -59,6 +102,10 @@ html, body {
 
 .img-sec2 .position-start, .img-sec2 .position-end {
   margin-top: 8%;
+}
+
+.bg-sec2.container-fluid{
+  width: 100.8%;
 }
 
 .bg-sec3 {
@@ -369,10 +416,6 @@ html, body {
   color: white;
 }
 
-/* .pria-sec4 {
-  transform: translateY(60%);
-} */
-
 @keyframes sec7QFloat{
   0%{
     transform: translate(0%, -190%) translateY(0) scale(1);
@@ -390,14 +433,14 @@ html, body {
   user-select: none;
   transform: translate(-12%, -50%) translate(var(--drag-x), var(--drag-y)) scale(var(--drag-scale));;
   transition: scale 0.1s linear;
-  z-index: 40;
+  /* z-index: 40; */
 }
 
-.jalanTanya-wrapper.dragging{
+/* .jalanTanya-wrapper.dragging{
   cursor: grabbing;
   animation: none;
   z-index: 60;
-}
+} */
 
 .bg-sec8 .sec7-solution, .bg-sec9 .sec7-solution, .bg-sec10 .sec7-solution,
 .bg-sec11 .sec7-solution, .bg-sec14 .sec7-solution, .bg-sec15 .sec7-solution {
@@ -521,7 +564,7 @@ html, body {
   will-change: transform;
   animation: sec7QFloat 1.4s ease-in-out infinite;
   pointer-events: auto; 
-  z-index: 40;
+  /* z-index: 40; */
 }
 
 .lifeTanya-pos {
@@ -589,7 +632,7 @@ html, body {
   will-change: transform;
   animation: sec7QFloat 1.4s ease-in-out infinite;
   pointer-events: auto; 
-  z-index: 40;
+  /* z-index: 40; */
 }
 
 .kursiDuduk.w-26 {
@@ -858,6 +901,7 @@ html, body {
 
   .qlcmb .poetsenOne {
     margin-top: -5%;
+    padding: 0 5rem 0 5rem !important;
   }
 
   .mst-1 {
@@ -912,7 +956,7 @@ html, body {
   }
 
   .fs-6vw {
-  font-size: 11.3vw;
+  font-size: 9.3vw;
   }
   
   .fs-63vw {
@@ -1257,8 +1301,24 @@ html, body {
     padding-top: 3rem !important;
   }    
 
+  .pria-swipe.w-98 {
+    padding-top: 0rem !important;
+  }
+
   .poetsenOne.fs-3 {
     font-size: 3vw !important;
+  }
+
+  .bg-sec2 .playpenSans.fs-2 {
+    font-size: 2.3vw !important;
+  }
+
+  .bg-sec2 .my-5 {
+    margin-top: 1rem !important;
+  }
+
+  .img-sec2 .position-start, .img-sec2 .position-end {
+    margin-top: 18% !important;
   }
 
   .renungTanya {
@@ -2214,7 +2274,7 @@ html, body {
   .img-sec2 {
     top: 55%;
     position: relative;
-    z-index: 3;
+    /* z-index: 3; */
   }
 
   .p-0 .btn {
@@ -2240,6 +2300,14 @@ html, body {
 
   .mt-3rem {
     margin-top: 3rem;
+  }
+
+  .sec1 .txt-sec1.mt-3rem {
+    margin-top: 0rem;
+  }
+
+  .img-sec2 .position-start, .img-sec2 .position-end {
+    margin-top: 26% !important;
   }
 
   .my-6rem {

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Mixed Scroll Curtain</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+  background:#000;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  color: white;
+  clip-path: inset(100% 0 0 0);
+  z-index: 0;
+}
+
+.scene.active {
+  z-index: 10;
+}
+
+/* warna demo */
+.s1 {background:#1e3a8a;}
+.s2 {background:#0f766e;}
+.s3 {background:#92400e;}
+
+.s4 {background:#7c3aed;}
+.s5 {background:#db2777;}
+.s6 {background:#16a34a;}
+.s7 {background:#0284c7;}
+
+.s8 {background:#111827;}
+.s9 {background:#4b5563;}
+.s10{background:#78350f;}
+
+.hint {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,.6);
+  z-index: 99;
+}
+</style>
+</head>
+<body>
+
+<div id="root">
+  <section class="scene s1 active" style="clip-path: inset(0 0 0 0)">1</section>
+  <section class="scene s2">2</section>
+  <section class="scene s3">3</section>
+
+  <section class="scene s4">4</section>
+  <section class="scene s5">5</section>
+  <section class="scene s6">6</section>
+  <section class="scene s7">7</section>
+
+  <section class="scene s8">8</section>
+  <section class="scene s9">9</section>
+  <section class="scene s10">10</section>
+</div>
+
+<div class="hint">Scroll sesuai arah</div>
+
+<script>
+const scenes = document.querySelectorAll('.scene');
+let current = 0;
+let animating = false;
+let progress = 0;
+
+const SPEED = 0.02;
+
+function ease(t) {
+  return t < 0.5
+    ? 2 * t * t
+    : 1 - Math.pow(-2 * t + 2, 2) / 2;
+}
+
+function getMode(index) {
+  if (index <= 2) return "vertical";
+  if (index <= 6) return "horizontal";
+  return "vertical";
+}
+
+function openScene(next) {
+  if (next < 0 || next >= scenes.length) return;
+  if (animating) return;
+
+  animating = true;
+  progress = 0;
+
+  const from = scenes[current];
+  const to = scenes[next];
+
+  const mode = getMode(current);
+  const dir = next > current ? 1 : -1;
+
+  from.style.zIndex = 5;
+to.style.zIndex = 10;
+
+
+  to.classList.add('active');
+
+  // START POSITION
+  if (mode === "vertical") {
+    to.style.clipPath =
+      dir > 0 ? 'inset(100% 0 0 0)' : 'inset(0 0 100% 0)';
+  } else {
+    to.style.clipPath =
+      dir > 0 ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)';
+  }
+
+  function animate() {
+    progress += SPEED;
+    const t = Math.min(progress, 1);
+    const e = ease(t) * 100;
+
+    if (mode === "vertical") {
+      to.style.clipPath =
+        dir > 0
+          ? `inset(${100 - e}% 0 0 0)`
+          : `inset(0 0 ${100 - e}% 0)`;
+    } else {
+      to.style.clipPath =
+        dir > 0
+          ? `inset(0 0 0 ${100 - e}%)`
+          : `inset(0 ${100 - e}% 0 0)`;
+    }
+
+    if (t < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      from.classList.remove('active');
+      from.style.clipPath = 'inset(100% 0 0 0)';
+      current = next;
+      animating = false;
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener('wheel', (e) => {
+  if (animating) return;
+  e.preventDefault();
+
+  const mode = getMode(current);
+
+  if (mode === "vertical") {
+    if (e.deltaY > 0) openScene(current + 1);
+    if (e.deltaY < 0) openScene(current - 1);
+  } else {
+    if (e.deltaY > 0) openScene(current + 1);
+    if (e.deltaY < 0) openScene(current - 1);
+  }
+}, { passive:false });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curtain Reveal Parallax</title>
+
+<style>
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 300vh; /* ruang scroll */
+  font-family: sans-serif;
+  background: #e9e9e9;
+}
+
+/* ================= STAGE ================= */
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #efefef;
+}
+
+/* ================= SCENES ================= */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;   /* objek di bawah */
+  justify-content: center;
+}
+
+/* gambar / objek */
+/* .scene img {
+  width: 80%;
+  max-width: 900px;
+} */
+
+.scene-6 {
+  z-index: 1;
+}
+
+.scene-7 {
+  z-index: 2;
+  clip-path: inset(100% 0 0 0);
+}
+
+.scene-8 {
+  z-index: 3;
+  clip-path: inset(100% 0 0 0);
+}
+
+.scene-9 {
+  z-index: 4;
+  clip-path: inset(100% 0 0 0);
+}
+
+.scene-10 {
+  z-index: 4;
+  clip-path: inset(100% 0 0 0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= STAGE ================= -->
+<div class="stage" id="stage">
+  <!-- SECTION 6 -->
+  <div class="scene scene-6">
+    <!-- GANTI DENGAN GAMBAR KAMU -->
+    <img src="https://cdn.motor1.com/images/mgl/Kb8AvN/s3/porsche-911-gt3-mit-weissach-paket-2025.jpg" alt="Section 6">
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="scene scene-7" id="scene7">
+    <!-- GANTI DENGAN GAMBAR KAMU -->
+    <img src="https://cdn.motor1.com/images/mgl/Kb7eqM/s1/2025-porsche-panamera-turbo-s-e-hybrid.jpg" alt="Section 7">
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="scene scene-8" id="scene8"> 
+    <!-- GANTI DENGAN GAMBAR KAMU -->
+    <img src="https://cdn.motor1.com/images/mgl/ZnKvO2/s1/2023-porsche-911-carrera-t-in-gulf-blue.jpg" alt="Section 6">
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="scene scene-9" id="scene9"> 
+    <!-- GANTI DENGAN GAMBAR KAMU -->
+    <img src="https://carwow-uk-wp-3.imgix.net/1_Taycan_Turbo_GT_with_WP_Driving_1024x683_A5_RGB.jpg" alt="Section 7">
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="scene scene-10" id="scene10"> 
+    <!-- GANTI DENGAN GAMBAR KAMU -->
+    <img src="https://www.motortrend.com/uploads/2022/12/2023-Porsche-Taycan-GTS-001.jpg" alt="Section 7">
+  </div>
+</div>
+
+<script>
+let progress = 0;
+let locked = true;
+
+const scene7 = document.getElementById('scene7');
+const scene8 = document.getElementById('scene8');
+const scene9 = document.getElementById('scene9');
+const scene10 = document.getElementById('scene10');
+const stage  = document.getElementById('stage');
+
+function clamp(v, min, max) {
+  return Math.max(min, Math.min(max, v));
+}
+
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+window.addEventListener('wheel', (e) => {
+  if (!locked) return;
+  e.preventDefault();
+
+  // progress utama
+  progress += e.deltaY * 0.00004;
+  progress = clamp(progress, 0, 1);
+
+  /* ======================
+     SECTION 7 (0 - 0.33)
+  ====================== */
+  const p7 = clamp(progress / 0.93, 0, 1);
+  const r7 = 100 - easeOutCubic(p7) * 100;
+  scene7.style.clipPath = `inset(${r7}% 0 0 0)`;
+
+  /* ======================
+     SECTION 8 (0.33 - 0.66)
+  ====================== */
+  const p8 = clamp((progress - 0.175) / 0.93, 0, 1);
+  const r8 = 100 - easeOutCubic(p8) * 100;
+  scene8.style.clipPath = `inset(${r8}% 0 0 0)`;
+
+  /* ======================
+     SECTION 9 (0.66 - 1)
+  ====================== */
+  const p9 = clamp((progress - 0.35) / 0.93, 0, 1);
+  const r9 = 100 - easeOutCubic(p9) * 100;
+  scene9.style.clipPath = `inset(${r9}% 0 0 0)`;
+  
+  const p10 = clamp((progress - 0.53) / 0.93, 0, 1);
+  const r10 = 100 - easeOutCubic(p10) * 100;
+  scene10.style.clipPath = `inset(${r10}% 0 0 0)`;
+
+  /* ======================
+     UNLOCK AFTER ALL
+  ====================== */
+  if (progress === 1) {
+    locked = false;
+    stage.style.position = 'relative';
+    document.body.style.height = 'auto';
+  }
+
+}, { passive:false });
+</script>
+
+
+</body>
+</html>
