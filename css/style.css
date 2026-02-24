@@ -857,6 +857,48 @@ html, body {
   position: fixed;
   width: 140%;
   }
+
+  .sec1 .d-flex.justify-content-center {
+    justify-content: start !important;
+  }
+
+  .bg-sec2 .my-5.p2sec2 {
+    margin-top: 0rem !important;
+  }  
+
+  .bg-sec2 .fs-2.p2sec2 {
+    font-size: 2.3vw !important;
+  } 
+
+  .bg-sec2.container-fluid{
+    width: 101.2%;
+  } 
+
+  .img-sec2 .position-start, .img-sec2 .position-end {
+    margin-top: 25%;
+  }
+
+  .bg-sec3 .btn-purple {
+    width: 120%;
+  }
+
+  .bg-sec3 .fs-22.my-6rem {
+    margin-bottom: 3rem !important;
+  }
+
+  .bg-sec3 .img-fluid.my-6rem.w-97 {
+    width: 97%;
+    margin-left: 5rem;
+  }
+
+  .bg-sec3 .my-3rem {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .bg-sec4 .col-lg-2 {
+      width: 50%;
+  }
   
   .position-start img {
   margin-right: 20%;
@@ -871,8 +913,8 @@ html, body {
   }
 
   .w-38 {
-    width: 22%;
-    margin-left: 13rem;
+    width: 37%;
+    margin-left: 0rem;
   }
 
   .w-42 {
@@ -881,6 +923,10 @@ html, body {
 
   .w-97 {
     width: 77%;
+  }
+
+  .wanita-swipe.w-97 {
+    width: 89.3%;
   }
 
   .w-98 {
@@ -901,7 +947,7 @@ html, body {
 
   .qlcmb .poetsenOne {
     margin-top: -5%;
-    padding: 0 5rem 0 5rem !important;
+    padding: 0 10rem 0 10rem !important;
   }
 
   .mst-1 {
@@ -952,11 +998,11 @@ html, body {
   }
 
   .fs-7vw {
-  font-size: 13vw;
+  font-size: 8.6vw;
   }
 
   .fs-6vw {
-  font-size: 9.3vw;
+  font-size: 7.3vw;
   }
   
   .fs-63vw {
@@ -964,7 +1010,7 @@ html, body {
   }
 
   .fs-22 {
-    font-size: 3.7vw;
+    font-size: 2.5vw;
   }
   
   .fs-18 {
@@ -1289,10 +1335,14 @@ html, body {
 }
 
 /* Laptop */
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   #lottie-bg {
     position: fixed;
     width: 180%;
+  }
+
+  .wanita-swipe.w-97 {
+    width: 94.4%;
   }
 
   .w-98 {
@@ -1303,10 +1353,32 @@ html, body {
 
   .pria-swipe.w-98 {
     padding-top: 0rem !important;
+    width: 95%;
   }
 
   .poetsenOne.fs-3 {
     font-size: 3vw !important;
+  }
+
+  .sec1 .d-flex.justify-content-center {
+    justify-content: center !important;
+  }
+
+  .sec1 .w-38 {
+    width: 20%;
+    margin-left: 14rem;
+  }
+
+  .sec1 .fs-7vw {
+    font-size: 13vw;
+  }
+
+  .sec1 .fs-6vw {
+    font-size: 11vw;
+  }
+
+  .bg-sec2 .fs-6vw {
+    font-size: 8.3vw;
   }
 
   .bg-sec2 .playpenSans.fs-2 {
@@ -1321,11 +1393,24 @@ html, body {
     margin-top: 18% !important;
   }
 
+  .bg-sec3 .img-fluid.my-6rem.w-97 {
+    width: 77%;
+    margin-left: 0rem;
+  }
+
+  .bg-sec3 .fs-22 {
+    font-size: 3vw;
+  }
+
   .renungTanya {
     position: absolute;
     bottom: 57.5%;
     left: 69%;
     width: 16.3%;
+  }
+
+  .bg-sec6 .w-83 {
+    width: 92.3%;
   }
 
   .bg-sec8 .d-inline.position-relative {
@@ -1500,6 +1585,18 @@ html, body {
   #lottie-bg {
     position: fixed;
     width: 180%;
+  }
+
+  .sec1 .w-38 {
+    margin-left: 11rem;
+  }
+
+  .bg-sec2 .my-5.p2sec2 {
+    margin-top: 3rem !important;
+  }
+  
+  .bg-sec2 .fs-6vw {
+    font-size: 9.3vw;
   }
 
   .position-end {
