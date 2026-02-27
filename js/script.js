@@ -299,12 +299,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var limRight780 = Math.min(scrollPercent, 6.55);
       var limLeft780 = Math.min(scrollPercent, 6.4);
       var menScale780 = Math.max(110, (330 - wScroll * 0.07));
-      var menScrollX780 = Math.min(scrollPercent, 53.5);
-      var menScrollY780 = Math.min(scrollPercent, 78);
+      var menScrollX780 = Math.min(scrollPercent, 17.5);
+      var menScrollY780 = Math.min(scrollPercent, 25.3);
       function menOpacity780(scrollPercent) {
-        if(scrollPercent < 43) return 0;
-        if(scrollPercent < 60) return 1;
-        if(scrollPercent < 74) return 0;
+        if(scrollPercent < 14.7) return 0;
+        if(scrollPercent < 19.8) return 1;
+        if(scrollPercent < 24) return 0;
         return 1; 
       }
 
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var menScale576 = Math.max(100, (280 - wScroll * 0.07));
       function menOpacity450(scrollPercent) {
         if(scrollPercent < 11.5) return 0;
-        if(scrollPercent < 16) return 1;
+        if(scrollPercent < 15) return 1;
         if(scrollPercent < 18.5) return 0;
         return 1; 
       }
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
           'transform' : 'translate(0, '+ (-30)+'%)'
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-875+wScroll*0.99) +'%) scale('+ (15 + (wScroll * 0.07)) +'%)',
+          'transform' : 'translate(0, '+ (-630+wScroll*0.7) +'%) scale('+ (15 + (wScroll * 0.07)) +'%)',
           'opacity': (scrollPercent >= 5.5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
@@ -468,10 +468,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Section 5    
-        if(scrollPercent >= 20.5 && !typewriterStarted) {
+        if(scrollPercent >= 20 && !typewriterStarted) {
           typewriterStarted = true;
           typeWriter();
-          $('.cursor').css('opacity', scrollPercent >= 20.5 ? 1 : 0);
+          $('.cursor').css('opacity', scrollPercent >= 20 ? 1 : 0);
         }
       } else if (window.matchMedia("(max-width: 780px)").matches) {
         // Section 1
@@ -494,20 +494,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-875+wScroll*0.6) +'%) scale('+ (-60 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 7.3 ? 1 : 0)
+          'opacity': (scrollPercent >= 8.7 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (39 + (wScroll * 0.05)) +'%) translate('+ (125-wScroll*0.1) + '%, '+ (-90+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (39 + (wScroll * 0.05)) +'%) translate('+ (125-wScroll*0.1) + '%, '+ (-100+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (39 + (wScroll * 0.05)) +'%) translate('+ (-125+wScroll*0.1) + '%, '+ (-90+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (39 + (wScroll * 0.05)) +'%) translate('+ (-125+wScroll*0.1) + '%, '+ (-100+wScroll*0.05) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-855 + menScrollX780*16) + '%, ' + (-1385 + menScrollY780*18) + '%) scale('+ menScale780 +'%)',
+          'transform': 'translate(' + (-300 + menScrollX780*17) + '%, ' + (-1362 + menScrollY780*55) + '%) scale('+ menScale780 +'%)',
            'opacity': menOpacity780(scrollPercent)
         });
+
+        // Section 5 
+        if(scrollPercent >= 25.5 && !typewriterStarted) {
+          typewriterStarted = true;
+          typeWriter();
+          $('.cursor').css('opacity', scrollPercent >= 25.5 ? 1 : 0);
+        }
       } else if (window.matchMedia("(max-width: 991px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
@@ -544,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Section 5 
-        if(scrollPercent >= 25 && !typewriterStarted) {
+        if(scrollPercent >= 29 && !typewriterStarted) {
           typewriterStarted = true;
           typeWriter();
           $('.cursor').css('opacity', scrollPercent >= 29 ? 1 : 0);

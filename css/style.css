@@ -1587,6 +1587,10 @@ html, body {
     width: 180%;
   }
 
+  .bg-sec2.container-fluid{
+    width: 101.5%;
+  } 
+
   .sec1 .w-38 {
     margin-left: 11rem;
   }
@@ -1840,6 +1844,10 @@ html, body {
   width: 250%;
   }
 
+  .bg-sec2.container-fluid{
+    width: 102%;
+  } 
+
   .position-start img {
   margin-top: 0%;
   margin-right: 0%;
@@ -1848,6 +1856,11 @@ html, body {
   .position-end img {
   margin-top: 0%;
   margin-left: 5%;
+  }
+
+  .qlcmb .poetsenOne {
+    margin-top: -5%;
+    padding: 0 8rem 0 8rem !important;
   }
 
   .swipe2-righthalf, .swipe2-lefthalf {
@@ -2164,6 +2177,26 @@ html, body {
     margin-bottom: 1.5rem !important;
   }
 
+  .bg-sec2.container-fluid{
+    width: 102.6%;
+  } 
+
+  .bg-sec2 .fs-6vw {
+    font-size: 10.3vw;
+  }
+
+  .bg-sec2 .qlcmb .poetsenOne {
+    padding: 0 5rem 0 5rem !important;
+  }
+
+  .bg-sec2 .playpenSans.fs-2 {
+    font-size: 3.3vw !important;
+  }
+
+  .bg-sec3 .fs-22 {
+    font-size: 4vw;
+  }
+
   .w-38 {
     width: 20%;
     margin-left: 6.2rem;
@@ -2338,6 +2371,10 @@ html, body {
   width: 380%;
   }
 
+  .bg-sec2.container-fluid {
+    width: 103.1%;
+  }
+
   .qlcmb .poetsenOne {
     margin-top: -25%;
   }
@@ -2420,7 +2457,7 @@ html, body {
   }
 
   .img-sec2 .position-start, .img-sec2 .position-end {
-    margin-top: 26% !important;
+    margin-top: 29% !important;
   }
 
   .my-6rem {
