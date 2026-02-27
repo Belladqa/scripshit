@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //375
       var limRight375 = Math.min(scrollPercent, 5.2);
-      var limLeft375 = Math.min(scrollPercent, 6.8);
+      var limLeft375 = Math.min(scrollPercent, 5.4);
       var menScrollY375 = Math.min(scrollPercent, 16.3);
       var menScale375 = Math.max(100, (220 - wScroll * 0.05));
       function menOpacity375(scrollPercent) {
@@ -353,11 +353,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Section 2
         $('.swipe2-righthalf').css({
-          'transform' : 'translate('+ (155-limRight375*35)+'%, 0) rotate(180deg) scale('+ (300 + (scrollPercent * 1)) +'%)',
+          'transform' : 'translate('+ (155-limRight375*27)+'%, 0) rotate(180deg) scale('+ (75 + (scrollPercent * 1)) +'%)',
           'opacity': (scrollPercent >= 3.5 ? 1 : 0)
         });
         $('.swipe2-lefthalf').css({
-          'transform' : 'translate('+ (-155+limLeft375*35)+'%, 0) scale('+ (300 + (scrollPercent * 1)) +'%)'
+          'transform' : 'translate('+ (-155+limLeft375*27)+'%, 10%) scale('+ (75 + (scrollPercent * 1)) +'%)'
         });
         $('.p2sec2').css({
           'transform' : 'translate(0, '+ (-30)+'%)'
@@ -367,11 +367,11 @@ document.addEventListener('DOMContentLoaded', function () {
           'opacity': (scrollPercent >= 4 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (164-wScroll*0.25) + '%, '+ (-47+wScroll*0.05) +'%)',
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (164-wScroll*0.25) + '%, '+ (-37+wScroll*0.05) +'%)',
           'opacity' : (scrollPercent >= 4 ? 1 : 0)
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (-164+wScroll*0.25) + '%, '+ (-47+wScroll*0.05) +'%)',
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (-170+wScroll*0.25) + '%, '+ (-37+wScroll*0.05) +'%)',
           'opacity' : (scrollPercent >= 4 ? 1 : 0)
         });
 

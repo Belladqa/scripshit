@@ -1592,7 +1592,7 @@ html, body {
   } 
 
   .sec1 .w-38 {
-    margin-left: 11rem;
+    margin-left: 8rem;
   }
 
   .bg-sec2 .my-5.p2sec2 {
@@ -2177,6 +2177,10 @@ html, body {
     margin-bottom: 1.5rem !important;
   }
 
+  .sec1 .w-38 {
+    margin-left: 6.4rem;
+  }
+
   .bg-sec2.container-fluid{
     width: 102.6%;
   } 
@@ -2371,12 +2375,16 @@ html, body {
   width: 380%;
   }
 
+  .sec1 .w-38 {
+    margin-left: 5.2rem;
+  }
+
   .bg-sec2.container-fluid {
     width: 103.1%;
   }
 
   .qlcmb .poetsenOne {
-    margin-top: -25%;
+    margin-top: -15%;
   }
 
   .fsk p{
