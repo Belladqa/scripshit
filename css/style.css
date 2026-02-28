@@ -58,7 +58,6 @@ html, body {
   justify-content: center;
   z-index: 9999;
   color: white;  
-  z-index: 999;
 }
 
 .music-overlay button {
@@ -90,31 +89,41 @@ html, body {
 .popup {
   position: fixed;
   top: 3rem;
-  right: 40%;
-  width: 300px;
+  margin: 0 36.3%;
+  width: 30rem;
   background: white;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   padding: 15px;
+  display: none;
+  z-index: 9999;
   animation: fadeIn 0.4s ease;
 }
 
+.popupvideo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .popup video {
-  width: 100%;
+  width: 12rem;
   border-radius: 10px;
+}
+
+.popupteks {
+  flex: 1;
+}
+
+.popupteks p {
+  font-size: 0.9vw;
   margin-bottom: 10px;
 }
 
-.popup p {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.popup button {
-  width: 100%;
-  padding: 8px;
+.popupteks button {
+  padding: 6px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #704FDE;
   color: white;
   cursor: pointer;
@@ -892,6 +901,14 @@ html, body {
   width: 140%;
   }
 
+  .popup {    
+    margin: 0 26.4%;
+  }
+
+  .popupteks p {
+    font-size: 1.3vw;
+  }
+
   .sec1 .d-flex.justify-content-center {
     justify-content: start !important;
   }
@@ -1621,6 +1638,14 @@ html, body {
     width: 180%;
   }
 
+  .popup {
+    margin: 0 19%;
+  }
+
+  .popupteks p {
+    font-size: 1.7vw;
+  }
+
   .bg-sec2.container-fluid{
     width: 101.5%;
   } 
@@ -1876,6 +1901,19 @@ html, body {
   #lottie-bg {
   position: fixed;
   width: 250%;
+  }
+
+  .popup {
+    width: 26rem;
+    margin: 0 14%;
+  }
+
+  .popup video {
+    width: 11rem;
+  }
+
+  .popupteks p {
+    font-size: 2vw;
   }
 
   .bg-sec2.container-fluid{
@@ -2211,6 +2249,15 @@ html, body {
     margin-bottom: 1.5rem !important;
   }
 
+  .popup {
+    width: 23.5rem;
+    margin: 0 8%;
+  }
+
+  .popupteks p {
+    font-size: 2.4vw;
+  }
+
   .sec1 .w-38 {
     margin-left: 6.4rem;
   }
@@ -2407,6 +2454,19 @@ html, body {
   #lottie-bg {
   position: fixed;
   width: 380%;
+  }
+
+  .popup {
+    width: 18.5rem;
+    margin: 0 11%;
+  }
+
+  .popup video {
+    width: 9rem;
+  }
+
+  .popupteks p {
+    font-size: 2vw;
   }
 
   .sec1 .w-38 {

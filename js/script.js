@@ -251,6 +251,26 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
+// Pop up petunjuk
+    const section5 = document.getElementById("popupsec");
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("closePopup");
+
+    let popupShown = false;
+
+    window.addEventListener("scroll", () => {
+      const rect = section5.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight * 0.5 && !popupShown) {
+        popup.style.display = "block";
+        popupShown = true;
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
 // Auto scroll section
 let sections = document.querySelectorAll(".snap-section");
 
