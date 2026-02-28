@@ -229,6 +229,63 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Backsound Web
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('musicToggle');
+
+  bgm.volume = 0.25;
+
+  btn.addEventListener('click', () => {
+    if (bgm.paused) {
+      gm.play();
+      btn.textContent = '❚❚ Pause';
+    } else {
+      bgm.pause();
+      btn.textContent = '▶︎ Music';
+    }
+  });
+
+// Auto scroll section
+let sections = document.querySelectorAll(".snap-section");
+
+let isScrolling = false;
+let lastIndex = 0;
+
+window.addEventListener("scroll", () => {
+
+  if (isScrolling) return;
+
+  let scrollY = window.scrollY;
+
+  // cari section yang paling dekat dengan atas viewport
+  let currentIndex = 0;
+  let minDistance = Infinity;
+
+  sections.forEach((section, index) => {
+    let distance = Math.abs(section.offsetTop - scrollY);
+    if (distance < minDistance) {
+      minDistance = distance;
+      currentIndex = index;
+    }
+  });
+
+  // kalau index berubah berarti user sudah pindah section
+  if (currentIndex !== lastIndex) {
+
+    isScrolling = true;
+
+    sections[currentIndex].scrollIntoView({
+      behavior: "smooth"
+    });
+
+    lastIndex = currentIndex;
+
+    setTimeout(() => {
+      isScrolling = false;
+    }, 600);
+  }
+
+});
 
 // SET ALL PARALLAX EFFECTS
     let wScroll = 0;
@@ -655,10 +712,10 @@ document.addEventListener('DOMContentLoaded', function () {
           'opacity': (scrollPercent >= 8 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (120-wScroll*0.1) + '%, '+ (-75+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (120-wScroll*0.1) + '%, '+ (-68+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (-127+wScroll*0.1) + '%, '+ (-75+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (15 + (wScroll * 0.07)) +'%) translate('+ (-127+wScroll*0.1) + '%, '+ (-68+wScroll*0.05) +'%)'
         });
 
         // Section 3
