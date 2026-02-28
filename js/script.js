@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
         audio.pause();
         musicBtn.textContent = "▶︎ Music";
       }
-    });
+    }); //test
 
 // Pop up petunjuk
     const section5 = document.getElementById("popupsec");
