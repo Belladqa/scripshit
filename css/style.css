@@ -52,12 +52,13 @@ html, body {
 .music-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  color: white;
+  color: white;  
+  z-index: 999;
 }
 
 .music-overlay button {
@@ -68,6 +69,7 @@ html, body {
   cursor: pointer;
   background: #704FDE;
   color: white;
+  z-index: 999;  
 }
 
 .music-btn {
@@ -82,6 +84,45 @@ html, body {
   cursor: pointer;
   display: none;
   z-index: 999;
+}
+
+/* Pop up petunjuk */
+.popup {
+  position: fixed;
+  top: 3rem;
+  right: 40%;
+  width: 300px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 15px;
+  animation: fadeIn 0.4s ease;
+}
+
+.popup video {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: #704FDE;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Style Website */
