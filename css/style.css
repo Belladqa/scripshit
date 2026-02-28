@@ -49,25 +49,39 @@ html, body {
 }
 
 /* Backsound web */
-.music-btn {
+.music-overlay {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-
-  background: rgba(112, 79, 222, 0.9);
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
   color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 50px;
-  font-size: 14px;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
 }
 
-.music-btn:hover {
-  background: #5a3fd1;
-  transform: scale(1.05);
+.music-overlay button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #704FDE;
+  color: white;
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: #704FDE;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
 }
 
 /* Style Website */

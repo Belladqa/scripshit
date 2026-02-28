@@ -230,20 +230,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Backsound Web
-  const bgm = document.getElementById('bgm');
-  const btn = document.getElementById('musicToggle');
+    const overlay = document.getElementById("musicOverlay");
+    const startBtn = document.getElementById("startMusic");
+    const audio = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
 
-  bgm.volume = 0.25;
+    startBtn.addEventListener("click", () => {
+      audio.play();
+      overlay.style.display = "none";
+      musicBtn.style.display = "block";
+    });
 
-  btn.addEventListener('click', () => {
-    if (bgm.paused) {
-      gm.play();
-      btn.textContent = '❚❚ Pause';
-    } else {
-      bgm.pause();
-      btn.textContent = '▶︎ Music';
-    }
-  });
+    musicBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        musicBtn.textContent = "❚❚ Pause";
+      } else {
+        audio.pause();
+        musicBtn.textContent = "▶︎ Music";
+      }
+    });
 
 // Auto scroll section
 let sections = document.querySelectorAll(".snap-section");
@@ -257,7 +263,6 @@ window.addEventListener("scroll", () => {
 
   let scrollY = window.scrollY;
 
-  // cari section yang paling dekat dengan atas viewport
   let currentIndex = 0;
   let minDistance = Infinity;
 
@@ -269,7 +274,6 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  // kalau index berubah berarti user sudah pindah section
   if (currentIndex !== lastIndex) {
 
     isScrolling = true;
@@ -284,7 +288,6 @@ window.addEventListener("scroll", () => {
       isScrolling = false;
     }, 600);
   }
-
 });
 
 // SET ALL PARALLAX EFFECTS
