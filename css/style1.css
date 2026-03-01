@@ -139,9 +139,9 @@ html, body {
   color: #FFE472;
 }
 
-#lottie-bg {
+/* #lottie-bg {
   position: fixed;
-}
+} */
 
 .img-sec2 .position-start, .img-sec2 .position-end {
   margin-top: 8%;
@@ -896,10 +896,10 @@ html, body {
 
 /* Laptop */
 @media (max-width: 1024px) {
-  #lottie-bg {
+  /* #lottie-bg {
   position: fixed;
   width: 140%;
-  }
+  } */
 
   .popup {    
     margin: 0 26.4%;
@@ -1387,10 +1387,10 @@ html, body {
 
 /* Laptop */
 @media (max-width: 991px) {
-  #lottie-bg {
+  /* #lottie-bg {
     position: fixed;
     width: 180%;
-  }
+  } */
 
   .wanita-swipe.w-97 {
     width: 94.4%;
@@ -1633,10 +1633,10 @@ html, body {
 
 /* Tablet */
 @media (max-width: 780px) {
-  #lottie-bg {
+  /* #lottie-bg {
     position: fixed;
     width: 180%;
-  }
+  } */
 
   .popup {
     margin: 0 19%;
@@ -1898,10 +1898,10 @@ html, body {
 
 /* Ponsel 1*/
 @media (max-width: 576px) {
-  #lottie-bg {
+  /* #lottie-bg {
   position: fixed;
   width: 250%;
-  }
+  } */
 
   .popup {
     width: 26rem;
@@ -2451,10 +2451,10 @@ html, body {
 
 /* Ponsel 3*/
 @media (max-width: 375px) {
-  #lottie-bg {
+  /* #lottie-bg {
   position: fixed;
   width: 380%;
-  }
+  } */
 
   .popup {
     width: 18.5rem;

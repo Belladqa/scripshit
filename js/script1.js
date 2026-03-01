@@ -1,14 +1,14 @@
 // BACKGROUND AWAN
-    var animation = lottie.loadAnimation({
-      container: document.getElementById('lottie-bg'), // div background
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'media/animate/landingpage.json',
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    });
+    // var animation = lottie.loadAnimation({
+    //   container: document.getElementById('lottie-bg'), // div background
+    //   renderer: 'svg',
+    //   loop: true,
+    //   autoplay: true,
+    //   path: 'media/animate/landingpage.json',
+    //   rendererSettings: {
+    //     preserveAspectRatio: 'xMidYMid slice'
+    //   }
+    // });
 
 // PEREMPATAN JALAN (SECTION 4)
     let texts = ["Percintaan", "Karir", "Keuangan", `Tujuan Hidup`];
