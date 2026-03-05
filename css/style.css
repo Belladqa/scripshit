@@ -914,11 +914,6 @@ body::before {
 
 /* Laptop */
 @media (max-width: 1024px) {
-  /* #lottie-bg {
-  position: fixed;
-  width: 140%;
-  } */
-
   .popup {    
     margin: 0 26.4%;
   }
@@ -1405,11 +1400,6 @@ body::before {
 
 /* Laptop */
 @media (max-width: 991px) {
-  /* #lottie-bg {
-    position: fixed;
-    width: 180%;
-  } */
-
   .wanita-swipe.w-97 {
     width: 94.4%;
   }
@@ -1651,10 +1641,6 @@ body::before {
 
 /* Tablet */
 @media (max-width: 780px) {
-  /* #lottie-bg {
-    position: fixed;
-    width: 180%;
-  } */
 
   .popup {
     margin: 0 19%;
@@ -1916,10 +1902,6 @@ body::before {
 
 /* Ponsel 1*/
 @media (max-width: 576px) {
-  /* #lottie-bg {
-  position: fixed;
-  width: 250%;
-  } */
 
   .popup {
     width: 26rem;
@@ -2359,6 +2341,10 @@ body::before {
     left: 3rem;
   }
 
+  .bg-sec8 .w-76 {
+    width: 60%;
+  }
+
   .bg-sec8 .show1 {
     bottom: 33rem;
   }
@@ -2375,8 +2361,8 @@ body::before {
   .renungTanya {
     position: absolute;
     bottom: 57%;
-    left: 67.5%;
-    width: 17.3%;
+    left: 62.5%;
+    width: 15%;
   }
 
   .bg-sec8 .col-12 .w-98, .bg-sec9 .col-12 .w-98 {
@@ -2728,6 +2714,10 @@ body::before {
     left: 3rem;
   }
 
+  .bg-sec8 .col-12 .w-76 {
+    width: 60%;
+  }
+
   .bg-sec8 .row.mt-5 {
     margin-top: 0rem !important;
   }
@@ -2749,8 +2739,8 @@ body::before {
   .renungTanya {
     position: absolute;
     bottom: 57%;
-    left: 66.5%;
-    width: 17.4%;
+    left: 62.5%;
+    width: 15%;
   }
 
   .bg-sec9 .col-12 .w-26 {

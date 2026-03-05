@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const w = window.innerWidth;
 
     if (type === 'sec8') {
-      if (w <= 375)  return { x: 97, y: -50 };
-      if (w <= 450)  return { x: 120, y: -55 };
-      if (w <= 576)  return { x: 130, y: -55 };
-      if (w <= 780)  return { x: 200, y: -90 };
-      if (w <= 992)  return { x: 250, y: -90 };
+      if (w <= 375)  return { x: 77, y: -38 };
+      if (w <= 450)  return { x: 90, y: -48 };
+      if (w <= 576)  return { x: 110, y: -55 };
+      if (w <= 780)  return { x: 170, y: -90 };
+      if (w <= 991)  return { x: 200, y: -90 };
       if (w <= 1024) return { x: 140, y: -70 };
       return           { x: 220, y: -110 };
     }
@@ -80,17 +80,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 14, y: -50 };
       if (w <= 576)  return { x: 15, y: -58 };
       if (w <= 780)  return { x: 22, y: -73 };
-      if (w <= 992)  return { x: 26, y: -84 };
+      if (w <= 991)  return { x: 26, y: -84 };
       if (w <= 1024) return { x: 15, y: -60 };
       return           { x: 15, y: -85 };
     }
 
     if (type === 'sec10') {
-      if (w <= 375)  return { x: 130, y: 40 };
+      if (w <= 375)  return { x: 70, y: 33 };
       if (w <= 450)  return { x: 125, y: 40 };
       if (w <= 576)  return { x: 160, y: 50 };
       if (w <= 780)  return { x: 190, y: 50 };
-      if (w <= 992)  return { x: 240, y: 70 };
+      if (w <= 991)  return { x: 240, y: 70 };
       if (w <= 1024) return { x: 150, y: 70 };
       return           { x: 210, y: 80 };
     }
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 70, y: 115 };
       if (w <= 576)  return { x: 90, y: 140 };
       if (w <= 780)  return { x: 130, y: 190 };
-      if (w <= 992)  return { x: 180, y: 225 };
+      if (w <= 991)  return { x: 180, y: 225 };
       if (w <= 1024) return { x: 120, y: 170 };
       return           { x: 140, y: 250 };
     }
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 30, y: 85 };
       if (w <= 576)  return { x: 40, y: 130 };
       if (w <= 780)  return { x: 50, y: 160 };
-      if (w <= 992)  return { x: 60, y: 200 };
+      if (w <= 991)  return { x: 60, y: 200 };
       if (w <= 1024) return { x: 47, y: 200 };
       return           { x: 40, y: 250 };
     }
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 30, y: 65 };
       if (w <= 576)  return { x: 43, y: 90 };
       if (w <= 780)  return { x: 53, y: 110 };
-      if (w <= 992)  return { x: 60, y: 120 };
+      if (w <= 991)  return { x: 60, y: 120 };
       if (w <= 1024) return { x: 45, y: 130 };
       return           { x: 48, y: 150 };
     }
