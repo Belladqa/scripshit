@@ -587,11 +587,11 @@ window.addEventListener("scroll", () => {
         // Section 1
         $('.wanita-swipe').css({
           'transform' : 'translate('+ (-35+wScroll*0.15) + '%, 0)',
-          'opacity': (scrollPercent >= 1 ? 1 : 0)
+          'opacity': (scrollPercent >= 0.5 ? 1 : 0)
         });
         $('.pria-swipe').css({
           'transform' : 'translate('+ (35-wScroll*0.15) + '%, 0)',
-          'opacity': (scrollPercent >= 1 ? 1 : 0)
+          'opacity': (scrollPercent >= 0.5 ? 1 : 0)
         });
 
         // Section 2
