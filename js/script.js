@@ -487,30 +487,30 @@ window.addEventListener("scroll", () => {
       } else if (window.matchMedia("(max-width: 450px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (25.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (45.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (26+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (46+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.quarter').css({
-          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-170-limQuarter*145) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-200-limQuarter*155) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
-          'transform' : 'translate('+ (wScroll*0) + '%, '+ (120-limtxtSec1*0) +'%) scale('+ (125 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (wScroll*0) + '%, '+ (140-limtxtSec1*0) +'%) scale('+ (125 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         });
         $('.pohon').css({
-          'transform' : 'translate('+ (25-wScroll*0) + '%, '+ (160+limSwipe*0) +'%) scale('+ (225 + (limpohon*0.5)) +'%)'
+          'transform' : 'translate('+ (25-wScroll*0) + '%, '+ (200+limSwipe*0) +'%) scale('+ (225 + (limpohon*0.5)) +'%)'
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (155-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)'
+          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (185-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)'
         }); 
         $('.pohonpohon').css({
-          'transform' : 'translate(0, '+ (160-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (200-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
         }); 
         $('.daun').css({
-          'transform' : 'translate(0, '+ (-135-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (-225-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
         });
 
         // Section 2
