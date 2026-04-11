@@ -552,13 +552,13 @@ window.addEventListener("scroll", () => {
       } else if (window.matchMedia("(max-width: 600px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (40.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (53.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (40+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (53+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.quarter').css({
-          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-200-limQuarter*110) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-240-limQuarter*110) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
@@ -566,7 +566,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         });
         $('.pohon').css({
-          'transform' : 'translate('+ (20-wScroll*0) + '%, '+ (190+limSwipe*0) +'%) scale('+ (200 + (limpohon*0.5)) +'%)'
+          'transform' : 'translate('+ (20-wScroll*0) + '%, '+ (210+limSwipe*0) +'%) scale('+ (200 + (limpohon*0.5)) +'%)'
         }); 
         $('.pohon-flip').css({
           'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (180-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)'
