@@ -12,7 +12,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
   z-index: -1;
 }
 
@@ -22,26 +22,103 @@ body::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -5;
   pointer-events: none;
 }
 
 /* Parallax Effect sec1 */
-.sec1, .fsk, .img-sec2 .position-start, .img-sec2 .position-end, .pria-swipe, .txt-sec1, .swipe2-righthalf, .swipe2-lefthalf, .wanita-swipe {
+.sec1, .fsk, .img-sec2 .position-start, .img-sec2 .position-end, .pria-swipe, .txt-sec1, .swipe2-righthalf, .swipe2-lefthalf, .wanita-swipe,
+.qlcmb {
   position: relative;
   transition: none !important;
 }
 
+.quarter {
+  position: fixed !important;
+  top: 35%;
+  left: 10%;
+}
+
 .img-sec2 {
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 .hiddenX{
   overflow-x: hidden;
 }
 
+.sec1 .pohon {
+  z-index: -1;  
+}
+
+.sec1 .top-0.start-0 {  
+  top: -85% !important;
+  left: -20.5% !important;
+  width: 65%;
+}
+
+.sec1 .pohon-flip.end-0 {
+  transform: scaleX(-1);
+  top: -9rem !important;
+  right: -21% !important;
+  width: 55%;
+}
+
+.sec1 .pohonpohon {
+  z-index: -2;
+  top: 21% !important;
+  width: 107%;
+  opacity: 0.25;
+}
+
+.sec1 .w-97, .sec1 .w-98 {
+  width: 78%;
+}
+
+/* .txt-sec1.mt-3rem {
+  margin-top: 8rem;
+} */
+
+.sec1 .daun.bottom-0 {
+  bottom: -30% !important;
+  width: 110%;
+  left: -7%;
+}
+
+.sec1 .wrapper1 {
+  position: fixed;
+  top: -41%;
+  left: 0.7%;
+  z-index: -1;
+}
+
+.sec1 .wrapper2 {
+  position: fixed;
+  top: 20%;
+  z-index: -1;
+}
+
+.sec1 .wrapper3 {
+  position: fixed;
+  top: 40%;
+  z-index: -2;
+}
+
+.sec1 .wrapper4 {
+  position: fixed;
+  bottom: -26%;
+}
+
 .bg-sec2, .delay{
   position: relative;
+}
+
+.bg-sec2 .swipe2-righthalf, .bg-sec2 .swipe2-lefthalf {
+  opacity: 0;
+}
+
+p.stroke-2 {
+  -webkit-text-stroke: 3.5px #ffffff;
 }
 
 .pria-sec4{  
@@ -259,7 +336,6 @@ body::before {
 
 .w-38 {
   width: 33%;
-  margin-left: 1.5rem;
 }
 
 .w-97 {
@@ -303,10 +379,6 @@ body::before {
 .mst-1 {
   margin-top: 3rem;
   margin-left: 3rem;
-}
-
-.ms-6 {
-  margin-left: 6rem;
 }
 
 .mt-1rem {
@@ -381,11 +453,11 @@ body::before {
 }
 
 .fs-7vw {
-  font-size: 7vw;
+  font-size: 8vw;
 }
 
 .fs-6vw {
-  font-size: 6vw;
+  font-size: 7vw;
 }
 
 .fs-63vw {
@@ -993,6 +1065,10 @@ body::before {
     width: 89.3%;
   }
 
+  .pria-swipe.w-98 {
+    width: 90%;
+  }
+
   .w-98 {
     width: 90%;
   }
@@ -1332,7 +1408,7 @@ body::before {
   }
 
   .bg-sec11 .sec7-solution-card {
-    margin-top: -6.5rem !important;
+    margin-top: -13.5rem !important;
     margin-bottom: 5rem !important;
   }
 
@@ -1564,6 +1640,10 @@ body::before {
     position: relative;
   }
 
+  .bg-sec11 .sec7-solution-card {
+    margin-top: -6.5rem !important;
+  }
+
   .bg-sec11 .d-flex.align-items-start {
     padding-left: 0%;  
   }
@@ -1655,7 +1735,11 @@ body::before {
   } 
 
   .sec1 .w-38 {
-    margin-left: 8rem;
+    margin-left: 11rem;
+  }
+
+  p.stroke-2 {
+    -webkit-text-stroke: 2.5px #ffffff;
   }
 
   .bg-sec2 .my-5.p2sec2 {
@@ -1898,6 +1982,10 @@ body::before {
     position: relative;
     bottom: 23.5rem;
   }
+
+  .bg-sec16 .fs-22 {
+    font-size: 4.5vw;
+  }
 }
 
 /* Ponsel 1*/
@@ -1916,9 +2004,17 @@ body::before {
     font-size: 2vw;
   }
 
+  .sec1 .w-38 {
+    margin-left: 8rem;
+  }
+
   .bg-sec2.container-fluid{
     width: 102%;
   } 
+
+  p.stroke-2 {
+    -webkit-text-stroke: 2.5px #ffffff;
+  }
 
   .position-start img {
   margin-top: 0%;
@@ -2260,6 +2356,10 @@ body::before {
 
   .sec1 .w-38 {
     margin-left: 6.4rem;
+  }
+
+  p.stroke-2 {
+    -webkit-text-stroke: 1.8px #ffffff;
   }
 
   .bg-sec2.container-fluid{
