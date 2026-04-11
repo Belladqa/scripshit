@@ -426,7 +426,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (26+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.quarter').css({
-          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-200-limQuarter*165) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-170-limQuarter*165) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
