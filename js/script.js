@@ -596,10 +596,10 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (65 + (wScroll * 0.07)) +'%) translate('+ (75-wScroll*0.1) + '%, '+ (-127+wScroll*0.1) +'%)'
+          'transform' : 'scale('+ (65 + (wScroll * 0.07)) +'%) translate('+ (75-wScroll*0.1) + '%, '+ (-122+wScroll*0.1) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (65 + (wScroll * 0.07)) +'%) translate('+ (-75+wScroll*0.1) + '%, '+ (-127+wScroll*0.1) +'%)'
+          'transform' : 'scale('+ (65 + (wScroll * 0.07)) +'%) translate('+ (-75+wScroll*0.1) + '%, '+ (-122+wScroll*0.1) +'%)'
         });
 
         // Section 3
