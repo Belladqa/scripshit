@@ -234,10 +234,6 @@ p.stroke-2 {
   color: #FFE472;
 }
 
-/* #lottie-bg {
-  position: fixed;
-} */
-
 .img-sec2 .position-start, .img-sec2 .position-end {
   margin-top: 8%;
 }
@@ -2666,6 +2662,10 @@ p.stroke-2 {
     margin-top: 0rem;
   }
 
+  p.stroke-2 {
+    -webkit-text-stroke: 1.2px #ffffff;
+  }
+
   .img-sec2 .position-start, .img-sec2 .position-end {
     margin-top: 29% !important;
   }
@@ -2751,7 +2751,7 @@ p.stroke-2 {
   }
 
   .bg-sec8 .sec7-solution, .bg-sec9 .sec7-solution {    
-    bottom: 18.5rem;
+    bottom: 21.5rem;
     position: relative;
   }
 
@@ -2827,11 +2827,11 @@ p.stroke-2 {
   }
 
   .bg-sec8 .show1 {
-    bottom: 57rem;
+    bottom: 64rem;
   }
 
   .bg-sec8 .sec7-solution-card {
-    margin-top: 2rem !important;
+    margin-top: 0rem !important;
     margin-bottom: 5rem !important;
   }
 
@@ -2858,7 +2858,7 @@ p.stroke-2 {
 
   .bg-sec9 .show1 {
     position: relative;
-    bottom: 50rem;
+    bottom: 56rem;
   }
 
   .bg-sec9 .row.mt-5 {
@@ -2867,11 +2867,11 @@ p.stroke-2 {
 
   .bg-sec10 .show1 {
     position: relative;
-    bottom: 51rem;
+    bottom: 60rem;
   }
 
   .bg-sec10 .sec7-solution {
-    bottom: 22rem;
+    bottom: 27rem;
     position: relative;
   }
 
@@ -2895,13 +2895,13 @@ p.stroke-2 {
 
   .bg-sec11 .sec7-solution {
     position: relative;
-    bottom: 25rem;
+    bottom: 30rem;
     margin-bottom: -5rem;
   }
 
   .bg-sec11 .show1 {
     position: relative;
-    bottom: 45rem;
+    bottom: 50rem;
   }
 
   .bg-sec11 .sec7-solution-card, .bg-sec14 .sec7-solution-card, .bg-sec15 .sec7-solution-card {
@@ -2934,12 +2934,12 @@ p.stroke-2 {
 
   .bg-sec14 .sec7-solution {
     position: relative;
-    bottom: 27rem;
+    bottom: 35rem;
   }
 
   .bg-sec14 .show1 {
     position: relative;
-    bottom: 53.5rem;
+    bottom: 62.5rem;
   }
 
   .bg-sec14 .col-12 .w-98 {
@@ -2959,13 +2959,13 @@ p.stroke-2 {
 
   .bg-sec15 .sec7-solution {
     position: relative;
-    bottom: 18rem;
+    bottom: 23rem;
     margin-bottom: -17rem;
   }
 
   .bg-sec15 .show1 {
     position: relative;
-    bottom: 37rem;
+    bottom: 46rem;
   }
 
   .bg-sec15 .sec7-solution-card {
@@ -2980,5 +2980,9 @@ p.stroke-2 {
 
   .cemasOvt.w-32 {
     width: 21%;
+  }
+
+  .bg-sec16 p.fs-22 {
+    margin-bottom: 0rem;
   }
 }
