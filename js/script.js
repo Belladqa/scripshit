@@ -575,7 +575,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate(0, '+ (180-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
         }); 
         $('.daun').css({
-          'transform' : 'translate(0, '+ (-305-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (-280-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
         });
 
         // Section 2
