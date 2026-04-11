@@ -426,7 +426,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (26+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.quarter').css({
-          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-170-limQuarter*165) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-150-limQuarter*165) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
@@ -443,7 +443,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate(0, '+ (210-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
         }); 
         $('.daun').css({
-          'transform' : 'translate(0, '+ (-135-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (-175-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
         });
 
         // Section 2
@@ -528,7 +528,7 @@ window.addEventListener("scroll", () => {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-580+wScroll*0.7) +'%) scale('+ (15 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 5.3 ? 1 : 0)
+          'opacity': (scrollPercent >= 5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
           'transform' : 'scale('+ (57 + (wScroll * 0.09)) +'%) translate('+ (70-wScroll*0.1) + '%, '+ (-240+wScroll*0.2) +'%)'
