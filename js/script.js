@@ -549,7 +549,7 @@ window.addEventListener("scroll", () => {
           typeWriter();
           $('.cursor').css('opacity', scrollPercent >= 18.5 ? 1 : 0);
         }
-      } else if (window.matchMedia("(max-width: 576px)").matches) {
+      } else if (window.matchMedia("(max-width: 600px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
           'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (19.5+limSwipe*10) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
@@ -596,10 +596,10 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 5.5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (47 + (wScroll * 0.07)) +'%) translate('+ (90-wScroll*0.1) + '%, '+ (-142+wScroll*0.08) +'%)'
+          'transform' : 'scale('+ (47 + (wScroll * 0.07)) +'%) translate('+ (90-wScroll*0.1) + '%, '+ (-142+wScroll*0.1) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (47 + (wScroll * 0.07)) +'%) translate('+ (-90+wScroll*0.1) + '%, '+ (-142+wScroll*0.08) +'%)'
+          'transform' : 'scale('+ (47 + (wScroll * 0.07)) +'%) translate('+ (-90+wScroll*0.1) + '%, '+ (-142+wScroll*0.1) +'%)'
         });
 
         // Section 3
