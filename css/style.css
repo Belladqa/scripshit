@@ -1501,7 +1501,7 @@ p.stroke-2 {
 
   .sec1 .w-38 {
     width: 20%;
-    margin-left: 14rem;
+    margin-left: 11.5rem;
   }
 
   .sec1 .fs-7vw {
@@ -1510,6 +1510,10 @@ p.stroke-2 {
 
   .sec1 .fs-6vw {
     font-size: 11vw;
+  }
+
+  p.stroke-2 {
+    -webkit-text-stroke: 2px #ffffff;
   }
 
   .bg-sec2 .fs-6vw {
@@ -1525,7 +1529,7 @@ p.stroke-2 {
   }
 
   .img-sec2 .position-start, .img-sec2 .position-end {
-    margin-top: 18% !important;
+    margin-top: 33% !important;
   }
 
   .bg-sec3 .img-fluid.my-6rem.w-97 {

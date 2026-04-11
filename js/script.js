@@ -682,28 +682,31 @@ window.addEventListener("scroll", () => {
       } else if (window.matchMedia("(max-width: 991px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-5+wScroll*0.17) + '%, 0)'
+          'transform' : 'translate('+ (-5+wScroll*0.17) + '%, '+ (limQuarter*14) +'%)'
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (5-wScroll*0.17) + '%, 0)'
+          'transform' : 'translate('+ (5-wScroll*0.17) + '%, '+ (limQuarter*14) +'%)'
         });
         $('.quarter').css({
           'position' : 'fixed',
-          'transform' : 'translate('+ (12.5-wScroll*0) + '%, '+ (-80-limQuarter*64) +'%) scale('+ (100 - (wScroll * 0.0)) +'%)',
+          'transform' : 'translate('+ (12.5-wScroll*0) + '%, '+ (-170-limQuarter*64) +'%) scale('+ (100 - (wScroll * 0.0)) +'%)',
           'opacity': (scrollPercent >= 10.4 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
           'transform' : 'translate('+ (wScroll*0) + '%, '+ (70+limtxtSec1*0) +'%)'
         });
         $('.pohon').css({
-          'transform' : 'translate('+ (7-wScroll*0) + '%, '+ (75+limSwipe*0) +'%) scale('+ (135 + (limpohon*0.5)) +'%)'
+          'transform' : 'translate('+ (14-wScroll*0) + '%, '+ (130+limSwipe*0) +'%) scale('+ (155 + (limpohon*0.5)) +'%)'
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (4+limpohon*0.5) + '%, '+ (55-limpohon*0.6) +'%) scaleX(-1) scale('+ (125 + (limpohon*0.5)) +'%)'
+          'transform' : 'translate('+ (4+limpohon*0.5) + '%, '+ (95-limpohon*0.6) +'%) scaleX(-1) scale('+ (125 + (limpohon*0.5)) +'%)'
         }); 
         $('.pohonpohon').css({
-          'transform' : 'translate(0, '+ (65-limpohon*0) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (140-limpohon*0) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
         }); 
+        $('.daun').css({
+          'transform' : 'translate(0, '+ (-135-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+        });
 
         // Section 2
         $('.swipe2-righthalf').css({
@@ -713,22 +716,25 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (-103+limLeft990*10)+'%, 0)'
         });
         $('.qlcmb').css({
-          'transform' : 'scale('+ (130 + (wScroll * 0)) +'%) translate(0, '+ (-85+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (140 + (wScroll * 0)) +'%) translate(0, '+ (-165+wScroll*0.05) +'%)'
+        });
+        $('.p2sec2').css({
+          'transform' : 'translate(0, '+ (-230)+'%) scale('+ (150 + (wScroll * 0)) +'%)'
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-260+wScroll*0.15) +'%) scale('+ (-60 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 10 ? 1 : 0)
+          'transform' : 'translate(0, '+ (-380+wScroll*0.15) +'%) scale('+ (-60 + (wScroll * 0.17)) +'%)',
+          'opacity': (scrollPercent >= 6 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (25 + (wScroll * 0.06)) +'%) translate('+ (180-wScroll*0.1) + '%, '+ (-85+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (25 + (wScroll * 0.1)) +'%) translate('+ (120-wScroll*0.1) + '%, '+ (-85+wScroll*0.05) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (25 + (wScroll * 0.06)) +'%) translate('+ (-183+wScroll*0.1) + '%, '+ (-85+wScroll*0.05) +'%)'
+          'transform' : 'scale('+ (25 + (wScroll * 0.1)) +'%) translate('+ (-123+wScroll*0.1) + '%, '+ (-85+wScroll*0.05) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-280 + menScrollX990*16) + '%, ' + (-1390 + menScrollY990*52) + '%) scale('+ menScale990 +'%)',
+          'transform': 'translate(' + (-270 + menScrollX990*16) + '%, ' + (-1340 + menScrollY990*52) + '%) scale('+ menScale990 +'%)',
            'opacity': menOpacity990(scrollPercent)
         });
 
@@ -736,7 +742,7 @@ window.addEventListener("scroll", () => {
         if(scrollPercent >= 29 && !typewriterStarted) {
           typewriterStarted = true;
           typeWriter();
-          $('.cursor').css('opacity', scrollPercent >= 29 ? 1 : 0);
+          $('.cursor').css('opacity', scrollPercent >= 26 ? 1 : 0);
         }
       } else if (window.matchMedia("(max-width: 1024px)").matches) {
         // Section 1
