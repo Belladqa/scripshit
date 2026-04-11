@@ -461,7 +461,7 @@ window.addEventListener("scroll", () => {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-350+wScroll*0.45) +'%) scale('+ (15 + (wScroll * 0.15)) +'%)',
-          'opacity': (scrollPercent >= 4 ? 1 : 0)
+          'opacity': (scrollPercent >= 3 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
           'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (149-wScroll*0.25) + '%, '+ (-37+wScroll*0.05) +'%)',
@@ -528,7 +528,7 @@ window.addEventListener("scroll", () => {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-580+wScroll*0.7) +'%) scale('+ (15 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 5 ? 1 : 0)
+          'opacity': (scrollPercent >= 4.5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
           'transform' : 'scale('+ (57 + (wScroll * 0.09)) +'%) translate('+ (70-wScroll*0.1) + '%, '+ (-240+wScroll*0.2) +'%)'
