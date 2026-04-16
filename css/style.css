@@ -981,6 +981,29 @@ p.stroke-2 {
 }
 
 /* Laptop */
+@media (max-width: 1440px) {
+  .bg-sec8 .show1, .bg-sec10 .show1, .bg-sec11 .show1 {
+    bottom: 30%;
+  }
+
+  .bg-sec9 .show1 {
+    bottom: 38%;
+  }
+
+  .bg-sec14 .show1 {
+    bottom: 26%;
+  }
+
+  .bg-sec15 .show1 {
+    bottom: 45%;
+  }
+
+  .bg-sec15 .sec7-solution-card {
+    margin-top: -11rem !important;
+  }
+}
+
+/* Laptop */
 @media (max-width: 1024px) {
   .popup {    
     margin: 0 26.4%;
