@@ -357,7 +357,7 @@ window.addEventListener("scroll", () => {
       var menScrollY990 = Math.min(scrollPercent, 27.8);
       var menScale990 = Math.max(135, (470 - wScroll * 0.1));
       function menOpacity990(scrollPercent) {
-        if(scrollPercent < 16.5) return 0;
+        if(scrollPercent < 16) return 0;
         if(scrollPercent < 21) return 1;
         if(scrollPercent < 26) return 0;
         return 1; 
@@ -656,7 +656,7 @@ window.addEventListener("scroll", () => {
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-735+wScroll*0.6) +'%) scale('+ (-30 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 7.5 ? 1 : 0)
+          'opacity': (scrollPercent >= 6.5 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
           'transform' : 'scale('+ (59 + (wScroll * 0.05)) +'%) translate('+ (105-wScroll*0.1) + '%, '+ (-85+wScroll*0.05) +'%)'
