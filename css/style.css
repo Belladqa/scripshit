@@ -1585,7 +1585,7 @@ p.stroke-2 {
 
   .bg-sec8 .show1 {
     position: relative;
-    bottom: 21.5rem;
+    bottom: 23.5rem;
   }
 
   .bg-sec8 .w-76 {
@@ -1618,7 +1618,7 @@ p.stroke-2 {
 
   .bg-sec9 .show1 {
     position: relative;
-    bottom: 26.5rem;
+    bottom: 29.5rem;
   }
 
   .bg-sec9 .sec7-solution-card {
@@ -1646,7 +1646,7 @@ p.stroke-2 {
 
   .bg-sec10 .show1 {
     position: relative;
-    bottom: 19.5rem;
+    bottom: 22.5rem;
   }
 
   .bg-sec10 .sec7-solution-card {
@@ -1664,11 +1664,16 @@ p.stroke-2 {
   }
 
   .bg-sec11 .sec7-solution-card {
-    margin-top: -6.5rem !important;
+    margin-top: -9rem !important;
   }
 
   .bg-sec11 .d-flex.align-items-start {
     padding-left: 0%;  
+  }
+
+  .bg-sec11 .show1 {
+    position: relative;
+    bottom: 17.5rem;
   }
 
   .kursiDuduk.w-26 {
@@ -1702,7 +1707,7 @@ p.stroke-2 {
 
   .bg-sec14 .show1 {
     position: relative;
-    bottom: 17.5rem;
+    bottom: 19.5rem;
   }
 
   .cemasInsecure.w-32 {
@@ -1728,7 +1733,7 @@ p.stroke-2 {
 
   .bg-sec15 .show1 {
     position: relative;
-    bottom: 29rem;
+    bottom: 32.5rem;
   }
 
   .cemasOvt.w-32 {
@@ -2469,7 +2474,7 @@ p.stroke-2 {
   }
 
   .bg-sec8 .show1 {
-    bottom: 33rem;
+    bottom: 37rem;
   }
 
   .bg-sec8 .row.py-4 {
@@ -2478,7 +2483,7 @@ p.stroke-2 {
   }
 
   .bg-sec8 .sec7-solution-card {
-    margin-top: -14rem !important;
+    margin-top: -16rem !important;
   }
 
   .renungTanya {
@@ -2505,11 +2510,11 @@ p.stroke-2 {
 
   .bg-sec9 .show1 {
     position: relative;
-    bottom: 30.5rem;
+    bottom: 32rem;
   }
 
   .bg-sec9 .sec7-solution-card {
-    margin-top: -16rem !important;
+    margin-top: -20rem !important;
   }
 
   .pintuTanya {
@@ -2523,11 +2528,11 @@ p.stroke-2 {
 
   .bg-sec10 .show1 {
     position: relative;
-    bottom: 28rem;
+    bottom: 26.5rem;
   }
 
   .bg-sec10 .sec7-solution-card {
-    margin-top: -21.5rem !important;
+    margin-top: -28.5rem !important;
   }
 
   .kursiDuduk {
@@ -2537,12 +2542,12 @@ p.stroke-2 {
   }
 
   .bg-sec11 .sec7-solution-card {
-    margin-top: -22.5rem !important;
+    margin-top: -31.5rem !important;
   }
 
-  .bg-sec11 .show1 {
+  .bg-sec11 .show1, .bg-sec14 .show1 {
     position: relative;
-    bottom: 21rem;
+    bottom: 17.5rem;
   }
 
   .cemasInsecure {
@@ -2552,12 +2557,7 @@ p.stroke-2 {
   }
 
   .bg-sec14 .sec7-solution-card {
-    margin-top: -25.5rem !important;
-  }
-
-  .bg-sec14 .show1 {
-    position: relative;
-    bottom: 19.5rem;
+    margin-top: -38.5rem !important;
   }
 
   .cemasOvt {
@@ -2566,13 +2566,18 @@ p.stroke-2 {
     left: 72%;
   }
 
+  .bg-sec14 .show1 {
+    position: relative;
+    bottom: 13.5rem;
+  }
+
   .bg-sec15 .sec7-solution-card {
-    margin-top: -18.5rem !important;
+    margin-top: -25.5rem !important;
   }
 
   .bg-sec15 .show1 {
     position: relative;
-    bottom: 46rem;
+    bottom: 50.5rem;
   }
 }
 

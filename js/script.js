@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 90, y: -48 };
       if (w <= 600)  return { x: 110, y: -55 };
       if (w <= 780)  return { x: 170, y: -90 };
-      if (w <= 991)  return { x: 200, y: -90 };
+      if (w <= 991)  return { x: 180, y: -90 };
       if (w <= 1024) return { x: 140, y: -70 };
       if (w <= 1300) return { x: 155, y: -70 };
       if (w <= 1440) return { x: 180, y: -70 };
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 14, y: -50 };
       if (w <= 600)  return { x: 15, y: -58 };
       if (w <= 780)  return { x: 22, y: -73 };
-      if (w <= 991)  return { x: 26, y: -84 };
+      if (w <= 991)  return { x: 26, y: -75 };
       if (w <= 1024) return { x: 15, y: -60 };
       if (w <= 1440) return { x: 10, y: -70 };
       return           { x: 15, y: -85 };
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 125, y: 40 };
       if (w <= 600)  return { x: 160, y: 50 };
       if (w <= 780)  return { x: 190, y: 50 };
-      if (w <= 991)  return { x: 240, y: 70 };
+      if (w <= 991)  return { x: 200, y: 70 };
       if (w <= 1024) return { x: 150, y: 70 };
       if (w <= 1440) return { x: 140, y: 70 };
       return           { x: 210, y: 80 };
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (w <= 450)  return { x: 70, y: 115 };
       if (w <= 600)  return { x: 90, y: 140 };
       if (w <= 780)  return { x: 130, y: 190 };
-      if (w <= 991)  return { x: 180, y: 225 };
+      if (w <= 991)  return { x: 140, y: 225 };
       if (w <= 1024) return { x: 120, y: 170 };
       if (w <= 1440) return { x: 120, y: 230 };
       return           { x: 140, y: 250 };
@@ -362,12 +362,12 @@ window.addEventListener("scroll", () => {
       var limRight990 = Math.min(scrollPercent, 10.7);
       var limLeft990 = Math.min(scrollPercent, 10.3);
       var menScrollX990 = Math.min(scrollPercent, 17.7);
-      var menScrollY990 = Math.min(scrollPercent, 27.8);
+      var menScrollY990 = Math.min(scrollPercent, 25.8);
       var menScale990 = Math.max(135, (470 - wScroll * 0.1));
       function menOpacity990(scrollPercent) {
         if(scrollPercent < 16) return 0;
-        if(scrollPercent < 21) return 1;
-        if(scrollPercent < 26) return 0;
+        if(scrollPercent < 18.3) return 1;
+        if(scrollPercent < 24) return 0;
         return 1; 
       }
 
@@ -397,12 +397,12 @@ window.addEventListener("scroll", () => {
 
       //450      
       var menScrollX450 = Math.min(scrollPercent, 10.5);
-      var menScrollY450 = Math.min(scrollPercent, 19.3);
+      var menScrollY450 = Math.min(scrollPercent, 18.2);
       var menScale576 = Math.max(100, (280 - wScroll * 0.07));
       function menOpacity450(scrollPercent) {
         if(scrollPercent < 11.5) return 0;
-        if(scrollPercent < 15) return 1;
-        if(scrollPercent < 18.5) return 0;
+        if(scrollPercent < 13) return 1;
+        if(scrollPercent < 16.5) return 0;
         return 1; 
       }
 
@@ -493,30 +493,30 @@ window.addEventListener("scroll", () => {
       } else if (window.matchMedia("(max-width: 450px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (45.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (-5+wScroll*0.2) + '%, '+ (60.5+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (46+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
+          'transform' : 'translate('+ (5-wScroll*0.2) + '%, '+ (60+limSwipe*40) +'%) scale('+ (90 - (wScroll * 0)) +'%)'
         });
         $('.quarter').css({
           'transform' : 'translate('+ (17+wScroll*0) + '%, '+ (-200-limQuarter*155) +'%) scale('+ (120 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         }); 
         $('.txt-sec1').css({
-          'transform' : 'translate('+ (wScroll*0) + '%, '+ (140-limtxtSec1*0) +'%) scale('+ (125 - (wScroll * 0)) +'%)',
+          'transform' : 'translate('+ (wScroll*0) + '%, '+ (180-limtxtSec1*0) +'%) scale('+ (125 - (wScroll * 0)) +'%)',
           'opacity': (scrollPercent >= 5.1 ? 0 : 1)
         });
         $('.pohon').css({
-          'transform' : 'translate('+ (25-wScroll*0) + '%, '+ (200+limSwipe*0) +'%) scale('+ (225 + (limpohon*0.5)) +'%)'
+          'transform' : 'translate('+ (25-wScroll*0) + '%, '+ (230+limSwipe*0) +'%) scale('+ (225 + (limpohon*0.5)) +'%)'
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (185-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)'
+          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (215-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)'
         }); 
         $('.pohonpohon').css({
-          'transform' : 'translate(0, '+ (200-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (230-limpohon*0) +'%) scale('+ (300 + (limpohon2 * 2.7)) +'%)'
         }); 
         $('.daun').css({
-          'transform' : 'translate(0, '+ (-225-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
+          'transform' : 'translate(0, '+ (-250-limdaun*0.5) +'%) scale('+ (200 + (limpohon2 * 2.7)) +'%)'
         });
 
         // Section 2
@@ -527,33 +527,33 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (-145+limLeft576*35)+'%, 0)'
         });
         $('.qlcmb').css({
-          'transform' : 'scale('+ (140 + (wScroll * 0)) +'%)'
+          'transform' : 'translate(0, '+ (90)+'%) scale('+ (140 + (wScroll * 0)) +'%)'
         });
         $('.p2sec2').css({
-          'transform' : 'translate(0, '+ (-30)+'%)'
+          'transform' : 'translate(0, '+ (100)+'%)'
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-580+wScroll*0.7) +'%) scale('+ (15 + (wScroll * 0.1)) +'%)',
-          'opacity': (scrollPercent >= 4.5 ? 1 : 0)
+          'transform' : 'translate(0, '+ (-500+wScroll*0.7) +'%) scale('+ (15 + (wScroll * 0.1)) +'%)',
+          'opacity': (scrollPercent >= 5.3 ? 1 : 0)
         });
         $('.img-sec2 .position-start').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.09)) +'%) translate('+ (70-wScroll*0.1) + '%, '+ (-240+wScroll*0.2) +'%)'
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (65-wScroll*0.1) + '%, '+ (-210+wScroll*0.2) +'%)'
         });
         $('.img-sec2 .position-end').css({
-          'transform' : 'scale('+ (57 + (wScroll * 0.09)) +'%) translate('+ (-70+wScroll*0.1) + '%, '+ (-240+wScroll*0.2) +'%)'
+          'transform' : 'scale('+ (57 + (wScroll * 0.1)) +'%) translate('+ (-65+wScroll*0.1) + '%, '+ (-210+wScroll*0.2) +'%)'
         });
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-780 + menScrollX450*73.7) + '%, ' + (-2080 + menScrollY450*110) + '%) scale('+ menScale576 +'%)',
+          'transform': 'translate(' + (-780 + menScrollX450*73.7) + '%, ' + (-1960 + menScrollY450*110) + '%) scale('+ menScale576 +'%)',
            'opacity': menOpacity450(scrollPercent)
         });
 
         // Section 5    
-        if(scrollPercent >= 18.5 && !typewriterStarted) {
+        if(scrollPercent >= 14.35 && !typewriterStarted) {
           typewriterStarted = true;
           typeWriter();
-          $('.cursor').css('opacity', scrollPercent >= 18.5 ? 1 : 0);
+          $('.cursor').css('opacity', scrollPercent >= 14.35 ? 1 : 0);
         }
       } else if (window.matchMedia("(max-width: 600px)").matches) {
         // Section 1
@@ -740,15 +740,15 @@ window.addEventListener("scroll", () => {
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': 'translate(' + (-270 + menScrollX990*16) + '%, ' + (-1340 + menScrollY990*52) + '%) scale('+ menScale990 +'%)',
+          'transform': 'translate(' + (-270 + menScrollX990*16) + '%, ' + (-1360 + menScrollY990*55) + '%) scale('+ menScale990 +'%)',
            'opacity': menOpacity990(scrollPercent)
         });
 
         // Section 5 
-        if(scrollPercent >= 29 && !typewriterStarted) {
+        if(scrollPercent >= 23.5 && !typewriterStarted) {
           typewriterStarted = true;
           typeWriter();
-          $('.cursor').css('opacity', scrollPercent >= 26 ? 1 : 0);
+          $('.cursor').css('opacity', scrollPercent >= 23.5 ? 1 : 0);
         }
       } else if (window.matchMedia("(max-width: 1024px)").matches) {
         // Section 1
