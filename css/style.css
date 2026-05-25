@@ -1121,6 +1121,15 @@ p.stroke-2 {
     margin: 0 26.4%;
   }
 
+  .bg-sec7 .card-text.f-in {
+    font-size: 1.3vw;
+  }
+
+  .bg-sec7 .px-5.row-cols-md-5.g-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
   .popupteks p {
     font-size: 1.3vw;
   }
@@ -1640,11 +1649,16 @@ p.stroke-2 {
   }
 
   .sec1 .fs-7vw {
-    font-size: 13vw;
+    font-size: 6vw;
   }
 
   .sec1 .fs-6vw {
     font-size: 11vw;
+  }
+
+  p.stroke-1 {
+    -webkit-text-stroke: 0.3px #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   p.stroke-2 {
@@ -1685,6 +1699,10 @@ p.stroke-2 {
 
   .bg-sec6 .w-83 {
     width: 92.3%;
+  }
+
+  .bg-sec7 .col-12.align-items-center{
+    justify-content: center;
   }
 
   .bg-sec8 .d-inline.position-relative {
