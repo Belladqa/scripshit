@@ -28,9 +28,17 @@ body::before {
 
 /* Parallax Effect sec1 */
 .sec1, .fsk, .img-sec2 .position-start, .img-sec2 .position-end, .pria-swipe, .txt-sec1, .swipe2-righthalf, .swipe2-lefthalf, .wanita-swipe,
-.qlcmb, .dampak {
+.qlcmb, .dampak, .validasi {
   position: relative;
   transition: none !important;
+}
+
+.dampak {
+  width: 170% !important;
+}
+
+.validasi {
+  margin-top: 3.5rem;
 }
 
 .quarter, .quarter2 {
@@ -549,6 +557,10 @@ p.stroke-2 {
 
 .h-13 {
   height: 13rem !important ;
+}
+
+.h-23 {
+  height: 23rem !important ;
 }
 
 .h-27 {
@@ -1102,6 +1114,10 @@ p.stroke-2 {
   .bg-sec15 .sec7-solution-card {
     margin-top: -11rem !important;
   }
+
+  .validasi {
+    margin-top: 0rem;
+  }
 }
 
 /* Laptop */
@@ -1630,6 +1646,10 @@ p.stroke-2 {
     padding-top: 3rem !important;
   }    
 
+  .w-150 {
+    width: 300%;
+  }
+
   .pria-swipe.w-98 {
     padding-top: 0rem !important;
     width: 95%;
@@ -1704,6 +1724,15 @@ p.stroke-2 {
   .bg-sec7 .col-12.align-items-center{
     justify-content: center;
   }
+
+  .bg-sec7 .purple.text-shadow {
+    text-shadow: 0px 0px 10px rgb(255 255 255);
+  }
+
+  .bg-sec7 .w-50 {
+    width: 80% !important;
+    text-shadow: 0px 0px 6px rgb(255 255 255);
+}
 
   .bg-sec8 .d-inline.position-relative {
     bottom: 0rem;
@@ -1870,6 +1899,10 @@ p.stroke-2 {
     bottom: 32.5rem;
   }
 
+  .bg-sec16 p.fs-22 {
+    font-size: 4.5vw;
+  }
+
   .cemasOvt.w-32 {
     width: 20%;
   }
@@ -1986,6 +2019,14 @@ p.stroke-2 {
 
   .poetsenOne.fs-3 {
     font-size: 3vw !important;
+  }
+
+  .h-23 {
+    height: 19rem !important;
+  }
+
+  .mt-7rem {
+    margin-top: -5rem !important;
   }
 
   .trY {
@@ -2148,6 +2189,14 @@ p.stroke-2 {
   .bg-sec16 .fs-22 {
     font-size: 4.5vw;
   }
+
+  .dampak {
+    width: 280% !important;
+  }
+
+  .validasi {
+    margin-top: 0rem !important;
+  }
 }
 
 /* Ponsel 1*/
@@ -2174,6 +2223,10 @@ p.stroke-2 {
     width: 102%;
   } 
 
+  .bg-sec2 .stroke-3 {
+    -webkit-text-stroke: 1.5px #ffffff;
+  }
+
   p.stroke-2 {
     -webkit-text-stroke: 2px #ffffff;
   }
@@ -2199,6 +2252,14 @@ p.stroke-2 {
 
   .img-sec2 .position-start, .img-sec2 .position-end {
     margin-top: 70% !important;
+  }  
+
+  .h-23 {
+    height: 34rem !important ;
+  }
+
+  .w-7 {
+    width: 17% !important;
   }
 
   .w-14 {
@@ -2220,6 +2281,10 @@ p.stroke-2 {
 
   .w-83 {
     width: 81%;
+  }
+
+  .w-150 {
+    width: 780%;
   }
 
   .mst-1 {
@@ -2249,6 +2314,14 @@ p.stroke-2 {
     margin-bottom: 3rem;
   }
 
+  .mt-3rem {
+    margin-top: 1rem !important;
+  }
+
+  .mt-7rem {
+    margin-top: 2rem !important;
+  }
+
   .sec6-col1.row {
     padding-right: 0.8rem !important;
   }
@@ -2271,6 +2344,10 @@ p.stroke-2 {
   
   .fs-18 {
     font-size: 1.35vw;
+  }
+
+  p.stroke-1 {
+    -webkit-text-stroke: 0.2px #ffffff;
   }
 
   .trY {
@@ -2312,6 +2389,19 @@ p.stroke-2 {
     100%{
       transform: translate(35%, -195%) translateY(0) scale(1);
     }
+  }
+
+  .bg-sec7 .h-27 {
+    height: 22rem !important;
+  }
+
+  .bg-sec7 .fs-5vw {
+    font-size: 5.7vw !important;
+  }
+
+  .bg-sec7 .fs-5vw.rasa {    
+    padding: 0 3rem 2rem;
+    text-align: center !important;
   }
 
   .bg-sec8 .col-12 .w-83, .bg-sec9 .col-12 .w-83 {
@@ -2493,11 +2583,19 @@ p.stroke-2 {
     bottom: 38rem;
   }
 
+  .dampak {
+    width: 550% !important;
+  }
+
   .cemasOvt {
     position: absolute;
     bottom: -45%;
     left: 69%;
   }
+
+  .bg-sec16 p.fs-22 {
+    font-size: 5.5vw;
+  }  
 }
 
 /* Ponsel 2*/
@@ -2528,6 +2626,10 @@ p.stroke-2 {
     width: 102.6%;
   } 
 
+  .bg-sec2 .stroke-3 {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
   .bg-sec2 .fs-6vw {
     font-size: 10.3vw;
   }
@@ -2551,6 +2653,10 @@ p.stroke-2 {
 
   .fs-18 {
     font-size: 1.5vw;
+  }
+
+  .h-23 {
+    height: 0rem !important;
   }
 
   .img-sec2 .position-start, .img-sec2 .position-end {
@@ -2587,6 +2693,10 @@ p.stroke-2 {
     100%{
       transform: translate(20%, -185%) translateY(0) scale(1);
     }
+  }
+
+  .bg-sec7 .h-27 {
+    height: 25rem !important;
   }
 
   .bg-sec8 .row p.fs-2, .bg-sec9 .row p.fs-2 {
