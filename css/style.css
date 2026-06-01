@@ -2929,6 +2929,14 @@ p.stroke-2 {
     margin-top: 0rem;
   }
 
+  .sec1 .orange.text-shadow {
+    text-shadow: 2px 2px 8px rgb(0 0 0 / 62%);
+  }
+
+  .bg-sec2 .stroke-3 {
+    -webkit-text-stroke: 0.8px #ffffff;
+  }
+
   p.stroke-2 {
     -webkit-text-stroke: 1.2px #ffffff;
   }
@@ -2969,6 +2977,14 @@ p.stroke-2 {
 
   .fs-22 {
     font-size: 1.1rem;
+  }
+
+  .bg-sec4 .fs-27 {
+    font-size: 2.5vw;
+  }
+
+  .p.stroke-1 {
+    -webkit-text-stroke: 0.1px #ffffff;
   }
 
   .trY {
@@ -3015,6 +3031,10 @@ p.stroke-2 {
   .bg-sec9 .sec7-solution-card, .bg-sec10 .sec7-solution-card {
     margin-top: 0rem !important;
     margin-bottom: 5rem !important;
+  }
+
+  .bg-sec7 .h-27 {
+    height: 29rem !important;
   }
 
   .bg-sec8 .sec7-solution, .bg-sec9 .sec7-solution {    
