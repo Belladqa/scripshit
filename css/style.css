@@ -35,6 +35,7 @@ body::before {
 
 .dampak {
   width: 170% !important;
+  opacity: 0.55;
 }
 
 .validasi {
@@ -425,6 +426,7 @@ p.stroke-2 {
 
 .w-150 {
   width: 162%;
+  opacity: 0.55;
 }
 
 .mst-1 {
@@ -1648,6 +1650,7 @@ p.stroke-2 {
 
   .w-150 {
     width: 300%;
+    opacity: 0.55;
   }
 
   .pria-swipe.w-98 {
@@ -2192,6 +2195,7 @@ p.stroke-2 {
 
   .dampak {
     width: 280% !important;
+    opacity: 0.55;
   }
 
   .validasi {
@@ -2284,7 +2288,8 @@ p.stroke-2 {
   }
 
   .w-150 {
-    width: 780%;
+    width: 780%;    
+    opacity: 0.55;
   }
 
   .mst-1 {
@@ -2585,6 +2590,7 @@ p.stroke-2 {
 
   .dampak {
     width: 550% !important;
+    opacity: 0.55;
   }
 
   .cemasOvt {

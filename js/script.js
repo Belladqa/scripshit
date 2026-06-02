@@ -434,11 +434,11 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 1 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (29) + '%, '+ (190+limQuarter*0) +'%) scale('+ (248 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (29-limpohon*0.5) + '%, '+ (190+limpohon*0.6) +'%) scale('+ (248 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 6.1 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (-1+limpohon*0.5) + '%, '+ (185-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)',
+          'transform' : 'translate('+ (-1+limpohon*0.5) + '%, '+ (185-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 6.1 ? 0.15 : 1)
         }); 
         $('.pohonpohon').css({
@@ -493,35 +493,117 @@ window.addEventListener("scroll", () => {
         $('.w-150').css({
           'transform' : 'translate('+ (-29) +'%, '+ (40) +'%)'
         });
-      } else if (window.matchMedia("(max-width: 450px)").matches) {
+      } else if (window.matchMedia("(max-width: 400px)").matches) {
         $('.fixed-top').css({
-          'opacity': (scrollPercent >= 4.2 ? 0 : 1)
+          'opacity': (scrollPercent >= 5.6 ? 0 : 1)
         })
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-75) + '%, '+ (160+limQuarter*120) +'%) scale('+ (180) +'%)',
+          'transform' : 'translate('+ (-75) + '%, '+ (290+limQuarter*120) +'%) scale('+ (180) +'%)',
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (-145) + '%, '+ (160+limQuarter*120) +'%) scale('+ (180) +'%)',
+          'transform' : 'translate('+ (-145) + '%, '+ (290+limQuarter*120) +'%) scale('+ (180) +'%)',
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
           'position' : 'fixed',
-          'transform' : 'translate('+ (10) + '%, '+ (-1390-limQuarter*94) +'%) scale('+ (120) +'%)',
+          'transform' : 'translate('+ (10) + '%, '+ (- 1320-limQuarter*94) +'%) scale('+ (120) +'%)',
           'opacity': (scrollPercent >= 1.15 ? 0 : 1)
         }); 
         $('.quarter2').css({
           'position' : 'fixed',
-          'transform' : 'translate('+ (10) + '%, '+ (-530-limQuarter*34) +'%) scale('+ (120) +'%)',
+          'transform' : 'translate('+ (10) + '%, '+ (-500-limQuarter*34) +'%) scale('+ (120) +'%)',
           'opacity': (scrollPercent >= 1.15 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (25) + '%, '+ (230) +'%) scale('+ (225 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (25) + '%, '+ (230+limpohon*1) +'%) scale('+ (220 + (limpohon*1)) +'%)',
           'opacity': (scrollPercent >= 7 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (215-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0)) +'%)',
+          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (215-limpohon*1) +'%) scaleX(-1) scale('+ (155 + (limpohon*1)) +'%)',
+          'opacity': (scrollPercent >= 7 ? 0.15 : 1)
+        }); 
+        $('.pohonpohon').css({
+          'transform' : 'translate(0, '+ (230) +'%) scale('+ (300 + (limdaun * 2.7)) +'%)',
+          'opacity': (scrollPercent >= 7 ? 0.15 : 1)
+        }); 
+        $('.daun').css({
+          'transform' : 'translate(0, '+ (-270-limdaun*0.5) +'%) scale('+ (200 + (limdaun * 2.7)) +'%)',
+          'opacity': bgfixed2(scrollPercent)
+        });
+
+        // Section 2
+        $('.swipe2-righthalf').css({
+          'transform' : 'translate('+ (145-limRight576*35)+'%, 0) rotate(180deg)'
+        });
+        $('.swipe2-lefthalf').css({
+          'transform' : 'translate('+ (-145+limRight576*35)+'%, 0)'
+        });
+        $('.qlcmb').css({
+          'transform' : 'translate(0, '+ (90)+'%) scale('+ (140) +'%)',
+          'opacity': (scrollPercent >= 0.9 ? 1 : 0)
+        });
+        $('.p2sec2').css({
+          'transform' : 'translate(0, '+ (100)+'%)', 'text-shadow': ('1px 1px 5px rgb(255, 255, 255)'),
+          'opacity': (scrollPercent >= 1.3 ? 1 : 0)
+        });
+        $('.fsk').css({
+          'transform' : 'translate(0, '+ (-130+wScroll*0.45) +'%) scale('+ (30 + (wScroll * 0.15)) +'%)', 'text-shadow': ('1px 1px 1px rgb(0, 0, 0.1)') ,
+          'opacity': (scrollPercent >= 1.3 ? 1 : 0)
+        });
+
+        // Section 3
+        $('.pria-sec4').css({
+          'transform': 'translate(' + (-82 + menScrollX450*8) + '%, ' + (-1850 + limLeft*205) + '%) scale('+ menScale576 +'%)',
+           'opacity': menOpacity576(scrollPercent)
+        });
+
+        // Section 5    
+        if(scrollPercent >= 7.8 && !typewriterStarted) {
+          typewriterStarted = true;
+          typeWriter();
+          $('.cursor').css('opacity', scrollPercent >= 7.8 ? 1 : 0);
+        }
+
+        // Section 7
+        $('.w-150').css({
+          'transform' : 'translate('+ (-29) +'%, '+ (30) +'%)'
+        });
+
+        // Section 17         
+        $('.dampak').css({
+          'transform' : 'translate('+ (26) +'%, '+ (110) +'%)'
+        });
+      } else if (window.matchMedia("(max-width: 450px)").matches) {
+        $('.fixed-top').css({
+          'opacity': (scrollPercent >= 5.9 ? 0 : 1)
+        })
+        // Section 1
+        $('.wanita-swipe').css({
+          'transform' : 'translate('+ (-75) + '%, '+ (190+limQuarter*120) +'%) scale('+ (180) +'%)',
+          'opacity': (scrollPercent >= 3.7 ? 0 : 1)
+        });
+        $('.pria-swipe').css({
+          'transform' : 'translate('+ (-145) + '%, '+ (190+limQuarter*120) +'%) scale('+ (180) +'%)',
+          'opacity': (scrollPercent >= 3.7 ? 0 : 1)
+        });
+        $('.quarter').css({
+          'position' : 'fixed',
+          'transform' : 'translate('+ (10) + '%, '+ (-920-limQuarter*94) +'%) scale('+ (120) +'%)',
+          'opacity': (scrollPercent >= 1.15 ? 0 : 1)
+        }); 
+        $('.quarter2').css({
+          'position' : 'fixed',
+          'transform' : 'translate('+ (10) + '%, '+ (-350-limQuarter*34) +'%) scale('+ (120) +'%)',
+          'opacity': (scrollPercent >= 1.15 ? 0 : 1)
+        }); 
+        $('.pohon').css({
+          'transform' : 'translate('+ (25) + '%, '+ (210+limpohon*1.5) +'%) scale('+ (195 + (limpohon*1.5)) +'%)',
+          'opacity': (scrollPercent >= 7 ? 0.15 : 1)
+        }); 
+        $('.pohon-flip').css({
+          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (215-limpohon*1.5) +'%) scaleX(-1) scale('+ (155 + (limpohon*1.5)) +'%)',
           'opacity': (scrollPercent >= 7 ? 0.15 : 1)
         }); 
         $('.pohonpohon').css({
@@ -549,7 +631,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 1.3 ? 1 : 0)
         });
         $('.fsk').css({
-          'transform' : 'translate(0, '+ (-100+wScroll*0.45) +'%) scale('+ (30 + (wScroll * 0.15)) +'%)', 'text-shadow': ('1px 1px 1px rgb(0, 0, 0.1)') ,
+          'transform' : 'translate(0, '+ (-150+wScroll*0.45) +'%) scale('+ (30 + (wScroll * 0.15)) +'%)', 'text-shadow': ('1px 1px 1px rgb(0, 0, 0.1)') ,
           'opacity': (scrollPercent >= 1.3 ? 1 : 0)
         });
 
@@ -568,7 +650,7 @@ window.addEventListener("scroll", () => {
 
         // Section 7
         $('.w-150').css({
-          'transform' : 'translate('+ (-29) +'%, '+ (40) +'%)'
+          'transform' : 'translate('+ (-29) +'%, '+ (30) +'%)'
         });
 
         // Section 17         
@@ -599,11 +681,11 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 1.15 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (20) + '%, '+ (210) +'%) scale('+ (200 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (20) + '%, '+ (210+limpohon*2) +'%) scale('+ (200 + (limpohon*2)) +'%)',
           'opacity': (scrollPercent >= 6.4 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (180-limpohon*0.6) +'%) scaleX(-1) scale('+ (155 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (-5+limpohon*0.5) + '%, '+ (180-limpohon*2) +'%) scaleX(-1) scale('+ (155 + (limpohon*2)) +'%)',
           'opacity': (scrollPercent >= 6.4 ? 0.15 : 1)
         }); 
         $('.pohonpohon').css({
@@ -682,11 +764,11 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 1.5 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (14) + '%, '+ (140) +'%) scale('+ (155 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (14) + '%, '+ (140+limpohon*1.5) +'%) scale('+ (155 + (limpohon*1.5)) +'%)',
           'opacity': (scrollPercent >= 8.4 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
-          'transform' : 'translate('+ (4+limpohon*0.5) + '%, '+ (115-limpohon*0.6) +'%) scaleX(-1) scale('+ (125 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (4+limpohon*0.5) + '%, '+ (115-limpohon*1.5) +'%) scaleX(-1) scale('+ (125 + (limpohon*1.5)) +'%)',
           'opacity': (scrollPercent >= 8.4 ? 0.15 : 1)
         }); 
         $('.pohonpohon').css({
@@ -771,7 +853,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 0.5 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (14) + '%, '+ (130) +'%) scale('+ (155 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (14) + '%, '+ (130+limpohon*0.6) +'%) scale('+ (155 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 8.4 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
@@ -860,7 +942,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 4.2 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (3) + '%, '+ (15) +'%) scale('+ (115 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (3-limpohon*0.5) + '%, '+ (15+limpohon*0.6) +'%) scale('+ (115 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 12 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
@@ -936,7 +1018,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 4.2 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (2) + '%, '+ (7) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (2-limpohon*0.5) + '%, '+ (7+limpohon*0.6) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 14.1 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
@@ -948,7 +1030,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 14.1 ? 0.15 : 1)
         }); 
         $('.daun').css({
-          'transform' : 'translate(0, '+ (-1-limdaun*0.5) +'%)',
+          'transform' : 'translate(0, '+ (-1-limdaun*0.5) +'%)', 
           'opacity': bgfixed(scrollPercent)
         });
 
@@ -1012,7 +1094,7 @@ window.addEventListener("scroll", () => {
           'opacity': (scrollPercent >= 5 ? 0 : 1)
         }); 
         $('.pohon').css({
-          'transform' : 'translate('+ (2) + '%, '+ (7) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (2-limpohon*0.5) + '%, '+ (7+limpohon*0.6) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 14.8 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
@@ -1086,7 +1168,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (20) +'%, '+ (300+limQuarter*100) +'%)'
         });
         $('.pohon').css({
-          'transform' : 'scale('+ (100 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (-limpohon*0.5) + '%, '+ (+limpohon*0.6) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
            'opacity': (scrollPercent >= 15.8 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
@@ -1160,7 +1242,7 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (31) +'%, '+ (130+limQuarter*100) +'%)'
         });
         $('.pohon').css({
-          'transform' : 'scale('+ (100 + (limpohon*0.5)) +'%)',
+          'transform' : 'translate('+ (-limpohon*0.5) + '%, '+ (+limpohon*0.6) +'%) scale('+ (100 + (limpohon*0.5)) +'%)',
           'opacity': (scrollPercent >= 18 ? 0.15 : 1)
         }); 
         $('.pohon-flip').css({
