@@ -240,10 +240,10 @@ document.addEventListener('DOMContentLoaded', function () {
     musicBtn.addEventListener("click", () => {
       if (audio.paused) {
         audio.play();
-        musicBtn.textContent = "❚❚ Pause";
+        musicBtn.textContent = "❚❚";
       } else {
         audio.pause();
-        musicBtn.textContent = "▶︎ Music";
+        musicBtn.textContent = "▶︎";
       }
     }); 
 
@@ -494,6 +494,9 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (-29) +'%, '+ (40) +'%)'
         });
       } else if (window.matchMedia("(max-width: 450px)").matches) {
+        $('.fixed-top').css({
+          'opacity': (scrollPercent >= 4.2 ? 0 : 1)
+        })
         // Section 1
         $('.wanita-swipe').css({
           'transform' : 'translate('+ (-75) + '%, '+ (160+limQuarter*120) +'%) scale('+ (180) +'%)',
@@ -573,6 +576,9 @@ window.addEventListener("scroll", () => {
           'transform' : 'translate('+ (26) +'%, '+ (110) +'%)'
         });
       } else if (window.matchMedia("(max-width: 600px)").matches) {
+        $('.fixed-top').css({
+          'opacity': (scrollPercent >= 5.6 ? 0 : 1)
+        })
         // Section 1
         $('.wanita-swipe').css({
           'transform' : 'translate('+ (-75) + '%, '+ (240+limQuarter*110) +'%) scale('+ (180) +'%)',
@@ -794,7 +800,7 @@ window.addEventListener("scroll", () => {
         });
         $('.p2sec2').css({
           'transform' : 'translate(0, '+ (-190)+'%) scale('+ (150 + (wScroll * 0)) +'%)',
-          'opacity': (scrollPercent >= 1.4 ? 1 : 0)
+          'opacity': (scrollPercent >= 1 ? 1 : 0)
         });
         $('.fsk').css({
           'transform' : 'translate(0, '+ (-400+wScroll*0.5) +'%) scale('+ (40 + (wScroll * 0.17)) +'%)', 'text-shadow': ('1px 1px 1px rgb(0, 0, 0.1)') ,
