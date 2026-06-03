@@ -568,7 +568,7 @@ window.addEventListener("scroll", () => {
 
         // Section 7
         $('.w-150').css({
-          'transform' : 'translate('+ (-29) +'%, '+ (46) +'%)'
+          'transform' : 'translate('+ (-29) +'%, '+ (45) +'%)'
         });
 
         // Section 17         
