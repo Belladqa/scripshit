@@ -267,45 +267,6 @@ document.addEventListener('DOMContentLoaded', function () {
       popup.style.display = "none";
     });
 
-// Auto scroll section
-let sections = document.querySelectorAll(".snap-section");
-
-let isScrolling = false;
-let lastIndex = 0;
-
-window.addEventListener("scroll", () => {
-
-  if (isScrolling) return;
-
-  let scrollY = window.scrollY;
-
-  let currentIndex = 0;
-  let minDistance = Infinity;
-
-  sections.forEach((section, index) => {
-    let distance = Math.abs(section.offsetTop - scrollY);
-    if (distance < minDistance) {
-      minDistance = distance;
-      currentIndex = index;
-    }
-  });
-
-  if (currentIndex !== lastIndex) {
-
-    isScrolling = true;
-
-    sections[currentIndex].scrollIntoView({
-      behavior: "smooth"
-    });
-
-    lastIndex = currentIndex;
-
-    setTimeout(() => {
-      isScrolling = false;
-    }, 600);
-  }
-});
-
 // SET ALL PARALLAX EFFECTS
     let wScroll = 0;
     let ticking = false;
@@ -416,11 +377,11 @@ window.addEventListener("scroll", () => {
       if (window.matchMedia("(max-width: 375px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-75) + '%, '+ (170+limQuarter*150) +'%) scale('+ (180) +'%)',
+          'transform' : 'translate('+ (-75) + '%, '+ (190+limQuarter*150) +'%) scale('+ (180) +'%)',
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (-145) + '%, '+ (170+limQuarter*150) +'%) scale('+ (180) +'%)',
+          'transform' : 'translate('+ (-145) + '%, '+ (190+limQuarter*150) +'%) scale('+ (180) +'%)',
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
