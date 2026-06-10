@@ -1944,6 +1944,10 @@ p.stroke-2 {
     -webkit-text-stroke: 2.5px #ffffff;
   }
 
+  .bg-sec2 .stroke-3 {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
   .bg-sec2 .my-5.p2sec2 {
     margin-top: 3rem !important;
   }
@@ -2728,7 +2732,7 @@ p.stroke-2 {
   }
 
   .bg-sec8 .show1 {
-    bottom: 37rem;
+    bottom: 35rem;
   }
 
   .bg-sec8 .row.py-4 {
@@ -2764,7 +2768,7 @@ p.stroke-2 {
 
   .bg-sec9 .show1 {
     position: relative;
-    bottom: 32rem;
+    bottom: 30rem;
   }
 
   .bg-sec9 .sec7-solution-card {
@@ -2786,7 +2790,7 @@ p.stroke-2 {
   }
 
   .bg-sec10 .sec7-solution-card {
-    margin-top: -28.5rem !important;
+    margin-top: -26rem !important;
   }
 
   .kursiDuduk {
@@ -2796,12 +2800,12 @@ p.stroke-2 {
   }
 
   .bg-sec11 .sec7-solution-card {
-    margin-top: -31.5rem !important;
+    margin-top: -29rem !important;
   }
 
   .bg-sec11 .show1, .bg-sec14 .show1 {
     position: relative;
-    bottom: 17.5rem;
+    bottom: 16.5rem;
   }
 
   .cemasInsecure {
@@ -2811,7 +2815,7 @@ p.stroke-2 {
   }
 
   .bg-sec14 .sec7-solution-card {
-    margin-top: -38.5rem !important;
+    margin-top: -28.5rem !important;
   }
 
   .cemasOvt {
@@ -2822,16 +2826,16 @@ p.stroke-2 {
 
   .bg-sec14 .show1 {
     position: relative;
-    bottom: 13.5rem;
+    bottom: 17.5rem;
   }
 
   .bg-sec15 .sec7-solution-card {
-    margin-top: -25.5rem !important;
+    margin-top: -22.5rem !important;
   }
 
   .bg-sec15 .show1 {
     position: relative;
-    bottom: 50.5rem;
+    bottom: 47rem;
   }
 }
 
@@ -2944,7 +2948,7 @@ p.stroke-2 {
   }
 
   .bg-sec2 .stroke-3 {
-    -webkit-text-stroke: 0.8px #ffffff;
+    -webkit-text-stroke: 0.5px #ffffff;
   }
 
   p.stroke-2 {
@@ -3107,6 +3111,7 @@ p.stroke-2 {
 
   .bg-sec8 .d-flex.align-items-center {
     margin-bottom: 1rem;
+    margin-top: 5rem;
   }
 
   .bg-sec8 .col-12 .w-76, .bg-sec9 .col-12 .w-76 {
@@ -3124,7 +3129,7 @@ p.stroke-2 {
   }
 
   .bg-sec8 .show1 {
-    bottom: 59.5rem;
+    bottom: 56.5rem;
   }
 
   .bg-sec8 .sec7-solution-card {
@@ -3155,7 +3160,7 @@ p.stroke-2 {
 
   .bg-sec9 .show1 {
     position: relative;
-    bottom: 56rem;
+    bottom: 54rem;
   }
 
   .bg-sec9 .row.mt-5 {
@@ -3164,7 +3169,7 @@ p.stroke-2 {
 
   .bg-sec10 .show1 {
     position: relative;
-    bottom: 58rem;
+    bottom: 53rem;
   }
 
   .bg-sec9 .sec7-solution-card {
@@ -3172,7 +3177,7 @@ p.stroke-2 {
   }
 
   .bg-sec10 .sec7-solution {
-    bottom: 27rem;
+    bottom: 25rem;
     position: relative;
   }
 
@@ -3206,7 +3211,7 @@ p.stroke-2 {
 
   .bg-sec11 .show1 {
     position: relative;
-    bottom: 52.5rem;
+    bottom: 50.5rem;
   }
 
   .bg-sec11 .sec7-solution-card {
@@ -3243,12 +3248,12 @@ p.stroke-2 {
 
   .bg-sec14 .sec7-solution {
     position: relative;
-    bottom: 35rem;
+    bottom: 33rem;
   }
 
   .bg-sec14 .show1 {
     position: relative;
-    bottom: 62rem;
+    bottom: 60rem;
   }
 
   .bg-sec14 .col-12 .w-98 {
@@ -3268,13 +3273,13 @@ p.stroke-2 {
 
   .bg-sec15 .sec7-solution {
     position: relative;
-    bottom: 23rem;
+    bottom: 20rem;
     margin-bottom: -17rem;
   }
 
   .bg-sec15 .show1 {
     position: relative;
-    bottom: 75rem;
+    bottom: 67rem;
   }
 
   .bg-sec15 .sec7-solution-card {
