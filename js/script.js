@@ -1538,11 +1538,11 @@ document.addEventListener('DOMContentLoaded', function () {
       } else if (window.matchMedia("(max-width: 780px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : 'translate('+ (-75) + '%, '+ (130+limQuarter*54) +'%) scale('+ (130 - (wScroll * 0.0)) +'%)',
+          'transform' : 'translate('+ (-75) + '%, '+ (140+limQuarter*54) +'%) scale('+ (130 - (wScroll * 0.0)) +'%)',
           'opacity': (scrollPercent >= 8.4 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform' : 'translate('+ (-145) + '%, '+ (130+limQuarter*54) +'%) scale('+ (130 - (wScroll * 0.0)) +'%)',
+          'transform' : 'translate('+ (-145) + '%, '+ (140+limQuarter*54) +'%) scale('+ (130 - (wScroll * 0.0)) +'%)',
           'opacity': (scrollPercent >= 8.4 ? 0 : 1)
         });
         $('.quarter').css({
