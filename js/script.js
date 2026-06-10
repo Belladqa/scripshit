@@ -1531,12 +1531,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Section 7
         $('.w-150').css({
-          'transform' : 'translate('+ (-40) +'%, '+ (45) +'%) scale('+ (185) +'%)'
+          'transform' : 'translate('+ (-30) +'%, '+ (45) +'%) scale('+ (185) +'%)'
         });
 
         // Section 17        
         $('.dampak').css({
-          'transform' : 'translate('+ (30-limdaun*0.5) +'%, '+ (50-limdaun*0.5) +'%) scale('+ (155) +'%)'
+          'transform' : 'translate('+ (30-limdaun*0.5) +'%, '+ (58-limdaun*0.5) +'%) scale('+ (155) +'%)'
         });
       } else if (window.matchMedia("(max-width: 1300px) and (max-height: 600px)").matches) {
         // Section 1

@@ -1376,6 +1376,10 @@ p.stroke-2 {
     margin-bottom: 5rem;
   }
 
+  .bg-sec6 .w-83 {
+    width: 92.3%;
+  }
+
   .bg-sec7 .h-23 {
     height: 7rem !important;
   }
