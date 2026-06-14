@@ -30,13 +30,22 @@
     </video>
 
 <!-- Navbar -->
-    <nav class="navbar">         
+    <nav class="navbar logo">         
         <img src="media/img/logo.png" alt="" class="img-fluid opacity-0 w-14 mst-1">
 
         <div class="fixed-top container-fluid">
+            <div>
             <a class="navbar-brand" href="#">
-                <img src="media/img/logo.png" alt="Bootstrap" class="w-14 mst-1">
+                <img src="media/img/logo.png" alt="Bootstrap" class="w-14 mst-1 logo1">
             </a>
+            </div>
+        </div>
+        <div class="fixed-top container-fluid">
+            <div>
+            <a class="navbar-brand" href="#">
+                <img src="media/img/logo2.png" alt="Bootstrap" class="w-14 mst-1 logo2">
+            </a>
+            </div>
         </div>
     </nav>
 
@@ -125,7 +134,7 @@
   <div class="row g-0 align-items-center">
     <!-- Gambar -->
     <div class="col-12 col-lg-5 text-center position-relative pria-center">
-        <img src="media/img/vektor2-slide3.png" class="img-fluid w-97 my-6rem ms-6">
+        <img id="emotionImage" src="media/img/vektor2-slide3.png" class="img-fluid w-97 my-6rem ms-6">
     </div>
     <!-- Fase -->
     <div class="col-12 col-lg-7 text-center ps-3rem">
@@ -141,14 +150,14 @@
                                 data-aos-offset="50"
                                 data-aos-duration="500">
             <button class="btn w-42">
-                <p class="playpenSans fw-bold rounded-pill btn-purple m-0 fs-22 py-3 text-white">STUCK</p>
+                <p class="playpenSans fw-bold rounded-pill btn-purple m-0 fs-22 py-3 text-white emotion-btn" data-image="media/img/stuck-slide3.png">STUCK</p>
             </button>
         </div>
         <div class="col-12 p-0 my-3rem" data-aos="fade-left"
                                         data-aos-offset="55"
                                         data-aos-duration="500">
             <button class="btn w-42">
-                <p class="playpenSans fw-bold rounded-pill btn-purple m-0 fs-22 py-3 text-white">BINGUNG</p>
+                <p class="playpenSans fw-bold rounded-pill btn-purple m-0 fs-22 py-3 text-white emotion-btn" data-image="media/img/bingung-slide3.png">BINGUNG</p>
             </button>
         </div>
         <div class="col-12 p-0" data-aos="fade-left"
@@ -166,7 +175,7 @@
 <!-- Section 4 -->
     <section class="container-fluid p-0 position-relative bg-sec4">
     <div class="row position-relative g-0 justify-content-center fs-27 p-0">
-        <div class="col-5 poetsenOne fw-light text-center txtsec5 position-absolute top-50 mt-3rem z-2">
+        <div data-aos="fade-up" class="col-5 poetsenOne fw-light text-center txtsec5 position-absolute top-50 mt-3rem z-2">
             <p style="color:#C80B0B" class="stroke-1">Pada fase ini, rasa khawatir mulai muncul pada beberapa aspek kehidupan. Seperti:</p>
         </div>
     </div>
@@ -209,10 +218,10 @@
                 <div class="col-1">
 
                 </div>
-                <div class="col-4 p-0">
+                <div class="col-4 p-0" data-aos="zoom-in">
                     <p class="poetsenOne fs-18 px-3rem text-center text-white m-0">Fase ini sering dialami oleh individu usia 20-an hingga awal 30-an</p>
                 </div>
-                <div class="col-6 d-flex p-0">
+                <div class="col-6 d-flex p-0" data-aos="zoom-out-left" data-aos-duration="600">
                     <div class="col-lg-3 position-relative">
                         <div class="row position-relative top-50">
                             <img src="media/img/line-section6.png" alt="" class="w-97 line-sec6">
@@ -231,11 +240,15 @@
             </div>
             <div class="row p-0 sec6-col2 mb-5">
                 <div class="col-5">
-                    <img src="media/img/pria-section6.png" alt="" class="float-end w-80">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="media/img/pria-section6.png" alt="" class="float-end w-80">
+                    </div>
                     <p class="position-absolute playpenSans fs-13 text-white top-50 text-center kategori1">Rentang usia 18-25 tahun beresiko ada di fase ini</p>
                 </div>
                 <div class="col-7">
+                    <div data-aos="fade-left" data-aos-duration="1000">
                     <img src="media/img/wanita-section6.png" alt="" class="w-83">
+                    </div>
                     <p class="position-absolute playpenSans fs-13 text-white top-50 text-center kategori2">Namun, pada usia 25-30 tahun, tekanan mulai terasa untuk menentukan arah hidup mereka sehingga masih berpeluang untuk berada di fase ini</p>
                 </div>
             </div>
@@ -244,7 +257,8 @@
 
 <!-- Section 7 -->
     <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden">
-        <div class="row g-0 position-relative overflow-hidden mt-5">
+        <div class="row g-0 position-relative overflow-hidden mt-5" data-aos="fade-down"
+                                                        data-aos-duration="800">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
@@ -279,7 +293,7 @@
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-internal" role="tabpanel" aria-labelledby="pills-internal-tab">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative py-4 justify-content-center">
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon1-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
@@ -288,7 +302,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon2-slide7.png" class="card-img-top w-25 " alt="...">
                             <div class="card-body">
@@ -297,7 +311,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon3-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
@@ -306,7 +320,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon4-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
@@ -315,7 +329,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon5-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
@@ -329,7 +343,7 @@
 
             <div class="tab-pane fade" id="pills-eksternal" role="tabpanel" aria-labelledby="pills-eksternal-tab">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center py-3 border-card h-100" >
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -344,7 +358,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center py-3 border-card h-100" >
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -359,7 +373,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                         <div class="card align-items-center py-3 border-card h-100" >
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -396,7 +410,7 @@
             </div>
         </div>
 
-        <div class="row g-0 position-relative overflow-hidden d-flex justify-content-center mt-7rem">
+        <div class="row g-0 position-relative overflow-hidden d-flex justify-content-center mt-7rem emotion-btn" data-target=".bg-sec8">
             <img src="media/img/scroll-slide8.png" class="w-7" alt="">
         </div>
 
@@ -456,7 +470,7 @@
     <div class="popup" id="popup">
         <div class="popupvideo">
             <video autoplay muted loop playsinline>
-                <source src="media/animate/popupsection.mp4" type="video/mp4">
+                <source src="media/animate/popupsection2.mp4" type="video/mp4">
             </video>
 
             <div class="popupteks">
@@ -691,7 +705,8 @@
 
 <!-- Section 17 -->
     <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden">
-        <div class="row g-0 position-relative overflow-hidden mt-5rem">
+        <div class="row g-0 position-relative overflow-hidden mt-5rem" data-aos="fade-down"
+                                                        data-aos-duration="800">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
@@ -717,7 +732,7 @@
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon1-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
@@ -726,7 +741,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon2-slide7.png" class="card-img-top w-25 " alt="...">
                     <div class="card-body">
@@ -735,7 +750,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon3-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
@@ -744,7 +759,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon4-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
@@ -753,7 +768,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon5-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
@@ -764,7 +779,8 @@
             </div>
         </div>
 
-        <div class="row g-0 position-relative overflow-hidden mt-5rem" >
+        <div class="row g-0 position-relative overflow-hidden mt-5rem" data-aos="fade-down"
+                                                        data-aos-duration="800">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
@@ -790,7 +806,7 @@
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -805,7 +821,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -820,7 +836,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -835,7 +851,7 @@
                     </div>
                 </div>
             </div>
-                        <div class="col">
+                        <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -850,7 +866,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -865,7 +881,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
                 <div class="card align-items-center py-3 border-card h-100" >
                     <div class="row g-0">
                         <div class="col-md-4 d-flex justify-content-center align-items-center">                            
@@ -942,7 +958,7 @@
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>  AOS.init({
-                once: true
+                mirror: false
             });
 
             if (window.innerWidth >= 450) {

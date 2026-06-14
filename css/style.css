@@ -26,11 +26,29 @@ body::before {
   pointer-events: none;
 }
 
+.logo img {
+  transition: .4s;
+}
+
+.logo2, .logo.active .logo1 {
+  opacity: 0;
+}
+
+.logo.active .logo2 {
+  opacity: 1;
+}
+
 /* Parallax Effect sec1 */
-.sec1, .fsk, .img-sec2 .position-start, .img-sec2 .position-end, .pria-swipe, .txt-sec1, .swipe2-righthalf, .swipe2-lefthalf, .wanita-swipe,
+.sec1, .fsk, .img-sec2 .position-start, .img-sec2 .position-end, .txt-sec1, .swipe2-righthalf, .swipe2-lefthalf,
 .qlcmb, .dampak, .validasi {
   position: relative;
   transition: none !important;
+}
+
+.pria-swipe, .wanita-swipe {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .dampak {
@@ -169,7 +187,7 @@ p.stroke-2 {
 
 .cursor {
   display: inline-block;
-  transition: opacity 4s ease;
+  transition: opacity 8s ease;
   opacity: 0;
 }
 
@@ -653,11 +671,19 @@ p.stroke-2 {
 }
 
 .jalanTanya-wrapper {
-  cursor: grab;
+  cursor: pointer;
   user-select: none;
-  transform: translate(-12%, -50%) translate(var(--drag-x), var(--drag-y)) scale(var(--drag-scale));;
-  transition: scale 0.1s linear;
-  /* z-index: 40; */
+  transform: translate(-12%, -50%) translate(var(--drag-x), var(--drag-y)) scale(var(--drag-scale));
+  transition: transform 0.4s ease,
+              opacity 0.4s ease,
+              filter 0.4s ease;
+}
+
+.sec7-default, .sec7-solution {
+  transition:
+    opacity .6s ease,
+    transform .6s ease,
+    filter .6s ease;
 }
 
 .bg-sec7 .nav-pills .nav-link.active, .bg-sec7 .nav-pills .show>.nav-link {
@@ -669,10 +695,10 @@ p.stroke-2 {
     color: #704FDE;
 }
 
-.bg-sec8 .sec7-solution, .bg-sec9 .sec7-solution, .bg-sec10 .sec7-solution,
+/* .bg-sec8 .sec7-solution, .bg-sec9 .sec7-solution, .bg-sec10 .sec7-solution,
 .bg-sec11 .sec7-solution, .bg-sec14 .sec7-solution, .bg-sec15 .sec7-solution {
   transition: opacity .12s linear, filter .12s linear, transform .12s linear;
-}
+} */
 
 .bg-sec8 .sec7-solution-card, .bg-sec9 .sec7-solution-card, .bg-sec10 .sec7-solution-card, 
 .bg-sec11 .sec7-solution-card, .bg-sec14 .sec7-solution-card, .bg-sec15 .sec7-solution-card {
