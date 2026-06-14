@@ -210,7 +210,12 @@ document.addEventListener('DOMContentLoaded', function () {
 const image = document.getElementById("emotionImage");
 document.querySelectorAll('.emotion-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
-    image.src = btn.dataset.image;
+    image.style.opacity = 0;
+
+    setTimeout(() => {
+      image.src = btn.dataset.image;
+      image.style.opacity = 1;
+    }, 300);
     document.querySelector(btn.dataset.target)
       .scrollIntoView({behavior:'smooth'});
   });

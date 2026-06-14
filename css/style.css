@@ -191,6 +191,10 @@ p.stroke-2 {
   opacity: 0;
 }
 
+#emotionImage{
+  transition: opacity .3s ease;
+}
+
 /* Backsound web */
 .music-overlay {
   position: fixed;
