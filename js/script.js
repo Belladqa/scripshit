@@ -477,7 +477,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 7
         $('.w-150').css({
-          'transform' : `translate3d(${-29}%, ${80}%, 0)`
+          'transform' : `translate3d(${-29}%, ${85}%, 0)`
         });
 
         // Section 17
@@ -816,7 +816,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 7
         $('.w-150').css({
-          'transform' : `translate3d(${-29}%, ${45}%, 0)`
+          'transform' : `translate3d(${-29}%, ${50}%, 0)`
         });
 
         // Section 17         
@@ -895,7 +895,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 7
         $('.w-150').css({
-          'transform' : `translate3d(${-29}%, ${30}%, 0)`
+          'transform' : `translate3d(${-29}%, ${40}%, 0)`
         });
 
         // Section 17         
@@ -986,11 +986,11 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
       } else if (window.matchMedia("(max-width: 450px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : `translate3d(${-75}%, ${190+limQuarter*120}%, 0) scale(${180}%)`,
+          'transform' : `translate3d(${-75}%, ${200+limQuarter*120}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform' : `translate3d(${-145}%, ${190+limQuarter*120}%, 0) scale(${180}%)`,
+          'transform' : `translate3d(${-145}%, ${200+limQuarter*120}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
@@ -1381,11 +1381,11 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
       } else if (window.matchMedia("(max-width: 550px) and (min-height: 961px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform' : `translate3d(${-75}%, ${240+limQuarter*110}%, 0) scale(${180}%)`,
+          'transform' : `translate3d(${-75}%, ${260+limQuarter*110}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform' : `translate3d(${-145}%, ${240+limQuarter*110}%, 0) scale(${180}%)`,
+          'transform' : `translate3d(${-145}%, ${260+limQuarter*110}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
@@ -2034,7 +2034,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 7
         $('.w-150').css({
-          'transform' : 'translate3d('+ (0) +'%, '+ (25) +'%, 0)'
+          'transform' : 'translate3d('+ (0) +'%, '+ (30) +'%, 0)'
         });
 
         // Section 17
@@ -2152,7 +2152,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'opacity': (scrollPercent >= 14.8 ? 0.15 : 1)
         }); 
         $('.daun').css({
-          'transform' : `translate3d(-2%, ${-20-limdaun*0.5}%, 0)`,
+          'transform' : `translate3d(0%, ${0-limdaun*0.5}%, 0)`,
           'opacity': bgfixed(scrollPercent)
         });
 
@@ -2191,7 +2191,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 7
         $('.w-150').css({
-          'transform' : `translate3d(${0}%, ${20}%, 0)` 
+          'transform' : `translate3d(${0}%, ${27}%, 0)` 
         });
       } else if (window.matchMedia("(max-width: 1550px)").matches) {
         // Section 1
