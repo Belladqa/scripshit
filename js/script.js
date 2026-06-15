@@ -402,22 +402,22 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
       if (window.matchMedia("(max-width: 375px) and (max-height: 667px)").matches) {
         // Section 1
         $('.wanita-swipe').css({
-          'transform': `translate3d(${-75}%, ${190+limQuarter*150}%, 0) scale(${180}%)`,
+          'transform': `translate3d(${-75}%, ${203+limQuarter*150}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform': `translate3d(${-145}%, ${172+limQuarter*150}%, 0) scale(${180}%)`,
+          'transform': `translate3d(${-145}%, ${185+limQuarter*150}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
           'position' : 'fixed',
           'transform' : `translate3d(${19}%, ${-890-limQuarter*250}%, 0) scale(${170}%)`,
-          'opacity': (scrollPercent >= 1 ? 0 : 1)
+          'opacity': (scrollPercent >= 0.9 ? 0 : 1)
         }); 
         $('.quarter2').css({
           'position' : 'fixed',
           'transform' : `translate3d(${27}%, ${-300-limQuarter*94}%, 0) scale(${170}%)`,
-          'opacity': (scrollPercent >= 1 ? 0 : 1)
+          'opacity': (scrollPercent >= 0.9 ? 0 : 1)
         }); 
         $('.pohon').css({
           'transform' : `translate3d(${29-limpohon*0.5}%, ${190+limpohon*0.6}%, 0) scale(${248 + (limpohon*0.5)}%)`,
