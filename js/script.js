@@ -59,7 +59,7 @@
       }
     }
 
-// DRAG ELEMENT FOR SECTION 7
+// CLICK ELEMENT FOR SECTION 7
 document.addEventListener('DOMContentLoaded', function () {
 
   function getResponsiveConfig(type) {
@@ -406,7 +406,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.pria-swipe').css({
-          'transform': `translate3d(${-145}%, ${190+limQuarter*150}%, 0) scale(${180}%)`,
+          'transform': `translate3d(${-145}%, ${172+limQuarter*150}%, 0) scale(${180}%)`,
           'opacity': (scrollPercent >= 3.7 ? 0 : 1)
         });
         $('.quarter').css({
@@ -444,7 +444,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'transform' : `translate3d(${-155+limLeft375*27}%, 10%, 0) scale(${75 + (scrollPercent * 1)}%)`
         });
         $('.qlcmb').css({
-          'transform' : `scale(${140 + (wScroll * 0)}) translate3d(0, ${30}%, 0)`,
+          'transform' : `scale(${140 + (wScroll * 0)}%) translate3d(0, ${30}%, 0)`,
           'opacity': (scrollPercent >= 0.7 ? 1 : 0)
         });
         $('.p2sec2').css({
@@ -464,7 +464,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
 
         // Section 3
         $('.pria-sec4').css({
-          'transform': `translate3d(${-68 + menScrollX450*8}%, ${-1560 + limRight1440*205}%, 0) scale(${menScale375}%)`,
+          'transform': `translate3d(${-68 + menScrollX450*8}%, ${-1560 + Math.min(scrollPercent, 7.4)*215}%, 0) scale(${menScale375}%)`,
            'opacity': menOpacity(scrollPercent)
         });
 
@@ -529,7 +529,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'transform' : `translate3d(${-155+limLeft375*27}%, 10%, 0) scale(${75 + (scrollPercent * 1)}%)`
         });
         $('.qlcmb').css({
-          'transform' : `scale(${140 + (wScroll * 0)}) translate(0, ${30}%)`,
+          'transform' : `scale(${140 + (wScroll * 0)}%) translate(0, ${30}%)`,
           'opacity': (scrollPercent >= 0.8 ? 1 : 0)
         });
         $('.p2sec2').css({
@@ -616,7 +616,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'transform' : `translate3d(${-155+limLeft375*27}%, 10%, 0) scale(${75 + (scrollPercent * 1)}%)`
         });
         $('.qlcmb').css({
-          'transform' : `scale(${140 + (wScroll * 0)}) translate3d(0, ${-30}%, 0)`,
+          'transform' : `scale(${140 + (wScroll * 0)}%) translate3d(0, ${-30}%, 0)`,
           'opacity': (scrollPercent >= 0.8 ? 1 : 0)
         });
         $('.p2sec2').css({
@@ -704,7 +704,7 @@ document.querySelectorAll('.emotion-btn').forEach(btn=>{
           'transform' : `translate3d(${-155+limLeft375*27}%, 10%, 0) scale(${75 + (scrollPercent * 1)}%)`
         });
         $('.qlcmb').css({
-          'transform' : `scale(${140 + (wScroll * 0)}) translate3d(0, ${-30}%, 0)`,
+          'transform' : `scale(${140 + (wScroll * 0)}%) translate3d(0, ${-30}%, 0)`,
           'opacity': (scrollPercent >= 0.4 ? 1 : 0)
         });
         $('.p2sec2').css({
