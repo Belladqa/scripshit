@@ -360,6 +360,10 @@ p.stroke-2 {
   background-color: #704FDE;
 }
 
+.btn-purple:hover {
+  background-color: #402597;
+}
+
 .yellow {
   color: #FFC300;
 }
@@ -704,8 +708,9 @@ p.stroke-2 {
   transition: opacity .12s linear, filter .12s linear, transform .12s linear;
 } */
 
-.bg-sec8 .sec7-solution-card, .bg-sec9 .sec7-solution-card, .bg-sec10 .sec7-solution-card, 
-.bg-sec11 .sec7-solution-card, .bg-sec14 .sec7-solution-card, .bg-sec15 .sec7-solution-card {
+.bg-sec8 .sec7-solution-card, .bg-sec9 .sec7-solution-card, 
+.bg-sec10 .sec7-solution-card, .bg-sec11 .sec7-solution-card, 
+.bg-sec14 .sec7-solution-card, .bg-sec15 .sec7-solution-card {
   background: rgba(255,255,255,0.92);
   border: 5px solid var(--yellow);
   border-radius: 24px;
@@ -719,8 +724,9 @@ p.stroke-2 {
   margin-bottom: 5rem !important;
 }
 
-.bg-sec8 .sec7-example, .bg-sec9 .sec7-example, .bg-sec10 .sec7-example,
-.bg-sec11 .sec7-example, .bg-sec14 .sec7-example, .bg-sec15 .sec7-example {
+.bg-sec8 .sec7-example, .bg-sec9 .sec7-example, 
+.bg-sec10 .sec7-example,.bg-sec11 .sec7-example, 
+.bg-sec14 .sec7-example, .bg-sec15 .sec7-example {
   background: rgba(107,79,230,0.10);
   border-radius: 16px;
   padding: 1.4rem;

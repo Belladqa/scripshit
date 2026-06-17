@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-  //  DRAG LOGIC
+  //  CLICK LOGIC
   const wrappers = document.querySelectorAll('.jalanTanya-wrapper');
   if (!wrappers.length) return;
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let opened = false;
     let moveVal = 0;
 
-    element.setAttribute('draggable', 'false');
+    element.setAttribute('click', 'false');
     element.style.touchAction = 'none';
 
     const section = element.closest('section');
@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// data target & data image html
 const image = document.getElementById("emotionImage");
 document.querySelectorAll('.emotion-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
