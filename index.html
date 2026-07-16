@@ -11,10 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans:wght@100..800&family=Poetsen+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
+<!-- <div id="preloader">
+    <div class="preloader-content">
+        <img src="media/img/logo.png" class="preloader-logo">
+        <p class="playpenSans">
+            <b>Menyiapkan perjalananmu...</b>
+        </p>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div> -->
 <!-- POP UP MUSIC -->
     <div class="music-overlay" id="musicOverlay">
         <button id="startMusic">▶︎ Music</button>
@@ -22,7 +37,6 @@
     <audio id="bgMusic" loop>
         <source src="media/music/ambient-emotional.mp3" type="audio/mpeg">
     </audio>
-    <button class="music-btn" id="musicBtn">❚❚</button>
 
 <!-- Background -->
     <video autoplay muted loop playsinline class="bg-video">
@@ -79,10 +93,10 @@
 
             <div class="row">
                 <div class="col wrapper1">
-                    <img src="media/img/pohon-slide1.png" class="pohon img-fluid top-0 position-absolute start-0">
+                    <img src="media/img/1pohon-slide1.png" class="pohon img-fluid top-0 position-absolute start-0">
                 </div>
                 <div class="col wrapper2">
-                    <img src="media/img/pohon-slide1.png" class="pohon pohon-flip img-fluid top-0 position-absolute end-0">
+                    <img src="media/img/1pohon-slide1.png" class="pohon pohon-flip img-fluid top-0 position-absolute end-0">
                 </div>
             </div>
 
@@ -91,7 +105,7 @@
                     <img src="media/img/pohonpohon-slide1.png" class="position-absolute pohonpohon">
                 </div>
                 <div class="wrapper4">
-                    <img src="media/img/daun-slide1.png" class="position-absolute bottom-0 daun">
+                    <img src="media/img/1daun-slide1.png" class="position-absolute bottom-0 daun">
                 </div>
             </div>
     </section>
@@ -160,7 +174,7 @@
                 <p class="playpenSans fw-bold rounded-pill btn-purple m-0 fs-22 py-3 text-white emotion-btn" data-image="/media/img/bingung-slide3.png">BINGUNG</p>
             </button>
         </div>
-        <div class="col-12 p-0 my-3rem sec3-button" data-aos="fade-left"
+        <div class="col-12 p-0 sec3-button" data-aos="fade-left"
                                 data-aos-offset="60"
                                 data-aos-duration="500">
             <button class="btn w-42">
@@ -203,9 +217,9 @@
     </section>
 
 <!-- Section 5 -->
-    <section><div class="container-fluid p-0 position-relative bg-sec5 parallax-section">
-        <div class="row position-relative g-0 justify-content-center fs-27 p-0 top-25">
-            <div class="col-9 poetsenOne fw-light text-center txtsec5">
+    <section><div class="container-fluid p-0 position-relative bg-sec5 parallax-section d-flex align-items-center">
+        <div class="row position-relative g-0 justify-content-center fs-27 p-0">
+            <div class="col-10 poetsenOne fw-light text-center txtsec5">
                 <span id="typing" class=""></span><span class="cursor purple"> kamu sedang mencoba mengenal diri dan dunia kamu lebih dalam.</span>
             </div>
         </div>
@@ -214,29 +228,32 @@
 <!-- Section 6 -->
     <section><div class="container-fluid p-0 position-relative bg-sec6 parallax-section">
         <div class="row">
+            <div class="col">
             <div class="row align-items-center my-5 sec6-col1">
-                <div class="col-1">
+                <div class="col-12 col-lg-1">
 
                 </div>
-                <div class="col-4 p-0" data-aos="zoom-in">
+                <div class="col-12 col-lg-4 p-0" data-aos="zoom-in">
                     <p class="poetsenOne fs-18 px-3rem text-center text-white m-0">Fase ini sering dialami oleh individu usia 20-an hingga awal 30-an</p>
                 </div>
-                <div class="col-6 d-flex p-0" data-aos="zoom-out-left" data-aos-duration="600">
-                    <div class="col-lg-3 position-relative">
-                        <div class="row position-relative top-50">
+                <div class="col-12 col-lg-7 justify-content-center d-flex p-0" data-aos="zoom-out-left" data-aos-duration="600">
+                    <div class="row w-diagram position-relative">
+                    <div class="col-4 position-relative align-items-center d-grid">   
+                        <div class="position-relative d-flex top-50 justify-content-center">
                             <img src="media/img/line-section6.png" alt="" class="w-97 line-sec6">
                         </div>
-                        <div class="row position-relative start-50">
-                            <p class="poetsenOne yellow-2 fs-18 position-absolute">75%</p>
+                        <div class="position-relative d-flex start-50 bottom-50">
+                            <p class="poetsenOne yellow-2 fs-18">75%</p>
                         </div>
+                    </div> 
+                    <div class="col-4 position-relative d-flex align-items-center justify-content-center">
+                        <img src="media/img/diagram-section6.png" alt="" class="h-75 dia-sec6">
                     </div>
-                    <div class="col-lg-4 d-flex justify-content-center align-items-center">
-                        <img src="media/img/diagram-section6.png" alt="" class="w-75 dia-sec6">
+                    <div class="col-4 position-relative d-flex align-items-center">
+                        <p class="playpenSans fs-13 float-start text-white anakmuda">Anak muda pernah mengalami fase Quarter Life Crisis</p>
                     </div>
-                    <div class="col-lg-5 d-flex align-items-center">
-                        <p class="playpenSans fs-13 pe-5 float-start text-white anakmuda">Anak muda pernah mengalami fase <br>Quarter Life Crisis</p>
                     </div>
-                </div>
+                </div>  
             </div>
             <div class="row p-0 sec6-col2 mb-5">
                 <div class="col-5">
@@ -251,14 +268,15 @@
                     </div>
                     <p class="position-absolute playpenSans fs-13 text-white top-50 text-center kategori2">Namun, pada usia 25-30 tahun, tekanan mulai terasa untuk menentukan arah hidup mereka sehingga masih berpeluang untuk berada di fase ini</p>
                 </div>
+            </div>            
             </div>
         </div>
     </div></section>
 
 <!-- Section 7 -->
-    <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden">
+    <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden inipemicu">
         <div class="row g-0 position-relative overflow-hidden mt-5" data-aos="fade-down"
-                                                        data-aos-duration="800">
+                                                        data-aos-duration="500">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
@@ -275,13 +293,13 @@
             </div>
         </div>
 
-        <div class="row g-0 position-relative overflow-hidden my-5">
+        <div class="row g-0 position-relative overflow-hidden my-5 px-5">
             <ul class="nav nav-pills mb-3 d-flex justify-content-center mt-5" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="border-1rem fs-4 poetsenOne nav-link active" id="pills-in-tab" data-bs-toggle="pill" data-bs-target="#pills-internal" type="button" role="tab" aria-controls="pills-internal" aria-selected="true">Faktor Internal</button>
+                    <button class="border-1rem fs-2 poetsenOne nav-link active" id="pills-in-tab" data-bs-toggle="pill" data-bs-target="#pills-internal" type="button" role="tab" aria-controls="pills-internal" aria-selected="true">FAKTOR INTERNAL</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="border-1rem fs-4 poetsenOne nav-link" id="pills-eks-tab" data-bs-toggle="pill" data-bs-target="#pills-eksternal" type="button" role="tab" aria-controls="pills-eksternal" aria-selected="false">Faktor Eksternal</button>
+                    <button class="border-1rem fs-2 poetsenOne nav-link" id="pills-eks-tab" data-bs-toggle="pill" data-bs-target="#pills-eksternal" type="button" role="tab" aria-controls="pills-eksternal" aria-selected="false">FAKTOR EKSTERNAL</button>
                 </li>
             </ul>
         </div>
@@ -298,43 +316,43 @@
                             <img src="media/img/icon1-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title poetsenOne">Lagi Mencari Jati Diri</h5>
-                                <p class="card-text  ">Di fase ini, kamu mulai banyak mikir soal masa depan, hubungan, pekerjaan, dan hidup yang kamu inginkan. Karena banyak keputusan terasa penting, wajar kalau kamu jadi sering ragu atau takut salah langkah.</p>
+                                <p class="card-text playpenSans">Di fase ini, kamu mulai banyak mikir soal masa depan, hubungan, pekerjaan, dan hidup yang kamu inginkan. Karena banyak keputusan terasa penting, wajar kalau kamu jadi sering ragu atau takut salah langkah.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon2-slide7.png" class="card-img-top w-25 " alt="...">
                             <div class="card-body">
                                 <h5 class="card-title poetsenOne">Hidup Terasa Tidak Stabil</h5>
-                                <p class="card-text  ">Perubahan yang datang terus-menerus, seperti pindah lingkungan, tuntutan kuliah, pekerjaan, atau hubungan sosial, bisa bikin hidup terasa nggak pasti. Kadang kamu jadi merasa kehilangan kendali atas arah hidup sendiri.</p>
+                                <p class="card-text playpenSans">Perubahan yang datang terus-menerus, seperti pindah lingkungan, tuntutan kuliah, pekerjaan, atau hubungan sosial, bisa bikin hidup terasa nggak pasti. Kadang kamu jadi merasa kehilangan kendali atas arah hidup sendiri.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon3-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title poetsenOne">Mulai Memikirkan Masa Depan Sendiri</h5>
-                                <p class="card-text  ">Semakin dewasa, kamu mulai sadar kalau keputusan hidup ada di tangan kamu sendiri. Dari situ muncul tekanan untuk “harus berhasil” atau “harus tahu tujuan hidup”.</p>
+                                <p class="card-text playpenSans">Semakin dewasa, kamu mulai sadar kalau keputusan hidup ada di tangan kamu sendiri. Dari situ muncul tekanan untuk “harus berhasil” atau “harus tahu tujuan hidup”.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon4-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title poetsenOne">Merasa Bukan Remaja, Tapi Belum Sepenuhnya Dewasa</h5>
-                                <p class="card-text  ">Kadang kamu merasa sudah terlalu dewasa untuk dianggap anak-anak, tapi juga belum benar-benar merasa jadi orang dewasa. Perasaan ini bikin bingung dan sering muncul pertanyaan tentang arah hidup.</p>
+                                <p class="card-text playpenSans">Kadang kamu merasa sudah terlalu dewasa untuk dianggap anak-anak, tapi juga belum benar-benar merasa jadi orang dewasa. Perasaan ini bikin bingung dan sering muncul pertanyaan tentang arah hidup.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
                         <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                             <img src="media/img/icon5-slide7.png" class="card-img-top w-25" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title poetsenOne">Terlalu Banyak Pilihan dan Kemungkinan</h5>
-                                <p class="card-text  ">Di usia ini, banyak jalan hidup yang bisa dipilih. Tapi justru karena pilihannya banyak, kamu jadi takut salah memilih dan mulai meragukan kemampuan diri sendiri.</p>
+                                <p class="card-text playpenSans">Di usia ini, banyak jalan hidup yang bisa dipilih. Tapi justru karena pilihannya banyak, kamu jadi takut salah memilih dan mulai meragukan kemampuan diri sendiri.</p>
                             </div>
                         </div>
                     </div>
@@ -343,48 +361,30 @@
 
             <div class="tab-pane fade" id="pills-eksternal" role="tabpanel" aria-labelledby="pills-eksternal-tab">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                        <div class="card align-items-center py-3 border-card h-100" >
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                                    <img src="media/img/icon6-slide7.png" class="card-img-top w-75" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title poetsenOne">Hubungan Sosial</h5>
-                                        <p class="card-text">Hubungan dengan teman, keluarga, atau pasangan bisa memengaruhi kondisi emosional kamu. Saat hubungan terasa nggak stabil, kamu jadi lebih gampang merasa cemas, overthinking, atau kesepian.</p>
-                                    </div>
-                                </div>
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                        <div class="card align-items-center py-3 border-card h-100" >                          
+                            <img src="media/img/icon6-slide7.png" class="card-img-top w-25" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title poetsenOne">Hubungan Sosial</h5>
+                                <p class="card-text playpenSans">Hubungan dengan teman, keluarga, atau pasangan bisa memengaruhi kondisi emosional kamu. Saat hubungan terasa nggak stabil, kamu jadi lebih gampang merasa cemas, overthinking, atau kesepian.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                        <div class="card align-items-center py-3 border-card h-100" >
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                                    <img src="media/img/icon7-slide7.png" class="card-img-top w-75 " alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title poetsenOne">Tekanan Pekerjaan dan Karier</h5>
-                                        <p class="card-text">Tuntutan pekerjaan, bingung soal karier, atau merasa tertinggal dari orang lain bisa bikin tekanan mental semakin besar. Apalagi kalau kamu merasa harus cepat sukses.</p>
-                                    </div>
-                                </div>
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                        <div class="card align-items-center py-3 border-card h-100" >                        
+                            <img src="media/img/icon7-slide7.png" class="card-img-top w-25 " alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title poetsenOne">Tekanan Pekerjaan dan Karier</h5>
+                                <p class="card-text playpenSans">Tuntutan pekerjaan, bingung soal karier, atau merasa tertinggal dari orang lain bisa bikin tekanan mental semakin besar. Apalagi kalau kamu merasa harus cepat sukses.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                        <div class="card align-items-center py-3 border-card h-100" >
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                                    <img src="media/img/icon8-slide7.png" class="card-img-top w-75" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title poetsenOne">Tekanan Akademis</h5>
-                                        <p class="card-text">Tugas kuliah, nilai, skripsi, atau ekspektasi untuk selalu berprestasi bisa membuat kamu merasa lelah secara mental. Tekanan akademis yang terus menumpuk sering bikin seseorang merasa stres dan kehilangan semangat.</p>
-                                    </div>
-                                </div>
+                    <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                        <div class="card align-items-center py-3 border-card h-100" >                        
+                            <img src="media/img/icon8-slide7.png" class="card-img-top w-25" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title poetsenOne">Tekanan Akademis</h5>
+                                <p class="card-text playpenSans">Tugas kuliah, nilai, skripsi, atau ekspektasi untuk selalu berprestasi bisa membuat kamu merasa lelah secara mental. Tekanan akademis yang terus menumpuk sering bikin seseorang merasa stres dan kehilangan semangat.</p>
                             </div>
                         </div>
                     </div>
@@ -704,9 +704,9 @@
     </div></section>
 
 <!-- Section 17 -->
-    <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden">
+    <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden initanda">
         <div class="row g-0 position-relative overflow-hidden mt-5rem" data-aos="fade-down"
-                                                        data-aos-duration="800">
+                                                        data-aos-duration="500">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
@@ -728,63 +728,63 @@
         </div>
 
         <div class="row g-0 position-relative overflow-hidden my-5 d-flex justify-content-center">
-            <p class="fs-3 poetsenOne text-danger text-shadow w-50 text-center">Gejala pada fase ini bisa muncul lewat pikiran, emosi, atau perubahan kebiasaan yang kamu alami sehari-hari </p>
+            <p class="fs-2 poetsenOne text-danger text-shadow w-50 text-center">Gejala pada fase ini bisa muncul lewat pikiran, emosi, atau perubahan kebiasaan yang kamu alami sehari-hari </p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon1-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
                         <h5 class="card-title poetsenOne">Sering Cemas dan Kepikiran Masa Depan</h5>
-                        <p class="card-text  ">Kamu jadi sering khawatir soal karier, hubungan, atau kehidupan yang belum jelas arahnya. Kadang kamu merasa belum siap menghadapi kehidupan dewasa dan takut kalau keputusan yang kamu ambil nanti salah.</p>
+                        <p class="card-text playpenSans">Kamu jadi sering khawatir soal karier, hubungan, atau kehidupan yang belum jelas arahnya. Kadang kamu merasa belum siap menghadapi kehidupan dewasa dan takut kalau keputusan yang kamu ambil nanti salah.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon2-slide7.png" class="card-img-top w-25 " alt="...">
                     <div class="card-body">
                         <h5 class="card-title poetsenOne">Bingung Soal Karier dan Tujuan Hidup</h5>
-                        <p class="card-text  ">Kamu mulai mempertanyakan pilihan hidup yang sedang dijalani. “Aku cocoknya di mana ya?” atau “Ini benar nggak buat aku?” jadi pertanyaan yang sering muncul di kepala.</p>
+                        <p class="card-text playpenSans">Kamu mulai mempertanyakan pilihan hidup yang sedang dijalani. “Aku cocoknya di mana ya?” atau “Ini benar nggak buat aku?” jadi pertanyaan yang sering muncul di kepala.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon3-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
                         <h5 class="card-title poetsenOne">Mudah Stres dan Merasa Tertekan</h5>
-                        <p class="card-text  ">Tuntutan dari lingkungan, pekerjaan, kuliah, keluarga, atau bahkan dari diri sendiri bisa bikin kamu merasa lelah terus-menerus. Rasanya seperti harus mengejar banyak hal dalam waktu bersamaan.</p>
+                        <p class="card-text playpenSans">Tuntutan dari lingkungan, pekerjaan, kuliah, keluarga, atau bahkan dari diri sendiri bisa bikin kamu merasa lelah terus-menerus. Rasanya seperti harus mengejar banyak hal dalam waktu bersamaan.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon4-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
                         <h5 class="card-title poetsenOne">Emosi Jadi Tidak Stabil</h5>
-                        <p class="card-text  ">Kadang mood berubah cepat, gampang marah, sedih, atau kehilangan semangat tanpa tahu alasannya. Hal-hal yang biasanya menyenangkan pun terasa biasa aja.</p>
+                        <p class="card-text playpenSans">Kadang mood berubah cepat, gampang marah, sedih, atau kehilangan semangat tanpa tahu alasannya. Hal-hal yang biasanya menyenangkan pun terasa biasa aja.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
                 <div class="card align-items-center pt-4 pb-5 px-2 border-card h-27">
                     <img src="media/img/icon5-slide7.png" class="card-img-top w-25" alt="...">
                     <div class="card-body">
                         <h5 class="card-title poetsenOne">Merasa Kehilangan Arah dan Jati Diri</h5>
-                        <p class="card-text  ">Kamu merasa bingung dengan diri sendiri dan mulai mempertanyakan identitas, tujuan, atau makna hidup yang kamu jalani sekarang.</p>
+                        <p class="card-text playpenSans">Kamu merasa bingung dengan diri sendiri dan mulai mempertanyakan identitas, tujuan, atau makna hidup yang kamu jalani sekarang.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="row g-0 position-relative overflow-hidden mt-5rem" data-aos="fade-down"
-                                                        data-aos-duration="800">
+                                                        data-aos-duration="500">
             <div class="col-12 col-lg-1"></div>
             <div class="col-12 col-lg-4 position-relative d-flex align-items-center">
                 <div class="d-inline position-relative">
-                    <p class="fs-5vw poetsenOne stroke-2 purple">Dampak yang bisa terjadi </p>
+                    <p class="fs-5vw poetsenOne stroke-2 purple inidampak">Dampak yang bisa terjadi </p>
                 </div>
             </div>
 
@@ -802,97 +802,61 @@
 <!-- Section 18 -->
  <section><div class="container-fluid p-0 position-relative bg-sec7 parallax-section overflow-hidden">
         <div class="row g-0 position-relative overflow-hidden my-5 d-flex justify-content-center">
-            <p class="fs-3 poetsenOne text-danger text-shadow w-50 text-center">Jika dibiarkan terlalu lama, Quarter Life Crisis bisa mempengaruhi kesehatan mental, emosi, dan cara kamu menjalani kehidupan sehari-hari</p>
+            <p class="fs-2 poetsenOne text-danger text-shadow w-50 text-center">Jika dibiarkan terlalu lama, Quarter Life Crisis bisa mempengaruhi kesehatan mental, emosi, dan cara kamu menjalani kehidupan sehari-hari</p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4 px-5 position-relative pl-5 py-4 justify-content-center">
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon1-slide18.png" class="card-img-top w-75" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Kecemasan dan Overthinking Berlebihan</h5>
-                                <p class="card-text">Kamu jadi terlalu banyak memikirkan kemungkinan buruk tentang masa depan. Hal kecil pun bisa terasa berat karena pikiran terus dipenuhi rasa takut dan khawatir.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                        
+                    <img src="media/img/icon1-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Kecemasan dan Overthinking Berlebihan</h5>
+                        <p class="card-text playpenSans">Kamu jadi terlalu banyak memikirkan kemungkinan buruk tentang masa depan. Hal kecil pun bisa terasa berat karena pikiran terus dipenuhi rasa takut dan khawatir.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon2-slide18.png" class="card-img-top w-75 " alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Emosi Jadi Lebih Tidak Stabil</h5>
-                                <p class="card-text">Perasaan mudah berubah dan sulit dikendalikan bisa mulai memengaruhi hubungan dengan orang sekitar maupun aktivitas sehari-hari.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                         
+                    <img src="media/img/icon2-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Emosi Jadi Lebih Tidak Stabil</h5>
+                        <p class="card-text playpenSans">Perasaan mudah berubah dan sulit dikendalikan bisa mulai memengaruhi hubungan dengan orang sekitar maupun aktivitas sehari-hari.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon3-slide18.png" class="card-img-top w-75" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Tingkat Stres Semakin Tinggi</h5>
-                                <p class="card-text">Tekanan hidup yang terus menumpuk bisa bikin tubuh dan pikiran terasa capek terus-menerus. Fokus berkurang, tidur jadi nggak teratur, dan aktivitas sehari-hari terasa berat.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                      
+                    <img src="media/img/icon3-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Tingkat Stres Semakin Tinggi</h5>
+                        <p class="card-text playpenSans">Tekanan hidup yang terus menumpuk bisa bikin tubuh dan pikiran terasa capek terus-menerus. Fokus berkurang, tidur jadi nggak teratur, dan aktivitas sehari-hari terasa berat.</p>
                     </div>
                 </div>
             </div>
-                        <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon4-slide18.png" class="card-img-top w-75" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Kesehatan Mental Menurun</h5>
-                                <p class="card-text">Kalau dibiarkan terlalu lama, perasaan cemas, bingung, dan tertekan bisa memengaruhi kesehatan mental secara lebih serius, seperti burnout atau depresi.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                         
+                    <img src="media/img/icon4-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Kesehatan Mental Menurun</h5>
+                        <p class="card-text playpenSans">Kalau dibiarkan terlalu lama, perasaan cemas, bingung, dan tertekan bisa memengaruhi kesehatan mental secara lebih serius, seperti burnout atau depresi.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon5-slide18.png" class="card-img-top w-75 " alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Takut Mengambil Keputusan</h5>
-                                <p class="card-text">Karena takut salah langkah, kamu jadi sering menunda keputusan penting dan memilih diam di tempat yang sebenarnya bikin kamu nggak nyaman.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                         
+                    <img src="media/img/icon5-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Takut Mengambil Keputusan</h5>
+                        <p class="card-text playpenSans">Karena takut salah langkah, kamu jadi sering menunda keputusan penting dan memilih diam di tempat yang sebenarnya bikin kamu nggak nyaman.</p>
                     </div>
                 </div>
             </div>
-            <div class="col" data-aos="zoom-out" data-aos-duration="1000">
-                <div class="card align-items-center py-3 border-card h-100" >
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">                            
-                            <img src="media/img/icon6-slide18.png" class="card-img-top w-75" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title poetsenOne">Jadi Tidak Percaya Diri</h5>
-                                <p class="card-text">Kamu mulai meragukan kemampuan diri sendiri dan merasa orang lain jauh lebih baik. Akibatnya, kamu jadi takut mencoba hal baru atau berkembang.</p>
-                            </div>
-                        </div>
+            <div class="col" data-aos="zoom-out" data-aos-duration="500">
+                <div class="card align-items-center px-2 py-3 border-card h-100" >                         
+                    <img src="media/img/icon6-slide18.png" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title poetsenOne">Jadi Tidak Percaya Diri</h5>
+                        <p class="card-text playpenSans">Kamu mulai meragukan kemampuan diri sendiri dan merasa orang lain jauh lebih baik. Akibatnya, kamu jadi takut mencoba hal baru atau berkembang.</p>
                     </div>
                 </div>
             </div>
@@ -902,9 +866,9 @@
 
 <!-- Section 16 -->
 <section class="bg-sec16">
-        <div class="row">
+        <div class="row mb-7">
             <div class="row">
-                <p class="fs-22 poetsenOne lh-sm primary text-center">STRATEGI SEHAT MENGELOLA<br>QUARTER LIFE CRISIS</p>
+                <p class="dark-blue fs-22 poetsenOne lh-sm text-center">STRATEGI SEHAT MENGELOLA<br>QUARTER LIFE CRISIS</p>
             </div>
             <div class="row">
                 <div id="app" class="container">
@@ -946,11 +910,176 @@
                 </div>
             </div>
         </div>
-
-    <div style="background-color: #704FDE;" class="validasi">
-        <p class="text-center m-0 py-3 text-white playpenSans">Telah divalidasi oleh <a href="https://mindsetpsychology.co.id/psikolog/fitria-adriana" class="text-decoration-none"><b>Fitria Adriana M.Psi, Psikolog</b></a></p>
-    </div>
 </section>
+
+<!-- Section 19 -->
+ <section class="bg-sec19 d-flex justify-content-center text-center align-items-center position-relative">
+    <div class="bg-sec3 w-85 rounded-5 p-5 mb-7 shadow-lg" style="background-color: #F6F2FC;">
+        <div class="row">
+            <div class="col-12 col-lg-6 d-grid justify-content-center">
+                <div class="">
+                    <p class="fs-22 dark-blue poetsenOne text-shadow">Butuh Bantuan Profesional?</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <p class="playpenSans w-80">Jika perasaan yang kamu alami saat ini mulai mengganggu aktivitas sehari-hari, jangan ragu untuk cari bantuan profesional ya!<br>
+                        Konsultasi dengan tenaga profesional bisa bantu kamu memahami diri dan menemukan jalan keluarnya</p>
+                </div>
+                <div class="purple-3 poetsenOne">
+                    <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue"><i class="fa-solid fa-hand-holding-heart me-2"></i> Cari Bantuan</button>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center position-relative p-3">
+                <img src="media/img/konseling.png" alt="" class="w-85">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+                    <div id="bantuanContainer" class="d-flex justify-content-center bantuan-container mt-4 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 d-flex">
+                        <div class="card bantuan-card col rounded-5 mx-2 mb-2 border-0">
+                            <div class="card-body">
+                                <button type="button" class="rounded-circle btn btn-purple-2 disabled opacity-100 border-0"><h1 class="p-2"><i class="fa-solid fa-hospital purple"></i></h1></button>
+                                <div class="d-grid">
+                                <h5 class="poetsenOne dark-blue mt-2">Psikolog di rumah sakit</h5>
+                                    <div class="d-flex justify-content-center"><hr class="text-danger border-3 w-25"></div>
+                                <p class="playpenSans dark-blue">Layanan psikologi profesional tersedia di rumah sakit umum maupun rumah sakit khusus jiwa</p>
+                                <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue poetsenOne" 
+                                onclick="window.open('https://www.google.com/search?q=psikolog+rumah+sakit+terdekat','_blank')"><span class="poetsenOne">Lihat </span><i class="fa-solid fa-circle-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bantuan-card col rounded-5 mx-2 mb-2 border-0">
+                            <div class="card-body">
+                                <button type="button" class="rounded-circle btn btn-purple-2 disabled opacity-100 border-0"><h1 class="p-2"><i class="fa-solid fa-clinic-medical purple"></i></h1></button>
+                                <div class="d-grid">
+                                <h5 class="poetsenOne dark-blue mt-2">Klinik psikologi</h5>
+                                    <div class="d-flex justify-content-center"><hr class="text-danger border-3 w-25"></div>
+                                <p class="playpenSans dark-blue">Klinik psikologi menyediakan layanan konseling, asesmen, dan terapi oleh psikolog</p>
+                                <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue poetsenOne" 
+                                onclick="window.open('https://www.google.com/search?q=klinik+psikologi+terdekat','_blank')"><span class="poetsenOne">Lihat </span><i class="fa-solid fa-circle-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bantuan-card col rounded-5 mx-2 mb-2 border-0">
+                            <div class="card-body">
+                                <button type="button" class="rounded-circle btn btn-purple-2 disabled opacity-100 border-0"><h1 class="p-2"><i class="fa-solid fa-notes-medical purple"></i></h1></button>
+                                <div class="d-grid">
+                                <h5 class="poetsenOne dark-blue mt-2">Puskesmas yang menyediakan layanan kesehatan jiwa</h5>
+                                    <div class="d-flex justify-content-center"><hr class="text-danger border-3 w-25"></div>
+                                <p class="playpenSans dark-blue">Beberapa puskesmas memiliki layanan kesehatan jiwa yang dapat diakses</p>
+                                <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue poetsenOne" 
+                                onclick="window.open('https://www.google.com/search?q=puskesmas+kesehatan+jiwa+terdekat','_blank')"><span class="poetsenOne">Lihat </span><i class="fa-solid fa-circle-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bantuan-card col rounded-5 mx-2 mb-2 border-0">
+                            <div class="card-body">
+                                <button type="button" class="rounded-circle btn btn-purple-2 disabled opacity-100 border-0"><h1 class="p-2"><i class="fa-solid fa-university purple"></i></h1></button>
+                                <div class="d-grid">
+                                <h5 class="poetsenOne dark-blue mt-2">Layanan konseling di perguruan tinggi</h5>
+                                    <div class="d-flex justify-content-center"><hr class="text-danger border-3 w-25"></div>
+                                <p class="playpenSans dark-blue">Banyak kampus menyediakan layanan konseling untuk mahasiswa</p>
+                                <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue poetsenOne" 
+                                onclick="window.open('https://www.google.com/search?q=layanan+konseling+perguruan+tinggi+terdekat','_blank')"><span class="poetsenOne">Lihat </span><i class="fa-solid fa-circle-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card bantuan-card col rounded-5 mx-2 mb-2 border-0">
+                            <div class="card-body">
+                                <button type="button" class="rounded-circle btn btn-purple-2 disabled opacity-100 border-0"><h1 class="p-2"><i class="fa-solid fa-user-md purple"></i></h1></button>
+                                <div class="d-grid">
+                                <h5 class="poetsenOne dark-blue mt-2">Psikolog berizin di platform layanan kesehatan</h5>
+                                    <div class="d-flex justify-content-center"><hr class="text-danger border-3 w-25"></div>
+                                <p class="playpenSans dark-blue">Konsultasi online dengan psikolog berizin melalui platform terpercaya</p>
+                                <button type="button" id="btnBantuan" class="rounded-pill btn btn-warning dark-blue poetsenOne" 
+                                onclick="window.open('https://www.google.com/search?q=psikolog+berizin+online','_blank')"><span class="poetsenOne">Lihat </span><i class="fa-solid fa-circle-chevron-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+ </section>
+
+<footer class="bg-sec17 d-flex justify-content-center" style="background-color: #704FDE;">
+    <div class="row w-83 mb-4 mt-3rem">
+        <div class="col-12 col-lg-9 d-flex justify-content-center">
+            <div class="col-12">
+            <table class="table bg-transparent table-borderless">
+                <thead class="yellow-3">
+                    <tr>
+                        <td class="bg-transparent fs-4 yellow-3 d-flex align-items-center" style="font-family: 'Poetsen One';">
+                            <button type="button" class="opacity-100 me-3 btn btn-warning rounded-circle d-flex justify-content-center align-items-center me-2 icon-btn" disabled><i class="fas fa-book-reader purple" style="color: #4b2ab8"></i>
+                            </button>  REFERENCE
+                        </td>
+                    </tr>
+                </thead>
+                <tbody style="border-color: transparent !important;" class="playpenSans">
+                    <tr><td class="bg-transparent"><hr class="yellow-3 border-1 opacity-100"></td></tr>
+                    <tr>
+                        <td class="bg-transparent"><a href="https://academic.oup.com/book/26128" target="_blank" title="Jeffrey Jensen Arnett" class=" text-white text-decoration-none"><i>Emerging Adulthood: The Winding Road from the Late Teens Through the Twenties (2nd edn)</a></i></td>
+                        <td class="bg-transparent"><a href="https://eprints.umm.ac.id/id/eprint/4398/" target="_blank" title="Audita Izza Balqis, Diah Karmiyati, Cahyaning Suryaningrum, Hanif Akhtar" class=" text-white text-decoration-none"><i>Quarter-life crisis: Personal growth initiative as a moderator of uncertainty intolerance in psychological distress</a></i></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-transparent"><a href="https://archive.org/details/quarterlifecrisi00robb/mode/2up" target="_blank" title="Alexandra Robbins & Abby Wilner" class=" text-white text-decoration-none"><i>Quarterlife crisis : the unique challenges of life in your twenties</a></i></td>
+                        <td class="bg-transparent"><a href="https://aksiologi.org/index.php/inner/article/view/1720" target="_blank" title="Inka Sukma Melati" class=" text-white text-decoration-none"><i>Quarter Life Crisis: Apa penyebab dan solusinya dilihat dari Perspektif Psikologi?</a></i></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-transparent"><a href="https://books.google.co.id/books/about/Helping_College_Students_Find_Purpose.html?hl=id&id=ZmubDwAAQBAJ&redir_esc=y" title="Robert J. Nash & Michele C. Murray" target="_blank" class=" text-white text-decoration-none"><i>Helping College Students Find Purpose</a></i></td>
+                        <td class="bg-transparent"><a href="https://www.tandfonline.com/doi/abs/10.1080/00221325.2010.521784" target="_blank" title="Nicole E. Rossi & Carolyn J. Mebert" class=" text-white text-decoration-none"><i>Does a Quarterlife Crisis Exist?</a></i></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3 p-0 position-relative d-grid justify-content-center">
+            <div class="col-12">
+                <div class="row rounded-pill mx-2 d-flex align-items-center my-3" style="background-color: #ffffff1c;">
+                    <div class="col-3">
+                        <button type="button" class="my-3 btn btn-warning rounded-circle validasi" disabled><i class="fa-solid fa-user-check" style="opacity: 1 !important; color: #4b2ab8; "></i></button>
+                    </div>
+                    <div class="col-9">
+                        <p class="m-3 text-white playpenSans">Has been validated by <a href="https://mindsetpsychology.co.id/psikolog/fitria-adriana" class="text-decoration-none text-white"><br><b>Psikolog Fitria Adriana</b></a></p>
+                    </div>
+                </div>
+                <div class="row rounded-pill mx-2 d-flex align-items-center my-3" style="background-color: #ffffff1c;">
+                    <div class="col-3">
+                        <button type="button" class="my-3 btn btn-warning rounded-circle validasi" disabled><i class="fa-solid fa-laptop-code" style="opacity: 1 !important; color: #4b2ab8; "></i></button>
+                    </div>
+                    <div class="col-9">
+                        <p class="m-3 text-white playpenSans">Design & Develop by <br><b>Bella Dqa </b> | <a href="mailto:belladinaqa.17@gmail.com" class="text-white text-decoration-none"><i class="fa-regular fa-envelope"></i></a> <a href="https://www.linkedin.com/in/belladinaqa/" class="text-white text-decoration-none"><i class="fa-brands fa-linkedin-in"></i> </a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="playpenSans text-white text-center"><i class="fa-regular fa-copyright"></i> 2026 QLifeC.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="floating-controls">
+    <div class="story-nav p-2 rounded-pill">
+        <button class="nav-stay active" data-target=".sec1" data-label="Beranda"></button>
+        <button class="nav-stay" data-target=".bg-sec3" data-label="Perasaan"></button>
+        <button class="nav-stay" data-target=".bg-sec5" data-label="Definisi"></button>
+        <button class="nav-stay" data-target=".bg-sec6" data-label="Usia"></button>
+        <button class="nav-stay" data-target=".inipemicu" data-label="Pemicu"></button>
+        <button class="nav-stay" data-target=".bg-sec8" data-label="Ciri-ciri"></button>
+        <button class="nav-stay" data-target=".initanda" data-label="Gejala"></button>
+        <button class="nav-stay" data-target=".bg-sec16" data-label="Strategi"></button>
+        <button class="nav-stay" data-target=".bg-sec19" data-label="Bantuan"></button>
+        <button class="nav-stay" data-target="footer" data-label="Referensi"></button>
+    </div>
+
+    <button class="nav-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <button class="music-btn" id="musicBtn">❚❚</button>
+</div>
 
 <!-- Javascript -->
     <script src="js/jquery-3.7.1.min.js"></script>
