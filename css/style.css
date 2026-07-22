@@ -210,10 +210,15 @@ body.nav-open .nav-stay::before{
   transition: none !important;
 }
 
+.pria-swipe, .wanita-swipe, .quarter, .quarter2, .txt-sec1, .pohon, .pohon-flip, .pohonpohon, .daun, .swipe2-righthalf, 
+.swipe2-lefthalf, .qlcmb, .p2sec2, .fsk, .pria-sec4, .w-150, .dampak, .validasi {
+  will-change: transform, opacity;
+}
+
 .pria-swipe, .wanita-swipe {
-  will-change: transform;
   backface-visibility: hidden;
   transform-style: preserve-3d;
+  transform-origin: center;
 }
 
 .dampak {
@@ -239,10 +244,6 @@ body.nav-open .nav-stay::before{
   overflow: hidden;  
 }
 
-.hiddenX{
-  overflow-x: hidden;
-}
-
 .sec1 .pohon {
   z-index: -1;  
 }
@@ -264,7 +265,6 @@ body.nav-open .nav-stay::before{
   z-index: -2;
   top: 21% !important;
   width: 107%;
-  /* opacity: 0.25; */
 }
 
 .sec1 .w-97, .sec1 .w-98 {
@@ -408,7 +408,7 @@ p.stroke-2 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   padding: 15px;
   display: none;
-  z-index: 1031;
+  z-index: 1032;
   animation: fadeIn 0.4s ease;
 }
 
@@ -444,6 +444,22 @@ p.stroke-2 {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none;
+  z-index:1030;
+}
+
+.highlight-target{
+    position: relative;
+    z-index: 1031;
+    filter:
+        drop-shadow(0 0 10px #fff)
+        drop-shadow(0 0 20px #fff);
 }
 
 /* Style Website */
@@ -2564,6 +2580,10 @@ p.stroke-2 {
     width: 95%;
   }
 
+  .popup {
+    margin: 0 11%;
+  }
+
   .bg-sec7 .fs-5vw.rasa {    
     padding: 0 3rem 2rem;
     text-align: center !important;
@@ -3086,7 +3106,7 @@ p.stroke-2 {
 
   .popup {
     width: 23.5rem;
-    margin: 0 5.5%;
+    margin: 0 2.5%;
   }
 
   .popupteks p {
